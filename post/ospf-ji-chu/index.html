@@ -1,0 +1,319 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<title>ospf基础 | WAKE</title>
+<link rel="shortcut icon" href="http://WEI-KE.github.io/favicon.ico?v=1683210060637">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="http://WEI-KE.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="ospf基础 | WAKE - Atom Feed" href="http://WEI-KE.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="ospf学习笔记
+
+ospf基础
+Router ID：
+
+企业网中的设备少则几台多则几十台甚至几百台，每台路由器都需要有一个唯一的ID用于标识自己。
+Router ID是一个32位的无符号整数，其格式和IP地址的格式是一样的，RouterI..." />
+    <meta name="keywords" content="ospf,网络,教程" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="http://WEI-KE.github.io">
+  <img class="avatar" src="http://WEI-KE.github.io/images/avatar.png?v=1683210060637" alt="">
+  </a>
+  <h1 class="site-title">
+    WAKE
+  </h1>
+  <p class="site-description">
+    温故而知新
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/things" class="menu">
+          碎碎念
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              ospf基础
+            </h2>
+            <div class="post-info">
+              <span>
+                2023-05-02
+              </span>
+              <span>
+                8 min read
+              </span>
+              
+                <a href="http://WEI-KE.github.io/tag/QXo4rBO1i/" class="post-tag">
+                  # ospf
+                </a>
+              
+                <a href="http://WEI-KE.github.io/tag/wzUypiG_h/" class="post-tag">
+                  # 网络
+                </a>
+              
+                <a href="http://WEI-KE.github.io/tag/RdyGu6Z_6E/" class="post-tag">
+                  # 教程
+                </a>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content" v-pre>
+                <p>ospf学习笔记</p>
+<!-- more -->
+<h1 id="ospf基础">ospf基础</h1>
+<h3 id="router-id"><strong>Router ID：</strong></h3>
+<ul>
+<li>企业网中的设备少则几台多则几十台甚至几百台，每台路由器都需要有一个唯一的ID用于标识自己。</li>
+<li>Router ID是一个32位的无符号整数，其格式和IP地址的格式是一样的，RouterID选举规则如下：
+<ol>
+<li>手动配置OSPF路由器的Router ID（通常建议手动配置）；</li>
+<li>如果没有手动配置Router ID，则路由器使用Loopback接口中<strong>最大的IP地址</strong>作为 Router ID；</li>
+<li>如果没有配置Loopback接口，则路由器使用物理接口中<strong>最大的IP地址</strong>作为Router ID。</li>
+</ol>
+</li>
+<li>OSPF的路由器Router ID重新配置后，可以通过重置OSPF进程来更新Router ID。</li>
+</ul>
+<p>注：router ID只是格式为ip地址格式，只是作为名称地址可以不存在</p>
+<h3 id="邻居建立过程"><strong>邻居建立过程：</strong></h3>
+<figure data-type="image" tabindex="1"><img src="http://WEI-KE.github.io/post-images/1683042032465.png" alt="" loading="lazy"></figure>
+<ul>
+<li>OSPF路由器之间在交换链路状态信息之前，首先需要彼此建立邻居关系，通过Hello报文 实现。
+<ul>
+<li>
+<p>OSPF协议通过Hello报文可以让互联的路由器间自动发现并建立邻居关系，为后续可</p>
+</li>
+<li>
+<p>在形成邻居关系过程中，路由器通过Hello报文完成一些参数的协商。</p>
+</li>
+<li>
+<p>邻居关系建立后，周期性的Hello报文发送还可以实现邻居保持的功能，在一定时间 内没有收到邻居的Hello报文，则会中断路由器间的OSPF邻居关系。</p>
+<p>达性信息的同步作准备。<br>
+两种方式：组播<a href="http://224.0.0.5" title="224.0.0.5">224.0.0.5</a> 224.0.0.6、手工单播</p>
+</li>
+</ul>
+</li>
+<li>LSA链路状态信息
+<ul>
+<li>链路类型</li>
+<li>接口ip地址及掩码</li>
+<li>链路上所连接的邻居路由器</li>
+<li>链路的带宽（开销）</li>
+</ul>
+</li>
+</ul>
+<p>ospf 度量方式</p>
+<p>ospf 报文类型</p>
+<figure data-type="image" tabindex="2"><img src="http://WEI-KE.github.io/post-images/1683042055018.png" alt="" loading="lazy"></figure>
+<p>路由信息仅在第4种里，其他的都是摘要信息</p>
+<p>DR角色不会被抢占，需手动重启进程</p>
+<p>ospf的lsdb同步</p>
+<figure data-type="image" tabindex="3"><img src="http://WEI-KE.github.io/post-images/1683042067477.png" alt="" loading="lazy"></figure>
+<ul>
+<li>状态含义：
+<ul>
+<li>ExStart：邻居状态变成此状态以后，路由器开始向邻居发送DD报文。Master/Slave  关系是在此状态下形成的，初始DD序列号也是在此状态下确定的。在此状态下发送 的DD报文不包含链路状态描述。</li>
+<li>Exchange：在此状态下，路由器与邻居之间相互发送包含链路状态信息摘要的DD报 文。</li>
+<li>Loading：在此状态下，路由器与邻居之间相互发送LSR报文、LSU报文、LSAck报 文。</li>
+<li>Full：LSDB同步过程完成，路由器与邻居之间形成了完全的邻接关系。</li>
+</ul>
+</li>
+<li>LSDB同步过程如下：
+<ul>
+<li>
+<p>RTA和RTB的Router ID分别为<a href="http://1.1.1.xn--12-jy6c.2.2.xn--2-5o6a4nxa038a38u0xcd4ab8au66pdbftqkdv0d" title="1.1.1.1和2.2.2.2并且二者已建立了邻居关系">1.1.1.1和2.2.2.2并且二者已建立了邻居关系</a>。当RTA  的邻居状态变为ExStart后，RTA会发送第一个DD报文。此报文中，DD序列号被随 机设置为X，I-bit设置为1，表示这是第一个DD报文，M-bit设置为1，表示后续还有 DD报文要发送，MS-bit设置为1，表示RTA宣告自己为Master。</p>
+</li>
+<li>
+<p>当RTB的邻居状态变为ExStart后，RTB会发送第一个DD报文。此报文中，DD序列号 被随机设置为Y（I-bit=1，M-bit=1，MS-bit=1，含义同上）。由于RTB的Router  ID较大，所以RTB将成为真正的Master。收到此报文后，RTA会产生一个 Negotiation-Done事件，并将邻居状态从ExStart变为Exchange。</p>
+</li>
+<li>
+<p>当RTA的邻居状态变为Exchange后，RTA会发送一个新的DD报文，此报文中包含了 LSDB的摘要信息，序列号设置为RTB在步骤2中使用的序列号Y，I-bit=0，表示这不 是第一个DD报文，M-bit=0，表示这是最后一个包含LSDB摘要信息的DD报文，  MS-bit=0，表示RTA宣告自己为Slave。收到此报文后，RTB会产生一个 Negotiation-Done事件，并将邻居状态从ExStart变为Exchange。</p>
+</li>
+<li>
+<p>当RTB的邻居状态变为Exchange后，RTB会发送一个新的DD报文，此报文包含了 LSDB的摘要信息，DD序列号设置为Y+1, MS-bit=1，表示RTB宣告自己为Master。</p>
+</li>
+<li>
+<p>虽然RTA不需要发送新的包含LSDB摘要信息的DD报文，但是作为Slave，RTA需要 对Master发送的每一个DD报文进行确认。所以，RTA向RTB发送一个新的DD报文，  序列号为Y+1，该报文内容为空。发送完此报文后，RTA产生一个Exchange-Done  事件，将邻居状态变为Loading。RTB收到此报文后，会将邻居状态变为Full（假设 RTB的LSDB是最新最全的，不需要向RTA请求更新）。</p>
+<ul>
+<li>如果需要更新：</li>
+</ul>
+<figure data-type="image" tabindex="4"><img src="http://WEI-KE.github.io/post-images/1683042094446.png" alt="" loading="lazy"></figure>
+<ul>
+<li>RTA开始向RTB发送LSR报文，请求那些在Exchange状态下通过DD报文发现的、并 且在本地LSDB中没有的链路状态信息。
+<ul>
+<li>RTB向RTA发送LSU报文，LSU报文中包含了那些被请求的链路状态的详细信息。</li>
+</ul>
+</li>
+<li>RTA向RTB发送LSAck报文，作为对LSU报文的确认。RTB收到LSAck报文后，双方便 建立起了完全的邻接关系。</li>
+</ul>
+</li>
+<li>
+<p>从建立邻居关系到同步LSDB的过程较为复杂，错误的配置或设备链路故障都会导致无法完 成LSDB同步。为了快速排障，最关键的是要理解不同状态之间切换的触发原因。</p>
+<p>RTA在完成LSU报文的接收之后，会将邻居状态从Loading变为Full。</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>ospf邻居状态机制</p>
+<figure data-type="image" tabindex="5"><img src="http://WEI-KE.github.io/post-images/1683042130529.png" alt="" loading="lazy"></figure>
+<ul>
+<li>这是形成邻居关系的过程和相关邻居状态的变换过程。
+<ul>
+<li>Down：这是邻居的初始状态，表示没有从邻居收到任何信息。在NBMA网络上，此 状态下仍然可以向静态配置的邻居发送Hello报文，发送间隔为PollInterval，通常和 Router DeadInterval间隔相同。</li>
+<li>Attempt：此状态只在NBMA网络上存在，表示没有收到邻居的任何信息，但是已经 周期性的向邻居发送报文，发送间隔为HelloInterval。如果Router DeadInterval间 隔内未收到邻居的Hello报文，则转为Down状态。</li>
+<li>Init：在此状态下，路由器已经从邻居收到了Hello报文，但是自己不在所收到的 Hello报文的邻居列表中，表示尚未与邻居建立双向通信关系。在此状态下的邻居要 被包含在自己所发送的Hello报文的邻居列表中。</li>
+<li>2-Way Received：此事件表示路由器发现与邻居的双向通信已经开始（发现自己在 邻居发送的Hello报文的邻居列表中）。Init状态下产生此事件之后，如果需要和邻居 建立邻接关系则进入ExStart状态，开始数据库同步过程，如果不能与邻居建立邻接 关系则进入2-Way。</li>
+<li>2-Way：在此状态下，双向通信已经建立，但是没有与邻居建立邻接关系。这是建立 邻接关系以前的最高级状态。</li>
+<li>1-Way Received：此事件表示路由器发现自己没有在邻居发送Hello报文的邻居列 表中，通常是由于对端邻居重启造成的。</li>
+<li>ExStart：这是形成邻接关系的第一个步骤，邻居状态变成此状态以后，路由器开始 向邻居发送DD报文。主从关系是在此状态下形成的；初始DD序列号是在此状态下决 定的。在此状态下发送的DD报文不包含链路状态描述。</li>
+<li>Exchange：此状态下路由器相互发送包含链路状态信息摘要的DD报文，描述本地 LSDB的内容。</li>
+<li>Loading：相互发送LS Request报文请求LSA，发送LS Update通告LSA。</li>
+<li>Full：两台路由器的LSDB已经同步。</li>
+</ul>
+</li>
+</ul>
+<p>DR与BDR选举</p>
+<p>规则：基于接口，接口的优先级越大越优先，优先级相等 router ID越大越优先</p>
+<p>优先级为0不参与选举</p>
+<p>.6只有dr或bdr接收</p>
+<p>.5给所有的ospf接收</p>
+<h3 id="邻接建立过程"><strong>邻接建立过程：</strong></h3>
+<p>路由同步后才是邻接关系</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li><a href="#ospf%E5%9F%BA%E7%A1%80">ospf基础</a><br>
+*
+<ul>
+<li><a href="#router-id"><strong>Router ID：</strong></a></li>
+<li><a href="#%E9%82%BB%E5%B1%85%E5%BB%BA%E7%AB%8B%E8%BF%87%E7%A8%8B"><strong>邻居建立过程：</strong></a></li>
+<li><a href="#%E9%82%BB%E6%8E%A5%E5%BB%BA%E7%AB%8B%E8%BF%87%E7%A8%8B"><strong>邻接建立过程：</strong></a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="http://WEI-KE.github.io/post/ipv4-bao-liu-ip/">
+              <h3 class="post-title">
+                IP地址中的保留IP
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="http://WEI-KE.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,301 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<title>ESXI相关 | WAKE</title>
+<link rel="shortcut icon" href="http://WEI-KE.github.io/favicon.ico?v=1683210060637">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="http://WEI-KE.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="ESXI相关 | WAKE - Atom Feed" href="http://WEI-KE.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="挂载USB存储：
+在不接入USB硬盘的情况下输入以下命令：
+/etc/init.d/usbarbitrator stop
+chkconfig usbarbitrator off
+
+接入硬盘
+esxcli storage core devic..." />
+    <meta name="keywords" content="Esxi" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="http://WEI-KE.github.io">
+  <img class="avatar" src="http://WEI-KE.github.io/images/avatar.png?v=1683210060637" alt="">
+  </a>
+  <h1 class="site-title">
+    WAKE
+  </h1>
+  <p class="site-description">
+    温故而知新
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/things" class="menu">
+          碎碎念
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              ESXI相关
+            </h2>
+            <div class="post-info">
+              <span>
+                2023-05-02
+              </span>
+              <span>
+                4 min read
+              </span>
+              
+                <a href="http://WEI-KE.github.io/tag/A5H53JYk8/" class="post-tag">
+                  # Esxi
+                </a>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content" v-pre>
+                <h2 id="挂载usb存储">挂载USB存储：</h2>
+<p>在不接入USB硬盘的情况下输入以下命令：</p>
+<pre><code>/etc/init.d/usbarbitrator stop
+chkconfig usbarbitrator off
+</code></pre>
+<p>接入硬盘</p>
+<pre><code>esxcli storage core device list |grep -i usb
+</code></pre>
+<p>查看分区表</p>
+<pre><code>cd /dev/disks/
+partedUtil getptbl mpx.vmhba32:C0:T0:L0
+
+示例：
+[root@localhost:/dev/disks] partedUtil getptbl mpx.vmhba32:C0:T0:L0 
+gpt 
+31130 255 63 500118192 
+1 64 204863 C12A7328F81F11D2BA4B00A0C93EC93B systemPartition 128 
+5 208896 8595455 EBD0A0A2B9E5443387C068B6B72699C7 linuxNative 0 
+6 8597504 16984063 EBD0A0A2B9E5443387C068B6B72699C7 linuxNative 0
+</code></pre>
+<p>创建新分区</p>
+<pre><code>partedUtil setptbl mpx.vmhba32:C0:T0:L0 gpt \
+&quot;1 64 204863 C12A7328F81F11D2BA4B00A0C93EC93B  128&quot; \
+&quot;5 208896 8595455 EBD0A0A2B9E5443387C068B6B72699C7  0&quot; \
+&quot;6 8597504 16984063 EBD0A0A2B9E5443387C068B6B72699C7  0&quot; \
+&quot;3 16984064 500118158 AA31E02A400F11DB9590000C2911D1B8 0&quot;
+</code></pre>
+<p>再次查看</p>
+<pre><code>partedUtil getptbl mpx.vmhba32:C0:T0:L0
+</code></pre>
+<p>格式化分区</p>
+<pre><code>vmkfstools -C vmfs6 -b 1m -S UsbDatastore mpx.vmhba32:C0:T0:L0:3
+</code></pre>
+<p>参考来源：<a href="https://vt.wooomooo.com/archives/39786">https://vt.wooomooo.com/archives/39786</a></p>
+<h2 id="sata直通">SATA直通</h2>
+<p>查看SATA控制器</p>
+<pre><code>lspci -v | grep &quot;Class 0106&quot; -B 1
+
+示例：
+[root@localhost:/dev/disks] lspci -v | grep &quot;Class 0106&quot; -B 1 
+0000:00:1f.2 Mass storage controller SATA controller: Intel Corporation Lynx Point AHCI Controller [vmhba0] 
+         Class 0106: 8086:8c02
+</code></pre>
+<p>编辑直通列表</p>
+<pre><code>vi /etc/vmware/passthru.map
+</code></pre>
+<p>在末尾添加</p>
+<pre><code>#Intel Corporation Lynx Point AHCI Controller
+8086   8c02    d3d0    fasle
+
+替换第二位设备ID即可
+</code></pre>
+<p>重启</p>
+<pre><code>reboot
+</code></pre>
+<p>参考来源：https://vt.wooomooo.com/archives/13671</p>
+<h2 id="解决-未配置任何-coredump-目标-无法保存主机核心转储">解决 未配置任何 coredump 目标。无法保存主机核心转储</h2>
+<p>查看coredump状态。</p>
+<pre><code>esxcli system coredump file list 
+</code></pre>
+<p>看到最后一条的Actiive状态为false。<br>
+<img src="http://WEI-KE.github.io/post-images/1683023840294.jpeg" alt="" loading="lazy"></p>
+<p>启用文件</p>
+<pre><code>esxcli system coredump file set -e true
+</code></pre>
+<p>5.再次查看coredump状态，已经改为true。<br>
+<img src="http://WEI-KE.github.io/post-images/1683023882209.jpeg" alt="" loading="lazy"></p>
+<p>6.回到ESXI，告警信息已经没有了。</p>
+<p>7.如果dumpfile不存在，要将 ESXi 配置为在 VMFS 上生成文件形式的 coredump，请执行以下操作：</p>
+<p>使用 SSH 连接到 ESXi 主机；</p>
+<p>运行以下命令添加用作 coredump 的新文件：</p>
+<pre><code>esxcli system coredump file add
+</code></pre>
+<p>-d可以指定用于 coredump 文件的vmfs数据存储。如果未提供此选项，将自动选择大小足够的数据存储。</p>
+<p>-f可以指定 coredump 文件的文件名。如果未提供此选项，则会创建唯一名称。</p>
+<p>例如：</p>
+<pre><code>esxcli system coredump file add -d UsbDatastore -f test
+</code></pre>
+<p>运行以下命令获取具有访问权限的所有转储文件的列表：</p>
+<pre><code>esxcli system coredump file list
+</code></pre>
+<p>您会看到类似以下内容的输出：<br>
+<img src="http://WEI-KE.github.io/post-images/1683023905292.jpeg" alt="" loading="lazy"></p>
+<p>注意：如果没有指定 coredump 文件，则运行命令不会显示任何输出。</p>
+<p>运行以下命令设置主机的转储文件：</p>
+<pre><code>esxcli system coredump file set -p /vmfs/volumes/DATASTORE_UUID/vmkdump/FILENAME
+</code></pre>
+<p>例如：</p>
+<pre><code>esxcli system coredump file set -p /vmfs/volumes/UsbDatastore/vmkdump/FCE0EAC0-D837-11DD-8EAD-F832E4BE8554.dumpfile
+</code></pre>
+<p>运行以下命令验证转储文件是否已配置并且处于活动状态：</p>
+<pre><code>esxcli system coredump file list
+</code></pre>
+<p>您会看到类似以下内容的输出：<br>
+<img src="http://WEI-KE.github.io/post-images/1683023905292.jpeg" alt="" loading="lazy"></p>
+<p>输出结果表明该文件的活动状态和已配置状态为 True。</p>
+<h2 id="解决-系统日志存储在非持久存储中">解决 系统日志存储在非持久存储中</h2>
+<p>在存储内新建存放主机日志的文件夹，并记录一下这个存储路径<br>
+例如 [UsbDatastore] Log/<br>
+<img src="http://WEI-KE.github.io/post-images/1683024020085.jpeg" alt="" loading="lazy"></p>
+<p>修改主机-配置-高级系统设置-编辑<br>
+<img src="http://WEI-KE.github.io/post-images/1683024042115.jpeg" alt="" loading="lazy"></p>
+<p>修改 Syslog.global.logdir 值为新建的文件夹的存储路径<br>
+<img src="http://WEI-KE.github.io/post-images/1683024066033.jpeg" alt="" loading="lazy"></p>
+<p>点击确定，警告消失</p>
+<h2 id="开启嵌套虚拟化">开启嵌套虚拟化</h2>
+<pre><code>vi /etc/vmware/config
+vhv.enable = &quot;TRUE&quot;
+</code></pre>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E6%8C%82%E8%BD%BDusb%E5%AD%98%E5%82%A8">挂载USB存储：</a></li>
+<li><a href="#sata%E7%9B%B4%E9%80%9A">SATA直通</a></li>
+<li><a href="#%E8%A7%A3%E5%86%B3-%E6%9C%AA%E9%85%8D%E7%BD%AE%E4%BB%BB%E4%BD%95-coredump-%E7%9B%AE%E6%A0%87-%E6%97%A0%E6%B3%95%E4%BF%9D%E5%AD%98%E4%B8%BB%E6%9C%BA%E6%A0%B8%E5%BF%83%E8%BD%AC%E5%82%A8">解决 未配置任何 coredump 目标。无法保存主机核心转储</a></li>
+<li><a href="#%E8%A7%A3%E5%86%B3-%E7%B3%BB%E7%BB%9F%E6%97%A5%E5%BF%97%E5%AD%98%E5%82%A8%E5%9C%A8%E9%9D%9E%E6%8C%81%E4%B9%85%E5%AD%98%E5%82%A8%E4%B8%AD">解决 系统日志存储在非持久存储中</a></li>
+<li><a href="#%E5%BC%80%E5%90%AF%E5%B5%8C%E5%A5%97%E8%99%9A%E6%8B%9F%E5%8C%96">开启嵌套虚拟化</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="http://WEI-KE.github.io/post/ubuntu-an-zhuang-zabbix/">
+              <h3 class="post-title">
+                Ubuntu安装zabbix
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="http://WEI-KE.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

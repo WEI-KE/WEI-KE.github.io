@@ -1,0 +1,264 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<title>Ubuntu安装zabbix | WAKE</title>
+<link rel="shortcut icon" href="http://WEI-KE.github.io/favicon.ico?v=1683210060637">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="http://WEI-KE.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Ubuntu安装zabbix | WAKE - Atom Feed" href="http://WEI-KE.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="1、安装zabbix，以6.4版本 Ubuntu 22.04 MySql Nginx为例
+wget https://repo.zabbix.com/zabbix/6.4/ubuntu/pool/main/z/zabbix-release/z..." />
+    <meta name="keywords" content="Ubuntu,zabbix,教程" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="http://WEI-KE.github.io">
+  <img class="avatar" src="http://WEI-KE.github.io/images/avatar.png?v=1683210060637" alt="">
+  </a>
+  <h1 class="site-title">
+    WAKE
+  </h1>
+  <p class="site-description">
+    温故而知新
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/things" class="menu">
+          碎碎念
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              Ubuntu安装zabbix
+            </h2>
+            <div class="post-info">
+              <span>
+                2023-05-02
+              </span>
+              <span>
+                2 min read
+              </span>
+              
+                <a href="http://WEI-KE.github.io/tag/BKaXy05cU/" class="post-tag">
+                  # Ubuntu
+                </a>
+              
+                <a href="http://WEI-KE.github.io/tag/0an3dR41jB/" class="post-tag">
+                  # zabbix
+                </a>
+              
+                <a href="http://WEI-KE.github.io/tag/RdyGu6Z_6E/" class="post-tag">
+                  # 教程
+                </a>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://assets.zabbix.com/img/banners/6.0/zabbix_6_0_background_5_1920x600.jpg" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content" v-pre>
+                <h4 id="1-安装zabbix以64版本-ubuntu-2204-mysql-nginx为例">1、安装zabbix，以6.4版本 Ubuntu 22.04 MySql Nginx为例</h4>
+<pre><code class="language-Bash">wget https://repo.zabbix.com/zabbix/6.4/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.4-1+ubuntu22.04_all.deb
+sudo dpkg -i zabbix-release_6.4-1+ubuntu22.04_all.deb
+sudo apt update
+sudo apt install zabbix-server-mysql zabbix-frontend-php zabbix-nginx-conf zabbix-sql-scripts zabbix-agent
+</code></pre>
+<h4 id="2-安装mysql">2 、安装MySql</h4>
+<p>下载<a href="https://dev.mysql.com/downloads/repo/apt/">https://dev.mysql.com/downloads/repo/apt/</a>并上传</p>
+<p>或者<a href="http://mirrors.ustc.edu.cn/mysql-repo/">http://mirrors.ustc.edu.cn/mysql-repo/</a></p>
+<pre><code class="language-Bash">sudo dpkg -i mysql-apt-config_0.8.24-1_all.deb
+sudo apt update
+sudo apt install mysql-server
+</code></pre>
+<p>安装输入数据库ROOT密码，其他保持默认即可</p>
+<h4 id="3-配置数据库">3、配置数据库</h4>
+<pre><code class="language-SQL">mysql -uroot -p
+
+create database zabbix character set utf8mb4 collate utf8mb4_bin;
+create user zabbix@localhost identified by 'zabbix数据库密码';
+grant all privileges on zabbix.* to zabbix@localhost;
+set global log_bin_trust_function_creators = 1;
+quit;
+</code></pre>
+<h4 id="4-在zabbix服务器主机上导入初始数据">4、在Zabbix服务器主机上导入初始数据</h4>
+<pre><code class="language-Bash">sudo zcat /usr/share/zabbix-sql-scripts/mysql/server.sql.gz | mysql --default-character-set=utf8mb4 -uzabbix -p zabbix
+</code></pre>
+<p>输入zabbix数据库密码</p>
+<h4 id="5-导入数据库架构后禁用log_bin_trust_function_creators选项">5、导入数据库架构后禁用log_bin_trust_function_creators选项。</h4>
+<pre><code class="language-Bash">mysql -uroot -p
+password
+mysql&gt; set global log_bin_trust_function_creators = 0;
+mysql&gt; quit;
+</code></pre>
+<h4 id="6-修改zabbix的配置文件">6、修改zabbix的配置文件</h4>
+<pre><code class="language-Bash">sudo vi /etc/zabbix/zabbix_server.conf
+</code></pre>
+<pre><code class="language-XML">DBPassword=zabbix数据库密码
+</code></pre>
+<h4 id="7-修改nginx配置修改注释和端口号">7、修改nginx配置，修改注释和端口号</h4>
+<pre><code class="language-Bash">sudo vi /etc/zabbix/nginx.conf
+sudo vi /etc/nginx/sites-available
+</code></pre>
+<pre><code class="language-XML"> listen 80;
+ server_name example.com;
+</code></pre>
+<h4 id="8添加中文支持取消utf-8的中文注释">8添加中文支持，取消UTF-8的中文注释</h4>
+<pre><code class="language-Bash"> sudo vi /etc/locale.gen 
+ sudo locale-gen
+</code></pre>
+<p>可能需要root账户执行locale-gen。。</p>
+<h4 id="9-重启服务设置自启动">9、重启服务设置自启动</h4>
+<pre><code class="language-Bash">sudo systemctl restart zabbix-server zabbix-agent nginx php8.1-fpm
+sudo systemctl enable zabbix-server zabbix-agent nginx php8.1-fpm
+</code></pre>
+<p>参考链接：</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#1-%E5%AE%89%E8%A3%85zabbix%E4%BB%A564%E7%89%88%E6%9C%AC-ubuntu-2204-mysql-nginx%E4%B8%BA%E4%BE%8B">1、安装zabbix，以6.4版本 Ubuntu 22.04 MySql Nginx为例</a></li>
+<li><a href="#2-%E5%AE%89%E8%A3%85mysql">2 、安装MySql</a></li>
+<li><a href="#3-%E9%85%8D%E7%BD%AE%E6%95%B0%E6%8D%AE%E5%BA%93">3、配置数据库</a></li>
+<li><a href="#4-%E5%9C%A8zabbix%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%BB%E6%9C%BA%E4%B8%8A%E5%AF%BC%E5%85%A5%E5%88%9D%E5%A7%8B%E6%95%B0%E6%8D%AE">4、在Zabbix服务器主机上导入初始数据</a></li>
+<li><a href="#5-%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9E%B6%E6%9E%84%E5%90%8E%E7%A6%81%E7%94%A8log_bin_trust_function_creators%E9%80%89%E9%A1%B9">5、导入数据库架构后禁用log_bin_trust_function_creators选项。</a></li>
+<li><a href="#6-%E4%BF%AE%E6%94%B9zabbix%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">6、修改zabbix的配置文件</a></li>
+<li><a href="#7-%E4%BF%AE%E6%94%B9nginx%E9%85%8D%E7%BD%AE%E4%BF%AE%E6%94%B9%E6%B3%A8%E9%87%8A%E5%92%8C%E7%AB%AF%E5%8F%A3%E5%8F%B7">7、修改nginx配置，修改注释和端口号</a></li>
+<li><a href="#8%E6%B7%BB%E5%8A%A0%E4%B8%AD%E6%96%87%E6%94%AF%E6%8C%81%E5%8F%96%E6%B6%88utf-8%E7%9A%84%E4%B8%AD%E6%96%87%E6%B3%A8%E9%87%8A">8添加中文支持，取消UTF-8的中文注释</a></li>
+<li><a href="#9-%E9%87%8D%E5%90%AF%E6%9C%8D%E5%8A%A1%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%90%AF%E5%8A%A8">9、重启服务设置自启动</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="http://WEI-KE.github.io/post/di-yi-pian-bo-ke/">
+              <h3 class="post-title">
+                第一篇博客？
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="http://WEI-KE.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
