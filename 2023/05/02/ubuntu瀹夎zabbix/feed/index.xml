@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	《Ubuntu安装zabbix》的评论	</title>
+	<atom:link href="http://weiqinke.com/2023/05/02/ubuntu%E5%AE%89%E8%A3%85zabbix/feed/" rel="self" type="application/rss+xml" />
+	<link>http://weiqinke.com/2023/05/02/ubuntu%e5%ae%89%e8%a3%85zabbix/</link>
+	<description></description>
+	<lastBuildDate>Fri, 12 May 2023 15:12:07 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.2</generator>
+</channel>
+</rss>

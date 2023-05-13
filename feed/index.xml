@@ -1,0 +1,891 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>WAKE</title>
+	<atom:link href="http://weiqinke.com/feed/" rel="self" type="application/rss+xml" />
+	<link>http://weiqinke.com/</link>
+	<description></description>
+	<lastBuildDate>Sat, 13 May 2023 10:32:58 +0000</lastBuildDate>
+	<language>zh-CN</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.2</generator>
+	<item>
+		<title>测试</title>
+		<link>http://weiqinke.com/2023/05/13/%e6%b5%8b%e8%af%95/</link>
+					<comments>http://weiqinke.com/2023/05/13/%e6%b5%8b%e8%af%95/#respond</comments>
+		
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<pubDate>Sat, 13 May 2023 10:06:48 +0000</pubDate>
+				<category><![CDATA[未分类]]></category>
+		<guid isPermaLink="false">http://weiqinke.com/?p=130</guid>
+
+					<description><![CDATA[测试测试哈哈哈]]></description>
+										<content:encoded><![CDATA[
+<p>测试测试哈哈哈</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>http://weiqinke.com/2023/05/13/%e6%b5%8b%e8%af%95/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>ospf基础</title>
+		<link>http://weiqinke.com/2023/05/09/45/</link>
+					<comments>http://weiqinke.com/2023/05/09/45/#respond</comments>
+		
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<pubDate>Tue, 09 May 2023 14:47:54 +0000</pubDate>
+				<category><![CDATA[未分类]]></category>
+		<category><![CDATA[ospf]]></category>
+		<category><![CDATA[网络]]></category>
+		<guid isPermaLink="false">http://weiqinke.com/?p=45</guid>
+
+					<description><![CDATA[ospf学习笔记 Router ID： 注：router ID只是格式为ip地址格式，只是作为名称地址可以不存在 邻居建立过程： ospf 度量方式 ospf 报文类型 路由信息仅在第4种里，其他的都是摘要信息 DR角色不会被抢占，需手动重启进程 ospf的lsdb同步 ospf邻居状态机制 DR与BDR选举 规则：基于接口，接口的优先级越大越优先，优先级相等 router ID越大越优先 优先级为0不参与选举 .6只有dr或bdr接收 .5给所有的ospf接收 邻接建立过程： 路由同步后才是邻接关系]]></description>
+										<content:encoded><![CDATA[
+<p>ospf学习笔记</p>
+
+
+
+<h3 class="wp-block-heading" id="router-id"><strong>Router ID：</strong></h3>
+
+
+
+<ul>
+<li>企业网中的设备少则几台多则几十台甚至几百台，每台路由器都需要有一个唯一的ID用于标识自己。</li>
+
+
+
+<li>Router ID是一个32位的无符号整数，其格式和IP地址的格式是一样的，RouterID选举规则如下：
+<ol>
+<li>手动配置OSPF路由器的Router ID（通常建议手动配置）；</li>
+
+
+
+<li>如果没有手动配置Router ID，则路由器使用Loopback接口中<strong>最大的IP地址</strong>作为 Router ID；</li>
+
+
+
+<li>如果没有配置Loopback接口，则路由器使用物理接口中<strong>最大的IP地址</strong>作为Router ID。</li>
+</ol>
+</li>
+
+
+
+<li>OSPF的路由器Router ID重新配置后，可以通过重置OSPF进程来更新Router ID。</li>
+</ul>
+
+
+
+<p>注：router ID只是格式为ip地址格式，只是作为名称地址可以不存在</p>
+
+
+
+<h3 class="wp-block-heading" id="邻居建立过程"><strong>邻居建立过程：</strong></h3>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="http://wei-ke.github.io/post-images/1683042032465.png" alt=""/></figure>
+
+
+
+<ul>
+<li>OSPF路由器之间在交换链路状态信息之前，首先需要彼此建立邻居关系，通过Hello报文 实现。
+<ul>
+<li>OSPF协议通过Hello报文可以让互联的路由器间自动发现并建立邻居关系，为后续可</li>
+
+
+
+<li>在形成邻居关系过程中，路由器通过Hello报文完成一些参数的协商。</li>
+
+
+
+<li>邻居关系建立后，周期性的Hello报文发送还可以实现邻居保持的功能，在一定时间 内没有收到邻居的Hello报文，则会中断路由器间的OSPF邻居关系。达性信息的同步作准备。<br>两种方式：组播<a href="http://224.0.0.5/">224.0.0.5</a>&nbsp;224.0.0.6、手工单播</li>
+</ul>
+</li>
+
+
+
+<li>LSA链路状态信息
+<ul>
+<li>链路类型</li>
+
+
+
+<li>接口ip地址及掩码</li>
+
+
+
+<li>链路上所连接的邻居路由器</li>
+
+
+
+<li>链路的带宽（开销）</li>
+</ul>
+</li>
+</ul>
+
+
+
+<p>ospf 度量方式</p>
+
+
+
+<p>ospf 报文类型</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="http://wei-ke.github.io/post-images/1683042055018.png" alt=""/></figure>
+
+
+
+<p>路由信息仅在第4种里，其他的都是摘要信息</p>
+
+
+
+<p>DR角色不会被抢占，需手动重启进程</p>
+
+
+
+<p>ospf的lsdb同步</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="http://wei-ke.github.io/post-images/1683042067477.png" alt=""/></figure>
+
+
+
+<ul>
+<li>状态含义：
+<ul>
+<li>ExStart：邻居状态变成此状态以后，路由器开始向邻居发送DD报文。Master/Slave &nbsp;关系是在此状态下形成的，初始DD序列号也是在此状态下确定的。在此状态下发送 的DD报文不包含链路状态描述。</li>
+
+
+
+<li>Exchange：在此状态下，路由器与邻居之间相互发送包含链路状态信息摘要的DD报 文。</li>
+
+
+
+<li>Loading：在此状态下，路由器与邻居之间相互发送LSR报文、LSU报文、LSAck报 文。</li>
+
+
+
+<li>Full：LSDB同步过程完成，路由器与邻居之间形成了完全的邻接关系。</li>
+</ul>
+</li>
+
+
+
+<li>LSDB同步过程如下：
+<ul>
+<li>RTA和RTB的Router ID分别为<a href="http://1.1.1.xn--12-jy6c.2.2.xn--2-5o6a4nxa038a38u0xcd4ab8au66pdbftqkdv0d/">1.1.1.1和2.2.2.2并且二者已建立了邻居关系</a>。当RTA &nbsp;的邻居状态变为ExStart后，RTA会发送第一个DD报文。此报文中，DD序列号被随 机设置为X，I-bit设置为1，表示这是第一个DD报文，M-bit设置为1，表示后续还有 DD报文要发送，MS-bit设置为1，表示RTA宣告自己为Master。</li>
+
+
+
+<li>当RTB的邻居状态变为ExStart后，RTB会发送第一个DD报文。此报文中，DD序列号 被随机设置为Y（I-bit=1，M-bit=1，MS-bit=1，含义同上）。由于RTB的Router &nbsp;ID较大，所以RTB将成为真正的Master。收到此报文后，RTA会产生一个 Negotiation-Done事件，并将邻居状态从ExStart变为Exchange。</li>
+
+
+
+<li>当RTA的邻居状态变为Exchange后，RTA会发送一个新的DD报文，此报文中包含了 LSDB的摘要信息，序列号设置为RTB在步骤2中使用的序列号Y，I-bit=0，表示这不 是第一个DD报文，M-bit=0，表示这是最后一个包含LSDB摘要信息的DD报文， &nbsp;MS-bit=0，表示RTA宣告自己为Slave。收到此报文后，RTB会产生一个 Negotiation-Done事件，并将邻居状态从ExStart变为Exchange。</li>
+
+
+
+<li>当RTB的邻居状态变为Exchange后，RTB会发送一个新的DD报文，此报文包含了 LSDB的摘要信息，DD序列号设置为Y+1, MS-bit=1，表示RTB宣告自己为Master。</li>
+
+
+
+<li>虽然RTA不需要发送新的包含LSDB摘要信息的DD报文，但是作为Slave，RTA需要 对Master发送的每一个DD报文进行确认。所以，RTA向RTB发送一个新的DD报文，  序列号为Y+1，该报文内容为空。发送完此报文后，RTA产生一个Exchange-Done  事件，将邻居状态变为Loading。RTB收到此报文后，会将邻居状态变为Full（假设 RTB的LSDB是最新最全的，不需要向RTA请求更新）。<ul><li>如果需要更新：</li></ul><img decoding="async" src="http://wei-ke.github.io/post-images/1683042094446.png" alt="">
+<ul>
+<li>RTA开始向RTB发送LSR报文，请求那些在Exchange状态下通过DD报文发现的、并 且在本地LSDB中没有的链路状态信息。
+<ul>
+<li>RTB向RTA发送LSU报文，LSU报文中包含了那些被请求的链路状态的详细信息。</li>
+</ul>
+</li>
+
+
+
+<li>RTA向RTB发送LSAck报文，作为对LSU报文的确认。RTB收到LSAck报文后，双方便 建立起了完全的邻接关系。</li>
+</ul>
+</li>
+
+
+
+<li>从建立邻居关系到同步LSDB的过程较为复杂，错误的配置或设备链路故障都会导致无法完 成LSDB同步。为了快速排障，最关键的是要理解不同状态之间切换的触发原因。RTA在完成LSU报文的接收之后，会将邻居状态从Loading变为Full。</li>
+</ul>
+</li>
+</ul>
+
+
+
+<p>ospf邻居状态机制</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="http://wei-ke.github.io/post-images/1683042130529.png" alt=""/></figure>
+
+
+
+<ul>
+<li>这是形成邻居关系的过程和相关邻居状态的变换过程。
+<ul>
+<li>Down：这是邻居的初始状态，表示没有从邻居收到任何信息。在NBMA网络上，此 状态下仍然可以向静态配置的邻居发送Hello报文，发送间隔为PollInterval，通常和 Router DeadInterval间隔相同。</li>
+
+
+
+<li>Attempt：此状态只在NBMA网络上存在，表示没有收到邻居的任何信息，但是已经 周期性的向邻居发送报文，发送间隔为HelloInterval。如果Router DeadInterval间 隔内未收到邻居的Hello报文，则转为Down状态。</li>
+
+
+
+<li>Init：在此状态下，路由器已经从邻居收到了Hello报文，但是自己不在所收到的 Hello报文的邻居列表中，表示尚未与邻居建立双向通信关系。在此状态下的邻居要 被包含在自己所发送的Hello报文的邻居列表中。</li>
+
+
+
+<li>2-Way Received：此事件表示路由器发现与邻居的双向通信已经开始（发现自己在 邻居发送的Hello报文的邻居列表中）。Init状态下产生此事件之后，如果需要和邻居 建立邻接关系则进入ExStart状态，开始数据库同步过程，如果不能与邻居建立邻接 关系则进入2-Way。</li>
+
+
+
+<li>2-Way：在此状态下，双向通信已经建立，但是没有与邻居建立邻接关系。这是建立 邻接关系以前的最高级状态。</li>
+
+
+
+<li>1-Way Received：此事件表示路由器发现自己没有在邻居发送Hello报文的邻居列 表中，通常是由于对端邻居重启造成的。</li>
+
+
+
+<li>ExStart：这是形成邻接关系的第一个步骤，邻居状态变成此状态以后，路由器开始 向邻居发送DD报文。主从关系是在此状态下形成的；初始DD序列号是在此状态下决 定的。在此状态下发送的DD报文不包含链路状态描述。</li>
+
+
+
+<li>Exchange：此状态下路由器相互发送包含链路状态信息摘要的DD报文，描述本地 LSDB的内容。</li>
+
+
+
+<li>Loading：相互发送LS Request报文请求LSA，发送LS Update通告LSA。</li>
+
+
+
+<li>Full：两台路由器的LSDB已经同步。</li>
+</ul>
+</li>
+</ul>
+
+
+
+<p>DR与BDR选举</p>
+
+
+
+<p>规则：基于接口，接口的优先级越大越优先，优先级相等 router ID越大越优先</p>
+
+
+
+<p>优先级为0不参与选举</p>
+
+
+
+<p>.6只有dr或bdr接收</p>
+
+
+
+<p>.5给所有的ospf接收</p>
+
+
+
+<h3 class="wp-block-heading" id="邻接建立过程"><strong>邻接建立过程：</strong></h3>
+
+
+
+<p>路由同步后才是邻接关系</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>http://weiqinke.com/2023/05/09/45/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>IP地址中的保留IP</title>
+		<link>http://weiqinke.com/2023/05/09/ip%e5%9c%b0%e5%9d%80%e4%b8%ad%e7%9a%84%e4%bf%9d%e7%95%99ip/</link>
+					<comments>http://weiqinke.com/2023/05/09/ip%e5%9c%b0%e5%9d%80%e4%b8%ad%e7%9a%84%e4%bf%9d%e7%95%99ip/#respond</comments>
+		
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<pubDate>Tue, 09 May 2023 14:39:59 +0000</pubDate>
+				<category><![CDATA[未分类]]></category>
+		<guid isPermaLink="false">http://weiqinke.com/?p=40</guid>
+
+					<description><![CDATA[IPV4 地址块 (CIDR) 范围 地址数 效用域 用途 0.0.0.0/8 0.0.0.0 – 0.255.255.255 16,777,216 软件 用于广播信息到当前主机。[1] 10.0.0.0/8 10.0.0.0 – 10.255.255.255 16,777,216 专用网络 用于专用网络中的本地通信。[2] 100.64.0.0/10 100.64.0.0 – 100.127.255.255 4,194,304 专用网络 用于在电信级NAT环境中服务提供商与其用户通信。[3] 127.0.0.0/8 127.0.0.0 – 127.255.255.255 16,777,216 主机 用于到本地主机的环回地址。[4] 169.254.0.0/16 169.254.0.0 – 169.254.255.255 65,536 链路 用于单链路的两个主机之间的链路本地地址，而没有另外指定IP地址，例如通常从DHCP服务器所检索到的IP地址。[5] 172.16.0.0/12 172.16.0.0 – 172.31.255.255 1,048,576 专用网络 用于专用网络中的本地通信。[2] 192.0.0.0/24 192.0.0.0 – 192.0.0.255 256 专用网络 用于IANA的IPv4特殊用途地址表。[6] 192.0.2.0/24 192.0.2.0 – 192.0.2.255 256 文档 分配为用于文档和示例中的“TEST-NET”（测试网），它不应该被公开使用。[7] 192.88.99.0/24 192.88.99.0 – 192.88.99.255 256 互联网 用于6to4任播中继。[8]（已废弃[9]） 192.168.0.0/16 192.168.0.0 – 192.168.255.255 65,536 专用网络 用于专用网络中的本地通信。[2] 198.18.0.0/15 198.18.0.0 – 198.19.255.255 131,072 专用网络 用于测试两个不同的子网的网间通信。[10] 198.51.100.0/24 198.51.100.0 – 198.51.100.255 256 文档 分配为用于文档和示例中的“TEST-NET-2”（测试-网-2），它不应该被公开使用。[7] 203.0.113.0/24 203.0.113.0 – 203.0.113.255 256 文档 分配为用于文档和示例中的“TEST-NET-3”（测试-网-3），它不应该被公开使用。[7] 224.0.0.0/4 224.0.0.0 – 239.255.255.255 268,435,456 互联网 用于多播。[11] 233.252.0.0/24 233.252.0.0 &#8211; 233.252.0.255 256 文档 分配为用于文档和示例中的“MCAST-TEST-NET”，它不应该被公开使用 240.0.0.0/4 240.0.0.0 – 255.255.255.254 268,435,455 互联网 用于将来使用。[12] 255.255.255.255/32 255.255.255.255 1 子网 用于受限广播地址。[12] Address block Address range Number of addresses Scope Description 0.0.0.0/8 0.0.0.0–0.255.255.255 16777216 Software Current network[3] 10.0.0.0/8 10.0.0.0–10.255.255.255 16777216 Private&#160;network Used for local communications within a private network.[4] 100.64.0.0/10 100.64.0.0–100.127.255.255 4194304 Private&#160;network Shared address space[5] for communications between a service provider and its subscribers when using a carrier-grade NAT. 127.0.0.0/8 127.0.0.0–127.255.255.255 16777216 Host Used for loopback addresses to the local host.[3] 169.254.0.0/16 169.254.0.0–169.254.255.255 65536 Subnet Used for link-local add...]]></description>
+										<content:encoded><![CDATA[
+<h3 class="wp-block-heading">IPV4</h3>
+
+
+
+<figure class="wp-block-table alignwide"><table><thead><tr><th>地址块 (<a href="https://zh.wikipedia.org/wiki/%E6%97%A0%E7%B1%BB%E5%88%AB%E5%9F%9F%E9%97%B4%E8%B7%AF%E7%94%B1">CIDR</a>)</th><th>范围</th><th>地址数</th><th>效用域</th><th>用途</th></tr></thead><tbody><tr><td><a href="http://0.0.0.0/8">0.0.0.0/8</a></td><td><a href="http://0.0.0.0/">0.0.0.0</a> – <a href="http://0.255.255.255/">0.255.255.255</a></td><td>16,777,216</td><td>软件</td><td>用于广播信息到当前主机。<a href="https://zh.wikipedia.org/wiki/%E4%BF%9D%E7%95%99IP%E5%9C%B0%E5%9D%80#cite_note-1">[1]</a></td></tr><tr><td><a href="http://10.0.0.0/8">10.0.0.0/8</a></td><td><a href="http://10.0.0.0/">10.0.0.0</a> – <a href="http://10.255.255.255/">10.255.255.255</a></td><td>16,777,216</td><td>专用网络</td><td>用于<a href="https://zh.wikipedia.org/wiki/%E4%B8%93%E7%94%A8%E7%BD%91%E7%BB%9C">专用网络</a>中的本地通信。<a href="https://zh.wikipedia.org/wiki/%E4%BF%9D%E7%95%99IP%E5%9C%B0%E5%9D%80#cite_note-rfc1918-2">[2]</a></td></tr><tr><td><a href="http://100.64.0.0/10">100.64.0.0/10</a></td><td><a href="http://100.64.0.0/">100.64.0.0</a> – <a href="http://100.127.255.255/">100.127.255.255</a></td><td>4,194,304</td><td>专用网络</td><td>用于在<a href="https://zh.wikipedia.org/wiki/%E7%94%B5%E4%BF%A1%E7%BA%A7NAT">电信级NAT</a>环境中服务提供商与其用户通信。<a href="https://zh.wikipedia.org/wiki/%E4%BF%9D%E7%95%99IP%E5%9C%B0%E5%9D%80#cite_note-3">[3]</a></td></tr><tr><td><a href="http://127.0.0.0/8">127.0.0.0/8</a></td><td><a href="http://127.0.0.0/">127.0.0.0</a> – <a href="http://127.255.255.255/">127.255.255.255</a></td><td>16,777,216</td><td>主机</td><td>用于到本地主机的环回地址。<a href="https://zh.wikipedia.org/wiki/%E4%BF%9D%E7%95%99IP%E5%9C%B0%E5%9D%80#cite_note-4">[4]</a></td></tr><tr><td><a href="http://169.254.0.0/16">169.254.0.0/16</a></td><td><a href="http://169.254.0.0/">169.254.0.0</a> – <a href="http://169.254.255.255/">169.254.255.255</a></td><td>65,536</td><td>链路</td><td>用于单链路的两个主机之间的<a href="https://zh.wikipedia.org/wiki/%E9%93%BE%E8%B7%AF%E6%9C%AC%E5%9C%B0%E5%9C%B0%E5%9D%80">链路本地地址</a>，而没有另外指定IP地址，例如通常从<a href="https://zh.wikipedia.org/wiki/%E5%8A%A8%E6%80%81%E4%B8%BB%E6%9C%BA%E8%AE%BE%E7%BD%AE%E5%8D%8F%E8%AE%AE">DHCP</a>服务器所检索到的IP地址。<a href="https://zh.wikipedia.org/wiki/%E4%BF%9D%E7%95%99IP%E5%9C%B0%E5%9D%80#cite_note-5">[5]</a></td></tr><tr><td><a href="http://172.16.0.0/12">172.16.0.0/12</a></td><td><a href="http://172.16.0.0/">172.16.0.0</a> – <a href="http://172.31.255.255/">172.31.255.255</a></td><td>1,048,576</td><td>专用网络</td><td>用于<a href="https://zh.wikipedia.org/wiki/%E4%B8%93%E7%94%A8%E7%BD%91%E7%BB%9C">专用网络</a>中的本地通信。<a href="https://zh.wikipedia.org/wiki/%E4%BF%9D%E7%95%99IP%E5%9C%B0%E5%9D%80#cite_note-rfc1918-2">[2]</a></td></tr><tr><td><a href="http://192.0.0.0/24">192.0.0.0/24</a></td><td><a href="http://192.0.0.0/">192.0.0.0</a> – <a href="http://192.0.0.255/">192.0.0.255</a></td><td>256</td><td>专用网络</td><td>用于IANA的IPv4特殊用途地址表。<a href="https://zh.wikipedia.org/wiki/%E4%BF%9D%E7%95%99IP%E5%9C%B0%E5%9D%80#cite_note-rfc5736-6">[6]</a></td></tr><tr><td><a href="http://192.0.2.0/24">192.0.2.0/24</a></td><td><a href="http://192.0.2.0/">192.0.2.0</a> – <a href="http://192.0.2.255/">192.0.2.255</a></td><td>256</td><td>文档</td><td>分配为用于文档和示例中的“TEST-NET”（测试网），它不应该被公开使用。<a href="https://zh.wikipedia.org/wiki/%E4%BF%9D%E7%95%99IP%E5%9C%B0%E5%9D%80#cite_note-rfc5737-7">[7]</a></td></tr><tr><td><a href="http://192.88.99.0/24">192.88.99.0/24</a></td><td><a href="http://192.88.99.0/">192.88.99.0</a> – <a href="http://192.88.99.255/">192.88.99.255</a></td><td>256</td><td>互联网</td><td>用于<a href="https://zh.wikipedia.org/wiki/6to4">6to4</a><a href="https://zh.wikipedia.org/wiki/%E4%BB%BB%E6%92%AD">任播</a>中继。<a href="https://zh.wikipedia.org/wiki/%E4%BF%9D%E7%95%99IP%E5%9C%B0%E5%9D%80#cite_note-8">[8]</a>（已废弃<a href="https://zh.wikipedia.org/wiki/%E4%BF%9D%E7%95%99IP%E5%9C%B0%E5%9D%80#cite_note-rfc7526-9">[9]</a>）</td></tr><tr><td><a href="http://192.168.0.0/16">192.168.0.0/16</a></td><td><a href="http://192.168.0.0/">192.168.0.0</a> – <a href="http://192.168.255.255/">192.168.255.255</a></td><td>65,536</td><td>专用网络</td><td>用于<a href="https://zh.wikipedia.org/wiki/%E4%B8%93%E7%94%A8%E7%BD%91%E7%BB%9C">专用网络</a>中的本地通信。<a href="https://zh.wikipedia.org/wiki/%E4%BF%9D%E7%95%99IP%E5%9C%B0%E5%9D%80#cite_note-rfc1918-2">[2]</a></td></tr><tr><td><a href="http://198.18.0.0/15">198.18.0.0/15</a></td><td><a href="http://198.18.0.0/">198.18.0.0</a> – <a href="http://198.19.255.255/">198.19.255.255</a></td><td>131,072</td><td>专用网络</td><td>用于测试两个不同的子网的网间通信。<a href="https://zh.wikipedia.org/wiki/%E4%BF%9D%E7%95%99IP%E5%9C%B0%E5%9D%80#cite_note-10">[10]</a></td></tr><tr><td><a href="http://198.51.100.0/24">198.51.100.0/24</a></td><td><a href="http://198.51.100.0/">198.51.100.0</a> – <a href="http://198.51.100.255/">198.51.100.255</a></td><td>256</td><td>文档</td><td>分配为用于文档和示例中的“TEST-NET-2”（测试-网-2），它不应该被公开使用。<a href="https://zh.wikipedia.org/wiki/%E4%BF%9D%E7%95%99IP%E5%9C%B0%E5%9D%80#cite_note-rfc5737-7">[7]</a></td></tr><tr><td><a href="http://203.0.113.0/24">203.0.113.0/24</a></td><td><a href="http://203.0.113.0/">203.0.113.0</a> – <a href="http://203.0.113.255/">203.0.113.255</a></td><td>256</td><td>文档</td><td>分配为用于文档和示例中的“TEST-NET-3”（测试-网-3），它不应该被公开使用。<a href="https://zh.wikipedia.org/wiki/%E4%BF%9D%E7%95%99IP%E5%9C%B0%E5%9D%80#cite_note-rfc5737-7">[7]</a></td></tr><tr><td><a href="http://224.0.0.0/4">224.0.0.0/4</a></td><td><a href="http://224.0.0.0/">224.0.0.0</a> – <a href="http://239.255.255.255/">239.255.255.255</a></td><td>268,435,456</td><td>互联网</td><td>用于多播。<a href="https://zh.wikipedia.org/wiki/%E4%BF%9D%E7%95%99IP%E5%9C%B0%E5%9D%80#cite_note-rfc1112-11">[11]</a></td></tr><tr><td><a href="http://233.252.0.0/24">233.252.0.0/24</a></td><td><a href="http://233.252.0.0/">233.252.0.0</a> &#8211; <a href="http://233.252.0.255/">233.252.0.255</a></td><td>256</td><td>文档</td><td>分配为用于文档和示例中的“MCAST-TEST-NET”，它不应该被公开使用</td></tr><tr><td><a href="http://240.0.0.0/4">240.0.0.0/4</a></td><td><a href="http://240.0.0.0/">240.0.0.0</a> – <a href="http://255.255.255.254/">255.255.255.254</a></td><td>268,435,455</td><td>互联网</td><td>用于将来使用。<a href="https://zh.wikipedia.org/wiki/%E4%BF%9D%E7%95%99IP%E5%9C%B0%E5%9D%80#cite_note-rfc6890-12">[12]</a></td></tr><tr><td><a href="http://255.255.255.255/32">255.255.255.255/32</a></td><td><a href="http://255.255.255.255/">255.255.255.255</a></td><td>1</td><td>子网</td><td>用于受限广播地址。<a href="https://zh.wikipedia.org/wiki/%E4%BF%9D%E7%95%99IP%E5%9C%B0%E5%9D%80#cite_note-rfc6890-12">[12]</a></td></tr></tbody></table></figure>
+
+
+
+<figure class="wp-block-table alignwide"><table><thead><tr><th>Address block</th><th>Address range</th><th>Number of addresses</th><th>Scope</th><th>Description</th></tr></thead><tbody><tr><td><a href="http://0.0.0.0/8">0.0.0.0/8</a></td><td><a href="http://0.0.0.0/">0.0.0.0</a>–<a href="http://0.255.255.255/">0.255.255.255</a></td><td>16777216</td><td>Software</td><td>Current network<a href="https://en.wikipedia.org/wiki/Reserved_IP_addresses#cite_note-rfc6890-3">[3]</a></td></tr><tr><td><a href="http://10.0.0.0/8">10.0.0.0/8</a></td><td><a href="http://10.0.0.0/">10.0.0.0</a>–<a href="http://10.255.255.255/">10.255.255.255</a></td><td>16777216</td><td>Private&nbsp;network</td><td>Used for local communications within a <a href="https://en.wikipedia.org/wiki/Private_network">private network</a>.<a href="https://en.wikipedia.org/wiki/Reserved_IP_addresses#cite_note-rfc1918-4">[4]</a></td></tr><tr><td><a href="http://100.64.0.0/10">100.64.0.0/10</a></td><td><a href="http://100.64.0.0/">100.64.0.0</a>–<a href="http://100.127.255.255/">100.127.255.255</a></td><td>4194304</td><td>Private&nbsp;network</td><td><a href="https://en.wikipedia.org/wiki/IPv4_shared_address_space">Shared address space</a><a href="https://en.wikipedia.org/wiki/Reserved_IP_addresses#cite_note-rfc6598-5">[5]</a> for communications between a service provider and its subscribers when using a <a href="https://en.wikipedia.org/wiki/Carrier-grade_NAT">carrier-grade NAT</a>.</td></tr><tr><td><a href="http://127.0.0.0/8">127.0.0.0/8</a></td><td><a href="http://127.0.0.0/">127.0.0.0</a>–<a href="http://127.255.255.255/">127.255.255.255</a></td><td>16777216</td><td>Host</td><td>Used for <a href="https://en.wikipedia.org/wiki/Loopback_address">loopback addresses</a> to the local host.<a href="https://en.wikipedia.org/wiki/Reserved_IP_addresses#cite_note-rfc6890-3">[3]</a></td></tr><tr><td><a href="http://169.254.0.0/16">169.254.0.0/16</a></td><td><a href="http://169.254.0.0/">169.254.0.0</a>–<a href="http://169.254.255.255/">169.254.255.255</a></td><td>65536</td><td>Subnet</td><td>Used for <a href="https://en.wikipedia.org/wiki/Link-local_address">link-local addresses</a><a href="https://en.wikipedia.org/wiki/Reserved_IP_addresses#cite_note-rfc3927-6">[6]</a> between two hosts on a single link when no IP address is otherwise specified, such as would have normally been retrieved from a <a href="https://en.wikipedia.org/wiki/DHCP">DHCP</a> server.</td></tr><tr><td><a href="http://172.16.0.0/12">172.16.0.0/12</a></td><td><a href="http://172.16.0.0/">172.16.0.0</a>–<a href="http://172.31.255.255/">172.31.255.255</a></td><td>1048576</td><td>Private&nbsp;network</td><td>Used for local communications within a private network.<a href="https://en.wikipedia.org/wiki/Reserved_IP_addresses#cite_note-rfc1918-4">[4]</a></td></tr><tr><td><a href="http://192.0.0.0/24">192.0.0.0/24</a></td><td><a href="http://192.0.0.0/">192.0.0.0</a>–<a href="http://192.0.0.255/">192.0.0.255</a></td><td>256</td><td>Private&nbsp;network</td><td>IETF Protocol Assignments.<a href="https://en.wikipedia.org/wiki/Reserved_IP_addresses#cite_note-rfc6890-3">[3]</a></td></tr><tr><td><a href="http://192.0.2.0/24">192.0.2.0/24</a></td><td><a href="http://192.0.2.0/">192.0.2.0</a>–<a href="http://192.0.2.255/">192.0.2.255</a></td><td>256</td><td>Documentation</td><td>Assigned as TEST-NET-1, documentation and examples.<a href="https://en.wikipedia.org/wiki/Reserved_IP_addresses#cite_note-rfc5737-7">[7]</a></td></tr><tr><td><a href="http://192.88.99.0/24">192.88.99.0/24</a></td><td><a href="http://192.88.99.0/">192.88.99.0</a>–<a href="http://192.88.99.255/">192.88.99.255</a></td><td>256</td><td>Internet</td><td>Reserved.<a href="https://en.wikipedia.org/wiki/Reserved_IP_addresses#cite_note-rfc7526-8">[8]</a> Formerly used for <a href="https://en.wikipedia.org/wiki/6to4">IPv6 to IPv4</a> relay<a href="https://en.wikipedia.org/wiki/Reserved_IP_addresses#cite_note-rfc3068-9">[9]</a> (included <a href="https://en.wikipedia.org/wiki/IPv6">IPv6</a> address block <a href="https://en.wikipedia.org/wiki/IPv6_address#Special_addresses">2002::/16</a>).</td></tr><tr><td><a href="http://192.168.0.0/16">192.168.0.0/16</a></td><td><a href="http://192.168.0.0/">192.168.0.0</a>–<a href="http://192.168.255.255/">192.168.255.255</a></td><td>65536</td><td>Private&nbsp;network</td><td>Used for local communications within a private network.<a href="https://en.wikipedia.org/wiki/Reserved_IP_addresses#cite_note-rfc1918-4">[4]</a></td></tr><tr><td><a href="http://198.18.0.0/15">198.18.0.0/15</a></td><td><a href="http://198.18.0.0/">198.18.0.0</a>–<a href="http://198.19.255.255/">198.19.255.255</a></td><td>131072</td><td>Private&nbsp;network</td><td>Used for benchmark testing of inter-network communications between two separate subnets.<a href="https://en.wikipedia.org/wiki/Reserved_IP_addresses#cite_note-rfc2544-10">[10]</a></td></tr><tr><td><a href="http://198.51.100.0/24">198.51.100.0/24</a></td><td><a href="http://198.51.100.0/">198.51.100.0</a>–<a href="http://198.51.100.255/">198.51.100.255</a></td><td>256</td><td>Documentation</td><td>Assigned as TEST-NET-2, documentation and examples.<a href="https://en.wikipedia.org/wiki/Reserved_IP_addresses#cite_note-rfc5737-7">[7]</a></td></tr><tr><td><a href="http://203.0.113.0/24">203.0.113.0/24</a></td><td><a href="http://203.0.113.0/">203.0.113.0</a>–<a href="http://203.0.113.255/">203.0.113.255</a></td><td>256</td><td>Documentation</td><td>Assigned as TEST-NET-3, documentation and examples.<a href="https://en.wikipedia.org/wiki/Reserved_IP_addresses#cite_note-rfc5737-7">[7]</a></td></tr><tr><td><a href="http://224.0.0.0/4">224.0.0.0/4</a></td><td><a href="http://224.0.0.0/">224.0.0.0</a>–<a href="http://239.255.255.255/">239.255.255.255</a></td><td>268435456</td><td>Internet</td><td>In use for <a href="https://en.wikipedia.org/wiki/IP_multicast">IP multicast</a>.<a href="https://en.wikipedia.org/wiki/Reserved_IP_addresses#cite_note-rfc5771-11">[11]</a> (Former Class D network.)</td></tr><tr><td><a href="http://233.252.0.0/24">233.252.0.0/24</a></td><td>233.252.0.0-233.252.0.255</td><td>256</td><td>Documentation</td><td>Assigned as MCAST-TEST-NET, documentation and examples.<a href="https://en.wikipedia.org/wiki/Reserved_IP_addresses#cite_note-rfc5771-11">[11]</a><a href="https://en.wikipedia.org/wiki/Reserved_IP_addresses#cite_note-rfc6676-12">[12]</a></td></tr><tr><td><a href="http://240.0.0.0/4">240.0.0.0/4</a></td><td><a href="http://240.0.0.0/">240.0.0.0</a>–<a href="http://255.255.255.254/">255.255.255.254</a></td><td>268435455</td><td>Internet</td><td>Reserved for future use.<a href="https://en.wikipedia.org/wiki/Reserved_IP_addresses#cite_note-rfc3232-13">[13]</a> (Former Class E network.)</td></tr><tr><td><a href="http://255.255.255.255/32">255.255.255.255/32</a></td><td><a href="http://255.255.255.255/">255.255.255.255</a></td><td>1</td><td>Subnet</td><td>Reserved for the &#8220;limited <a href="https://en.wikipedia.org/wiki/Broadcast_address">broadcast</a>&#8221; destination address.<a href="https://en.wikipedia.org/wiki/Reserved_IP_addresses#cite_note-rfc6890-3">[3]</a><a href="https://en.wikipedia.org/wiki/Reserved_IP_addresses#cite_note-rfc919-14">[14]</a></td></tr></tbody></table></figure>
+
+
+
+<h3 class="wp-block-heading">IPV6</h3>
+
+
+
+<figure class="wp-block-table alignwide"><table><thead><tr><th>地址块（CIDR）</th><th>范围</th><th>地址数</th><th>效用域</th><th>用途</th></tr></thead><tbody><tr><td>::/128</td><td>::</td><td>1</td><td>软件</td><td>未指定地址。</td></tr><tr><td>::1/128</td><td>::1</td><td>1</td><td>主机</td><td>用于到本地主机的环回地址。</td></tr><tr><td>::ffff:0:0/96</td><td>::ffff:0:0 –::ffff:ffff:ffff(::ffff:<a href="http://0.0.0.0/">0.0.0.0</a> –::ffff:<a href="http://255.255.255.255/">255.255.255.255</a>)</td><td>232</td><td>软件</td><td>IPv4映射地址。</td></tr><tr><td>100::/64</td><td>100:: –100::ffff:ffff:ffff:ffff</td><td>264</td><td></td><td>RFC 6666中废除的前缀。</td></tr><tr><td>64:ff9b::/96</td><td>64:ff9b::64:ff9b::ffff:ffff(64:ff9b::<a href="http://0.0.0.0/">0.0.0.0</a> –64:ff9b::<a href="http://255.255.255.255/">255.255.255.255</a>)</td><td>232</td><td>全球互联网<a href="https://zh.wikipedia.org/wiki/%E4%BF%9D%E7%95%99IP%E5%9C%B0%E5%9D%80#cite_note-13">[13]</a></td><td>用于IPv4/IPv6转换。（<a href="https://tools.ietf.org/html/rfc6052">RFC 6052</a>）</td></tr><tr><td>2001::/32</td><td>2001:: –2001::ffff:ffff:ffff:ffff:ffff:ffff</td><td>296</td><td>全局</td><td>用于<a href="https://zh.wikipedia.org/wiki/Teredo%E9%9A%A7%E9%81%93">Teredo</a>通道。</td></tr><tr><td>2001:10::/28</td><td>2001:10:: –2001:1f:ffff:ffff:ffff:ffff:ffff:ffff</td><td>2100</td><td>软件</td><td>已弃用（先前为<a href="https://zh.wikipedia.org/w/index.php?title=ORCHID&amp;action=edit&amp;redlink=1">ORCHID</a>）。</td></tr><tr><td>2001:20::/28</td><td>2001:20:: –2001:2f:ffff:ffff:ffff:ffff:ffff:ffff</td><td>2100</td><td>软件</td><td><a href="https://zh.wikipedia.org/w/index.php?title=ORCHIDv2&amp;action=edit&amp;redlink=1">ORCHIDv2</a>。</td></tr><tr><td>2001:db8::/32</td><td>2001:db8:: –2001:db8:ffff:ffff:ffff:ffff:ffff:ffff</td><td>296</td><td>文档</td><td>用于文档和示例源代码中的地址。</td></tr><tr><td>2002::/16</td><td>2002:: –2002:ffff:ffff:ffff:ffff:ffff:ffff:ffff</td><td>2112</td><td>全球互联网</td><td>用于<a href="https://zh.wikipedia.org/wiki/6to4">6to4</a>。</td></tr><tr><td>fc00::/7</td><td>fc00:: –fdff:ffff:ffff:ffff:ffff:ffff:ffff:ffff</td><td>2121</td><td>专用网络</td><td>用于<a href="https://zh.wikipedia.org/wiki/%E4%B8%93%E7%94%A8%E7%BD%91%E7%BB%9C">专用网络</a>中的本地通信。</td></tr><tr><td>fe80::/10</td><td>fe80:: –febf:ffff:ffff:ffff:ffff:ffff:ffff:ffff</td><td>2118</td><td>链路</td><td>用于主机之间的<a href="https://zh.wikipedia.org/wiki/%E9%93%BE%E8%B7%AF%E6%9C%AC%E5%9C%B0%E5%9C%B0%E5%9D%80">链路本地地址</a>。</td></tr><tr><td>ff00::/8</td><td>ff00:: –ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff</td><td>2120</td><td>全球互联网</td><td>用于<a href="https://zh.wikipedia.org/w/index.php?title=%E5%A4%9A%E6%92%AD%E5%9C%B0%E5%9D%80&amp;action=edit&amp;redlink=1">多播地址</a>。</td></tr></tbody></table></figure>
+
+
+
+<figure class="wp-block-table alignwide is-style-regular"><table><thead><tr><th>Address block (CIDR)</th><th>First address</th><th>Last address</th><th>Number of addresses</th><th>Usage</th><th>Purpose</th></tr></thead><tbody><tr><td>::/0</td><td>::</td><td>ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff</td><td>2128</td><td>Routing</td><td><a href="https://en.wikipedia.org/wiki/Default_route">Default route</a> (no specific route)</td></tr><tr><td>::/128</td><td>::</td><td>::</td><td>1</td><td>Software</td><td>Unspecified address</td></tr><tr><td>::1/128</td><td>::1</td><td>::1</td><td>1</td><td>Host</td><td><a href="https://en.wikipedia.org/wiki/Loopback_address">Loopback address</a>—a virtual interface that loops all traffic back to itself, the <em>local host</em></td></tr><tr><td>::ffff:0:0/96</td><td>::ffff:<a href="http://0.0.0.0/">0.0.0.0</a></td><td>::ffff:<a href="http://255.255.255.255/">255.255.255.255</a></td><td>2128 − 96 = 232 = 4294967296</td><td>Software</td><td>IPv4-mapped addresses</td></tr><tr><td>::ffff:0:0:0/96</td><td>::ffff:0:<a href="http://0.0.0.0/">0.0.0.0</a></td><td>::ffff:0:<a href="http://255.255.255.255/">255.255.255.255</a></td><td>232</td><td>Software</td><td>IPv4 translated addresses</td></tr><tr><td>64:ff9b::/96</td><td>64:ff9b::<a href="http://0.0.0.0/">0.0.0.0</a></td><td>64:ff9b::<a href="http://255.255.255.255/">255.255.255.255</a></td><td>232</td><td>Global Internet</td><td>IPv4/IPv6 translation<a href="https://en.wikipedia.org/wiki/Reserved_IP_addresses#cite_note-rfc6052-15">[15]</a></td></tr><tr><td>64:ff9b:1::/48</td><td>64:ff9b:1::<a href="http://0.0.0.0/">0.0.0.0</a></td><td>64:ff9b:1:ffff:ffff:ffff:<a href="http://255.255.255.255/">255.255.255.255</a></td><td>280</td><td>Private internets</td><td>IPv4/IPv6 translation<a href="https://en.wikipedia.org/wiki/Reserved_IP_addresses#cite_note-rfc8215-16">[16]</a></td></tr><tr><td>100::/64</td><td>100::</td><td>100::ffff:ffff:ffff:ffff</td><td>264</td><td>Routing</td><td>Discard prefix<a href="https://en.wikipedia.org/wiki/Reserved_IP_addresses#cite_note-rfc6666-17">[17]</a></td></tr><tr><td>2001:0000::/32</td><td>2001::</td><td>2001::ffff:ffff:ffff:ffff:ffff:ffff</td><td>296</td><td>Global Internet</td><td><a href="https://en.wikipedia.org/wiki/Teredo_tunneling">Teredo tunneling</a><a href="https://en.wikipedia.org/wiki/Reserved_IP_addresses#cite_note-18">[18]</a></td></tr><tr><td>2001:20::/28</td><td>2001:20::</td><td>2001:2f:ffff:ffff:ffff:ffff:ffff:ffff</td><td>2100</td><td>Software</td><td><a href="https://en.wikipedia.org/w/index.php?title=ORCHIDv2&amp;action=edit&amp;redlink=1">ORCHIDv2</a><a href="https://en.wikipedia.org/wiki/Reserved_IP_addresses#cite_note-rfc7343-19">[19]</a></td></tr><tr><td>2001:db8::/32</td><td>2001:db8::</td><td>2001:db8:ffff:ffff:ffff:ffff:ffff:ffff</td><td>296</td><td>Documentation</td><td>Addresses used in documentation and example source code<a href="https://en.wikipedia.org/wiki/Reserved_IP_addresses#cite_note-rfc3849-20">[20]</a></td></tr><tr><td>2002::/16</td><td>2002::</td><td>2002:ffff:ffff:ffff:ffff:ffff:ffff:ffff</td><td>2112</td><td>Global Internet</td><td>The <a href="https://en.wikipedia.org/wiki/6to4">6to4</a> addressing scheme (deprecated)<a href="https://en.wikipedia.org/wiki/Reserved_IP_addresses#cite_note-rfc7526-8">[8]</a></td></tr><tr><td>fc00::/7</td><td>fc00::</td><td>fdff:ffff:ffff:ffff:ffff:ffff:ffff:ffff</td><td>2121</td><td>Private internets</td><td><a href="https://en.wikipedia.org/wiki/Unique_local_address">Unique local address</a><a href="https://en.wikipedia.org/wiki/Reserved_IP_addresses#cite_note-rfc4193-21">[21]</a></td></tr><tr><td>fe80::/10</td><td>fe80::</td><td>fe80::ffff:ffff:ffff:ffff</td><td>264</td><td>Link</td><td><a href="https://en.wikipedia.org/wiki/Link-local_address#IPv6">Link-local address</a></td></tr><tr><td>ff00::/8</td><td>ff00::</td><td>ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff</td><td>2120</td><td>Global Internet</td><td><a href="https://en.wikipedia.org/wiki/Multicast_address#IPv6">Multicast address</a></td></tr></tbody></table></figure>
+
+
+
+<p>来源：<a href="https://zh.wikipedia.org/wiki/%E4%BF%9D%E7%95%99IP%E5%9C%B0%E5%9D%80">https://zh.wikipedia.org/wiki/保留IP地址</a></p>
+
+
+
+<p></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>http://weiqinke.com/2023/05/09/ip%e5%9c%b0%e5%9d%80%e4%b8%ad%e7%9a%84%e4%bf%9d%e7%95%99ip/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>ESXI相关</title>
+		<link>http://weiqinke.com/2023/05/03/esxi%e7%9b%b8%e5%85%b3/</link>
+					<comments>http://weiqinke.com/2023/05/03/esxi%e7%9b%b8%e5%85%b3/#respond</comments>
+		
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<pubDate>Wed, 03 May 2023 12:17:48 +0000</pubDate>
+				<category><![CDATA[esxi]]></category>
+		<category><![CDATA[教程]]></category>
+		<guid isPermaLink="false">http://weiqinke.com/?p=111</guid>
+
+					<description><![CDATA[挂载USB存储： 在不接入USB硬盘的情况下输入以下命令： 接入硬盘 查看分区表 创建新分区 再次查看 格式化分区 参考来源：https://vt.wooomooo.com/archives/39786 SATA直通 查看SATA控制器 编辑直通列表 在末尾添加 重启 参考来源：https://vt.wooomooo.com/archives/13671 解决 未配置任何 coredump 目标。无法保存主机核心转储 查看coredump状态。 看到最后一条的Active状态为false。 启用文件 5.再次查看coredump状态，已经改为true。 6.回到ESXI，告警信息已经没有了。 7.如果dumpfile不存在，要将 ESXi 配置为在 VMFS 上生成文件形式的 coredump，请执行以下操作： 使用 SSH 连接到 ESXi 主机； 运行以下命令添加用作 coredump 的新文件： -d可以指定用于 coredump 文件的vmfs数据存储。如果未提供此选项，将自动选择大小足够的数据存储。 -f可以指定 coredump 文件的文件名。如果未提供此选项，则会创建唯一名称。 例如： 运行以下命令获取具有访问权限的所有转储文件的列表： 您会看到类似以下内容的输出： 注意：如果没有指定 coredump 文件，则运行命令不会显示任何输出。 运行以下命令设置主机的转储文件： 例如： 运行以下命令验证转储文件是否已配置并且处于活动状态： 您会看到类似以下内容的输出： 输出结果表明该文件的活动状态和已配置状态为 True。 解决 系统日志存储在非持久存储中 在存储内新建存放主机日志的文件夹，并记录一下这个存储路径例如 [UsbDatastore] Log/ 修改主机-配置-高级系统设置-编辑 修改 Syslog.global.logdir 值为新建的文件夹的存储路径 点击确定，警告消失 开启嵌套虚拟化]]></description>
+										<content:encoded><![CDATA[
+<h2 class="wp-block-heading" id="挂载usb存储">挂载USB存储：</h2>
+
+
+
+<p>在不接入USB硬盘的情况下输入以下命令：</p>
+
+
+
+<pre class="wp-block-code"><code>/etc/init.d/usbarbitrator <strong>stop</strong>
+chkconfig usbarbitrator <strong>off</strong>
+</code></pre>
+
+
+
+<p>接入硬盘</p>
+
+
+
+<pre class="wp-block-code"><code>esxcli storage core device list |<strong>grep</strong> -i usb
+</code></pre>
+
+
+
+<p>查看分区表</p>
+
+
+
+<pre class="wp-block-code"><code>cd /dev/disks/
+partedUtil getptbl mpx.vmhba32:C0:T0:L0
+
+示例：
+&#91;root@localhost:/dev/disks] partedUtil getptbl mpx.vmhba32:C0:T0:L0 
+gpt 
+31130 255 63 500118192 
+1 64 204863 C12A7328F81F11D2BA4B00A0C93EC93B systemPartition 128 
+5 208896 8595455 EBD0A0A2B9E5443387C068B6B72699C7 linuxNative 0 
+6 8597504 16984063 EBD0A0A2B9E5443387C068B6B72699C7 linuxNative 0
+</code></pre>
+
+
+
+<p>创建新分区</p>
+
+
+
+<pre class="wp-block-code"><code>partedUtil setptbl mpx.vmhba32:C0:T0:L0 gpt \
+"1 64 204863 C12A7328F81F11D2BA4B00A0C93EC93B  128" \
+"5 208896 8595455 EBD0A0A2B9E5443387C068B6B72699C7  0" \
+"6 8597504 16984063 EBD0A0A2B9E5443387C068B6B72699C7  0" \
+"3 16984064 500118158 AA31E02A400F11DB9590000C2911D1B8 0"
+</code></pre>
+
+
+
+<p>再次查看</p>
+
+
+
+<pre class="wp-block-code"><code>partedUtil getptbl mpx.vmhba32:C0:T0:L0
+</code></pre>
+
+
+
+<p>格式化分区</p>
+
+
+
+<pre class="wp-block-code"><code>vmkfstools -C vmfs6 -b 1m -S UsbDatastore mpx.vmhba32:C0:T0:L0:3
+</code></pre>
+
+
+
+<p>参考来源：<a href="https://vt.wooomooo.com/archives/39786">https://vt.wooomooo.com/archives/39786</a></p>
+
+
+
+<h2 class="wp-block-heading" id="sata直通">SATA直通</h2>
+
+
+
+<p>查看SATA控制器</p>
+
+
+
+<pre class="wp-block-code"><code>lspci -v | <strong>grep</strong> "Class 0106" -B 1
+
+示例：
+&#91;root@localhost:/dev/disks] lspci -v | <strong>grep</strong> "Class 0106" -B 1 
+0000:00:1f.2 Mass storage controller SATA controller: Intel Corporation Lynx Point AHCI Controller &#91;vmhba0] 
+         Class 0106: 8086:8c02
+</code></pre>
+
+
+
+<p>编辑直通列表</p>
+
+
+
+<pre class="wp-block-code"><code>vi /etc/vmware/passthru.map
+</code></pre>
+
+
+
+<p>在末尾添加</p>
+
+
+
+<pre class="wp-block-code"><code><em>#Intel Corporation Lynx Point AHCI Controller</em>
+8086   8c02    d3d0    fasle
+
+替换第二位设备ID即可
+</code></pre>
+
+
+
+<p>重启</p>
+
+
+
+<pre class="wp-block-code"><code>reboot
+</code></pre>
+
+
+
+<p>参考来源：https://vt.wooomooo.com/archives/13671</p>
+
+
+
+<h2 class="wp-block-heading" id="解决-未配置任何-coredump-目标-无法保存主机核心转储">解决 未配置任何 coredump 目标。无法保存主机核心转储</h2>
+
+
+
+<p>查看coredump状态。</p>
+
+
+
+<pre class="wp-block-code"><code>esxcli <strong>system</strong> coredump file list 
+</code></pre>
+
+
+
+<p>看到最后一条的Active状态为false。<br><img decoding="async" src="http://wei-ke.github.io/post-images/1683023840294.jpeg" alt=""></p>
+
+
+
+<p>启用文件</p>
+
+
+
+<pre class="wp-block-code"><code>esxcli <strong>system</strong> coredump file <strong>set</strong> -e true
+</code></pre>
+
+
+
+<p>5.再次查看coredump状态，已经改为true。<br><img decoding="async" src="http://wei-ke.github.io/post-images/1683023882209.jpeg" alt=""></p>
+
+
+
+<p>6.回到ESXI，告警信息已经没有了。</p>
+
+
+
+<p>7.如果dumpfile不存在，要将 ESXi 配置为在 VMFS 上生成文件形式的 coredump，请执行以下操作：</p>
+
+
+
+<p>使用 SSH 连接到 ESXi 主机；</p>
+
+
+
+<p>运行以下命令添加用作 coredump 的新文件：</p>
+
+
+
+<pre class="wp-block-code"><code>esxcli <strong>system</strong> coredump file <strong>add</strong>
+</code></pre>
+
+
+
+<p>-d可以指定用于 coredump 文件的vmfs数据存储。如果未提供此选项，将自动选择大小足够的数据存储。</p>
+
+
+
+<p>-f可以指定 coredump 文件的文件名。如果未提供此选项，则会创建唯一名称。</p>
+
+
+
+<p>例如：</p>
+
+
+
+<pre class="wp-block-code"><code>esxcli <strong>system</strong> coredump file <strong>add</strong> -d UsbDatastore -f test
+</code></pre>
+
+
+
+<p>运行以下命令获取具有访问权限的所有转储文件的列表：</p>
+
+
+
+<pre class="wp-block-code"><code>esxcli <strong>system</strong> coredump file list
+</code></pre>
+
+
+
+<p>您会看到类似以下内容的输出：<br><img decoding="async" src="http://wei-ke.github.io/post-images/1683023905292.jpeg" alt=""></p>
+
+
+
+<p>注意：如果没有指定 coredump 文件，则运行命令不会显示任何输出。</p>
+
+
+
+<p>运行以下命令设置主机的转储文件：</p>
+
+
+
+<pre class="wp-block-code"><code>esxcli system coredump file set -p /vmfs/volumes/DATASTORE_UUID/vmkdump/FILENAME
+</code></pre>
+
+
+
+<p>例如：</p>
+
+
+
+<pre class="wp-block-code"><code>esxcli system coredump file set -p /vmfs/volumes/UsbDatastore/vmkdump/FCE0EAC0-D837-11DD-8EAD-F832E4BE8554.dumpfile
+</code></pre>
+
+
+
+<p>运行以下命令验证转储文件是否已配置并且处于活动状态：</p>
+
+
+
+<pre class="wp-block-code"><code>esxcli <strong>system</strong> coredump file list
+</code></pre>
+
+
+
+<p>您会看到类似以下内容的输出：<br><img decoding="async" src="http://wei-ke.github.io/post-images/1683023905292.jpeg" alt=""></p>
+
+
+
+<p>输出结果表明该文件的活动状态和已配置状态为 True。</p>
+
+
+
+<h2 class="wp-block-heading" id="解决-系统日志存储在非持久存储中">解决 系统日志存储在非持久存储中</h2>
+
+
+
+<p>在存储内新建存放主机日志的文件夹，并记录一下这个存储路径<br>例如 [UsbDatastore] Log/<br><img decoding="async" src="http://wei-ke.github.io/post-images/1683024020085.jpeg" alt=""></p>
+
+
+
+<p>修改主机-配置-高级系统设置-编辑<br><img decoding="async" src="http://wei-ke.github.io/post-images/1683024042115.jpeg" alt=""></p>
+
+
+
+<p>修改 Syslog.global.logdir 值为新建的文件夹的存储路径<br><img decoding="async" src="http://wei-ke.github.io/post-images/1683024066033.jpeg" alt=""></p>
+
+
+
+<p>点击确定，警告消失</p>
+
+
+
+<h2 class="wp-block-heading" id="开启嵌套虚拟化">开启嵌套虚拟化</h2>
+
+
+
+<pre class="wp-block-code"><code>vi /etc/vmware/config
+vhv.enable = "TRUE</code></pre>
+]]></content:encoded>
+					
+					<wfw:commentRss>http://weiqinke.com/2023/05/03/esxi%e7%9b%b8%e5%85%b3/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Ubuntu安装zabbix</title>
+		<link>http://weiqinke.com/2023/05/02/ubuntu%e5%ae%89%e8%a3%85zabbix/</link>
+					<comments>http://weiqinke.com/2023/05/02/ubuntu%e5%ae%89%e8%a3%85zabbix/#respond</comments>
+		
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<pubDate>Tue, 02 May 2023 14:33:21 +0000</pubDate>
+				<category><![CDATA[未分类]]></category>
+		<category><![CDATA[Ubuntu]]></category>
+		<category><![CDATA[zabbix]]></category>
+		<category><![CDATA[教程]]></category>
+		<guid isPermaLink="false">http://weiqinke.com/?p=34</guid>
+
+					<description><![CDATA[1、安装zabbix，以6.4版本 Ubuntu 22.04 MySql Nginx为例 2 、安装MySql 下载https://dev.mysql.com/downloads/repo/apt/并上传 或者http://mirrors.ustc.edu.cn/mysql-repo/ 安装输入数据库ROOT密码，其他保持默认即可 3、配置数据库 4、在Zabbix服务器主机上导入初始数据 输入zabbix数据库密码 5、导入数据库架构后禁用log_bin_trust_function_creators选项。 6、修改zabbix的配置文件 7、修改nginx配置，修改注释和端口号 8添加中文支持，取消UTF-8的中文注释 可能需要root账户执行locale-gen。。 9、重启服务设置自启动 参考链接：]]></description>
+										<content:encoded><![CDATA[
+<h4 class="wp-block-heading">1、安装zabbix，以6.4版本 Ubuntu 22.04 MySql Nginx为例</h4>
+
+
+
+<pre class="wp-block-code"><code>wget https://repo.zabbix.com/zabbix/6.4/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.4-1+ubuntu22.04_all.deb
+sudo dpkg -i zabbix-release_6.4-1+ubuntu22.04_all.deb
+sudo apt update
+sudo apt install zabbix-server-mysql zabbix-frontend-php zabbix-nginx-conf zabbix-sql-scripts zabbix-agent
+
+</code></pre>
+
+
+
+<h4 class="wp-block-heading">2 、安装MySql</h4>
+
+
+
+<p>下载<a href="https://dev.mysql.com/downloads/repo/apt/">https://dev.mysql.com/downloads/repo/apt/</a>并上传</p>
+
+
+
+<p>或者<a href="http://mirrors.ustc.edu.cn/mysql-repo/">http://mirrors.ustc.edu.cn/mysql-repo/</a></p>
+
+
+
+<pre class="wp-block-code"><code>sudo dpkg -i mysql-apt-config_0.8.24-1_all.deb
+sudo apt update
+sudo apt install mysql-server
+
+</code></pre>
+
+
+
+<p>安装输入数据库ROOT密码，其他保持默认即可</p>
+
+
+
+<h4 class="wp-block-heading">3、配置数据库</h4>
+
+
+
+<pre class="wp-block-code"><code>mysql -uroot -p
+
+create database zabbix character set utf8mb4 collate utf8mb4_bin;
+create user zabbix@localhost identified by 'zabbix数据库密码';
+grant all privileges on zabbix.* to zabbix@localhost;
+set global log_bin_trust_function_creators = 1;
+quit;
+</code></pre>
+
+
+
+<h4 class="wp-block-heading">4、在Zabbix服务器主机上导入初始数据</h4>
+
+
+
+<pre class="wp-block-code"><code>sudo zcat /usr/share/zabbix-sql-scripts/mysql/server.sql.gz | mysql --default-character-set=utf8mb4 -uzabbix -p zabbix
+
+</code></pre>
+
+
+
+<p>输入zabbix数据库密码</p>
+
+
+
+<h4 class="wp-block-heading">5、导入数据库架构后禁用log_bin_trust_function_creators选项。</h4>
+
+
+
+<pre class="wp-block-code"><code>mysql -uroot -p
+password
+mysql&gt; set global log_bin_trust_function_creators = 0;
+mysql&gt; quit;
+</code></pre>
+
+
+
+<h4 class="wp-block-heading">6、修改zabbix的配置文件</h4>
+
+
+
+<pre class="wp-block-code"><code>sudo vi /etc/zabbix/zabbix_server.conf
+
+</code></pre>
+
+
+
+<pre class="wp-block-code"><code>DBPassword=zabbix数据库密码
+</code></pre>
+
+
+
+<h4 class="wp-block-heading">7、修改nginx配置，修改注释和端口号</h4>
+
+
+
+<pre class="wp-block-code"><code>sudo vi /etc/zabbix/nginx.conf
+sudo vi /etc/nginx/sites-available
+</code></pre>
+
+
+
+<pre class="wp-block-code"><code> listen 80;
+ server_name example.com;
+
+</code></pre>
+
+
+
+<h4 class="wp-block-heading">8添加中文支持，取消UTF-8的中文注释</h4>
+
+
+
+<pre class="wp-block-code"><code> sudo vi /etc/locale.gen 
+ sudo locale-gen
+
+</code></pre>
+
+
+
+<p>可能需要root账户执行locale-gen。。</p>
+
+
+
+<h4 class="wp-block-heading">9、重启服务设置自启动</h4>
+
+
+
+<pre class="wp-block-code"><code>sudo systemctl restart zabbix-server zabbix-agent nginx php8.1-fpm
+sudo systemctl enable zabbix-server zabbix-agent nginx php8.1-fpm
+</code></pre>
+
+
+
+<p>参考链接：</p>
+
+
+
+<figure class="wp-block-embed"><div class="wp-block-embed__wrapper">
+https://www.zabbix.com/download
+</div></figure>
+]]></content:encoded>
+					
+					<wfw:commentRss>http://weiqinke.com/2023/05/02/ubuntu%e5%ae%89%e8%a3%85zabbix/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>第一篇博客？</title>
+		<link>http://weiqinke.com/2023/05/02/diyi/</link>
+					<comments>http://weiqinke.com/2023/05/02/diyi/#respond</comments>
+		
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<pubDate>Tue, 02 May 2023 14:14:44 +0000</pubDate>
+				<category><![CDATA[未分类]]></category>
+		<guid isPermaLink="false">http://weiqinke.com/?p=132</guid>
+
+					<description><![CDATA[🤔最近想做个个人网站，主要用于记笔记和分享内容，以及能够让别人快速了解我。 很早之前玩过云主机，所以买过域名和主机，顺势想到了继续用原来的方法。 今天看了看阿里云和腾讯的国内外的虚拟主机和ECS真是不便宜。 然后又看了看各种博客平台。 最后终于想起来 我来 和 息流 有分享页面的功能，而且我有一些笔记已经在上面了，还不要钱。。 于是测试了一下分享页面，还行，就是下面有广告，免费的还要什么自行车。。 于是就有了你看到的这篇文章。。 PS：目前仅仅是为了测试博客放在笔记网站的可行性，有问题的话可能还是转到云主机。 测试失败，原因是本来想用自己的域名跳转到两个软件的公开分享链接但是不行🤡因为没办法备案。。 第二天又研究了一下发现了现在的方案 Gridea+文件托管到github+CDN加速 希望能行~~。 目前看起来还不错，接下来会把之前写的笔记同步一部分。 最终转战wordpress。 费了一点点力气终于是搞好了，目前方案是本地wordpress转静态+文件托管github+CDN。]]></description>
+										<content:encoded><![CDATA[
+<p><img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f914.png" alt="🤔" class="wp-smiley" style="height: 1em; max-height: 1em;" />最近想做个个人网站，主要用于记笔记和分享内容<s>，以及能够让别人快速了解我</s>。</p>
+
+
+
+<p>很早之前玩过云主机，所以买过域名和主机，顺势想到了继续用原来的方法。</p>
+
+
+
+<p>今天看了看阿里云和腾讯的国内外的虚拟主机和ECS真是不便宜。</p>
+
+
+
+<p>然后又看了看各种博客平台。</p>
+
+
+
+<p>最后终于想起来 我来 和 息流 有分享页面的功能，而且我有一些笔记已经在上面了，还不要钱。。</p>
+
+
+
+<p>于是测试了一下分享页面，还行，就是下面有广告，免费的还要什么自行车。。</p>
+
+
+
+<p><s>于是就有了你看到的这篇文章。。</s></p>
+
+
+
+<p><s>PS：目前仅仅是为了测试博客放在笔记网站的可行性，有问题的话可能还是转到云主机。</s></p>
+
+
+
+<p>测试失败，原因是本来想用自己的域名跳转到两个软件的<a href="https://www.wolai.com/bfvxGMnc1DU8MgVRhhkB34">公开分享链接</a>但是不行<img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f921.png" alt="🤡" class="wp-smiley" style="height: 1em; max-height: 1em;" />因为没办法备案。。</p>
+
+
+
+<p><s>第二天又研究了一下发现了现在的方案 Gridea+文件托管到github+CDN加速 希望能行~~</s>。</p>
+
+
+
+<p><s>目前看起来还不错，接下来会把之前写的笔记同步一部分。</s></p>
+
+
+
+<p>最终转战wordpress。</p>
+
+
+
+<p>费了一点点力气终于是搞好了，目前方案是本地wordpress转静态+文件托管github+CDN。</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>http://weiqinke.com/2023/05/02/diyi/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>
