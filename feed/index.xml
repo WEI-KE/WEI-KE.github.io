@@ -9,8 +9,8 @@
 
 <channel>
 	<title>WAKE</title>
-	<atom:link href="http://weiqinke.com/feed/" rel="self" type="application/rss+xml" />
-	<link>http://weiqinke.com/</link>
+	<atom:link href="https://weiqinke.com/feed/" rel="self" type="application/rss+xml" />
+	<link>https://weiqinke.com/</link>
 	<description></description>
 	<lastBuildDate>Sat, 13 May 2023 11:21:34 +0000</lastBuildDate>
 	<language>zh-CN</language>
@@ -21,35 +21,35 @@
 	<generator>https://wordpress.org/?v=6.2</generator>
 	<item>
 		<title>测试</title>
-		<link>http://weiqinke.com/2023/05/13/%e6%b5%8b%e8%af%95/</link>
-					<comments>http://weiqinke.com/2023/05/13/%e6%b5%8b%e8%af%95/#respond</comments>
+		<link>https://weiqinke.com/2023/05/13/%e6%b5%8b%e8%af%95/</link>
+					<comments>https://weiqinke.com/2023/05/13/%e6%b5%8b%e8%af%95/#respond</comments>
 		
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<pubDate>Sat, 13 May 2023 10:06:48 +0000</pubDate>
 				<category><![CDATA[未分类]]></category>
-		<guid isPermaLink="false">http://weiqinke.com/?p=130</guid>
+		<guid isPermaLink="false">https://weiqinke.com/?p=130</guid>
 
 					<description><![CDATA[测试测试哈哈哈]]></description>
 										<content:encoded><![CDATA[
 <p>测试测试哈哈哈</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>http://weiqinke.com/2023/05/13/%e6%b5%8b%e8%af%95/feed/</wfw:commentRss>
+					<wfw:commentRss>https://weiqinke.com/2023/05/13/%e6%b5%8b%e8%af%95/feed/</wfw:commentRss>
 			<slash:comments>0</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>ospf基础</title>
-		<link>http://weiqinke.com/2023/05/09/45/</link>
-					<comments>http://weiqinke.com/2023/05/09/45/#respond</comments>
+		<link>https://weiqinke.com/2023/05/09/45/</link>
+					<comments>https://weiqinke.com/2023/05/09/45/#respond</comments>
 		
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<pubDate>Tue, 09 May 2023 14:47:54 +0000</pubDate>
 				<category><![CDATA[未分类]]></category>
 		<category><![CDATA[ospf]]></category>
 		<category><![CDATA[网络]]></category>
-		<guid isPermaLink="false">http://weiqinke.com/?p=45</guid>
+		<guid isPermaLink="false">https://weiqinke.com/?p=45</guid>
 
 					<description><![CDATA[ospf学习笔记 Router ID： 注：router ID只是格式为ip地址格式，只是作为名称地址可以不存在 邻居建立过程： ospf 度量方式 ospf 报文类型 路由信息仅在第4种里，其他的都是摘要信息 DR角色不会被抢占，需手动重启进程 ospf的lsdb同步 ospf邻居状态机制 DR与BDR选举 规则：基于接口，接口的优先级越大越优先，优先级相等 router ID越大越优先 优先级为0不参与选举 .6只有dr或bdr接收 .5给所有的ospf接收 邻接建立过程： 路由同步后才是邻接关系]]></description>
 										<content:encoded><![CDATA[
@@ -308,20 +308,20 @@
 <p>路由同步后才是邻接关系</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>http://weiqinke.com/2023/05/09/45/feed/</wfw:commentRss>
+					<wfw:commentRss>https://weiqinke.com/2023/05/09/45/feed/</wfw:commentRss>
 			<slash:comments>0</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>IP地址中的保留IP</title>
-		<link>http://weiqinke.com/2023/05/09/ip%e5%9c%b0%e5%9d%80%e4%b8%ad%e7%9a%84%e4%bf%9d%e7%95%99ip/</link>
-					<comments>http://weiqinke.com/2023/05/09/ip%e5%9c%b0%e5%9d%80%e4%b8%ad%e7%9a%84%e4%bf%9d%e7%95%99ip/#respond</comments>
+		<link>https://weiqinke.com/2023/05/09/ip%e5%9c%b0%e5%9d%80%e4%b8%ad%e7%9a%84%e4%bf%9d%e7%95%99ip/</link>
+					<comments>https://weiqinke.com/2023/05/09/ip%e5%9c%b0%e5%9d%80%e4%b8%ad%e7%9a%84%e4%bf%9d%e7%95%99ip/#respond</comments>
 		
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<pubDate>Tue, 09 May 2023 14:39:59 +0000</pubDate>
 				<category><![CDATA[未分类]]></category>
-		<guid isPermaLink="false">http://weiqinke.com/?p=40</guid>
+		<guid isPermaLink="false">https://weiqinke.com/?p=40</guid>
 
 					<description><![CDATA[IPV4 地址块 (CIDR) 范围 地址数 效用域 用途 0.0.0.0/8 0.0.0.0 – 0.255.255.255 16,777,216 软件 用于广播信息到当前主机。[1] 10.0.0.0/8 10.0.0.0 – 10.255.255.255 16,777,216 专用网络 用于专用网络中的本地通信。[2] 100.64.0.0/10 100.64.0.0 – 100.127.255.255 4,194,304 专用网络 用于在电信级NAT环境中服务提供商与其用户通信。[3] 127.0.0.0/8 127.0.0.0 – 127.255.255.255 16,777,216 主机 用于到本地主机的环回地址。[4] 169.254.0.0/16 169.254.0.0 – 169.254.255.255 65,536 链路 用于单链路的两个主机之间的链路本地地址，而没有另外指定IP地址，例如通常从DHCP服务器所检索到的IP地址。[5] 172.16.0.0/12 172.16.0.0 – 172.31.255.255 1,048,576 专用网络 用于专用网络中的本地通信。[2] 192.0.0.0/24 192.0.0.0 – 192.0.0.255 256 专用网络 用于IANA的IPv4特殊用途地址表。[6] 192.0.2.0/24 192.0.2.0 – 192.0.2.255 256 文档 分配为用于文档和示例中的“TEST-NET”（测试网），它不应该被公开使用。[7] 192.88.99.0/24 192.88.99.0 – 192.88.99.255 256 互联网 用于6to4任播中继。[8]（已废弃[9]） 192.168.0.0/16 192.168.0.0 – 192.168.255.255 65,536 专用网络 用于专用网络中的本地通信。[2] 198.18.0.0/15 198.18.0.0 – 198.19.255.255 131,072 专用网络 用于测试两个不同的子网的网间通信。[10] 198.51.100.0/24 198.51.100.0 – 198.51.100.255 256 文档 分配为用于文档和示例中的“TEST-NET-2”（测试-网-2），它不应该被公开使用。[7] 203.0.113.0/24 203.0.113.0 – 203.0.113.255 256 文档 分配为用于文档和示例中的“TEST-NET-3”（测试-网-3），它不应该被公开使用。[7] 224.0.0.0/4 224.0.0.0 – 239.255.255.255 268,435,456 互联网 用于多播。[11] 233.252.0.0/24 233.252.0.0 &#8211; 233.252.0.255 256 文档 分配为用于文档和示例中的“MCAST-TEST-NET”，它不应该被公开使用 240.0.0.0/4 240.0.0.0 – 255.255.255.254 268,435,455 互联网 用于将来使用。[12] 255.255.255.255/32 255.255.255.255 1 子网 用于受限广播地址。[12] Address block Address range Number of addresses Scope Description 0.0.0.0/8 0.0.0.0–0.255.255.255 16777216 Software Current network[3] 10.0.0.0/8 10.0.0.0–10.255.255.255 16777216 Private&#160;network Used for local communications within a private network.[4] 100.64.0.0/10 100.64.0.0–100.127.255.255 4194304 Private&#160;network Shared address space[5] for communications between a service provider and its subscribers when using a carrier-grade NAT. 127.0.0.0/8 127.0.0.0–127.255.255.255 16777216 Host Used for loopback addresses to the local host.[3] 169.254.0.0/16 169.254.0.0–169.254.255.255 65536 Subnet Used for link-local add...]]></description>
 										<content:encoded><![CDATA[
@@ -356,21 +356,21 @@
 <p></p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>http://weiqinke.com/2023/05/09/ip%e5%9c%b0%e5%9d%80%e4%b8%ad%e7%9a%84%e4%bf%9d%e7%95%99ip/feed/</wfw:commentRss>
+					<wfw:commentRss>https://weiqinke.com/2023/05/09/ip%e5%9c%b0%e5%9d%80%e4%b8%ad%e7%9a%84%e4%bf%9d%e7%95%99ip/feed/</wfw:commentRss>
 			<slash:comments>0</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>ESXI相关</title>
-		<link>http://weiqinke.com/2023/05/03/esxi%e7%9b%b8%e5%85%b3/</link>
-					<comments>http://weiqinke.com/2023/05/03/esxi%e7%9b%b8%e5%85%b3/#respond</comments>
+		<link>https://weiqinke.com/2023/05/03/esxi%e7%9b%b8%e5%85%b3/</link>
+					<comments>https://weiqinke.com/2023/05/03/esxi%e7%9b%b8%e5%85%b3/#respond</comments>
 		
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<pubDate>Wed, 03 May 2023 12:17:48 +0000</pubDate>
 				<category><![CDATA[esxi]]></category>
 		<category><![CDATA[教程]]></category>
-		<guid isPermaLink="false">http://weiqinke.com/?p=111</guid>
+		<guid isPermaLink="false">https://weiqinke.com/?p=111</guid>
 
 					<description><![CDATA[挂载USB存储： 在不接入USB硬盘的情况下输入以下命令： 接入硬盘 查看分区表 创建新分区 再次查看 格式化分区 参考来源：https://vt.wooomooo.com/archives/39786 SATA直通 查看SATA控制器 编辑直通列表 在末尾添加 重启 参考来源：https://vt.wooomooo.com/archives/13671 解决 未配置任何 coredump 目标。无法保存主机核心转储 查看coredump状态。 看到最后一条的Active状态为false。 启用文件 5.再次查看coredump状态，已经改为true。 6.回到ESXI，告警信息已经没有了。 7.如果dumpfile不存在，要将 ESXi 配置为在 VMFS 上生成文件形式的 coredump，请执行以下操作： 使用 SSH 连接到 ESXi 主机； 运行以下命令添加用作 coredump 的新文件： -d可以指定用于 coredump 文件的vmfs数据存储。如果未提供此选项，将自动选择大小足够的数据存储。 -f可以指定 coredump 文件的文件名。如果未提供此选项，则会创建唯一名称。 例如： 运行以下命令获取具有访问权限的所有转储文件的列表： 您会看到类似以下内容的输出： 注意：如果没有指定 coredump 文件，则运行命令不会显示任何输出。 运行以下命令设置主机的转储文件： 例如： 运行以下命令验证转储文件是否已配置并且处于活动状态： 您会看到类似以下内容的输出： 输出结果表明该文件的活动状态和已配置状态为 True。 解决 系统日志存储在非持久存储中 在存储内新建存放主机日志的文件夹，并记录一下这个存储路径例如 [UsbDatastore] Log/ 修改主机-配置-高级系统设置-编辑 修改 Syslog.global.logdir 值为新建的文件夹的存储路径 点击确定，警告消失 开启嵌套虚拟化]]></description>
 										<content:encoded><![CDATA[
@@ -650,15 +650,15 @@ gpt
 vhv.enable = "TRUE</code></pre>
 ]]></content:encoded>
 					
-					<wfw:commentRss>http://weiqinke.com/2023/05/03/esxi%e7%9b%b8%e5%85%b3/feed/</wfw:commentRss>
+					<wfw:commentRss>https://weiqinke.com/2023/05/03/esxi%e7%9b%b8%e5%85%b3/feed/</wfw:commentRss>
 			<slash:comments>0</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>Ubuntu安装zabbix</title>
-		<link>http://weiqinke.com/2023/05/02/ubuntu%e5%ae%89%e8%a3%85zabbix/</link>
-					<comments>http://weiqinke.com/2023/05/02/ubuntu%e5%ae%89%e8%a3%85zabbix/#respond</comments>
+		<link>https://weiqinke.com/2023/05/02/ubuntu%e5%ae%89%e8%a3%85zabbix/</link>
+					<comments>https://weiqinke.com/2023/05/02/ubuntu%e5%ae%89%e8%a3%85zabbix/#respond</comments>
 		
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<pubDate>Tue, 02 May 2023 14:33:21 +0000</pubDate>
@@ -666,7 +666,7 @@ vhv.enable = "TRUE</code></pre>
 		<category><![CDATA[Ubuntu]]></category>
 		<category><![CDATA[zabbix]]></category>
 		<category><![CDATA[教程]]></category>
-		<guid isPermaLink="false">http://weiqinke.com/?p=34</guid>
+		<guid isPermaLink="false">https://weiqinke.com/?p=34</guid>
 
 					<description><![CDATA[1、安装zabbix，以6.4版本 Ubuntu 22.04 MySql Nginx为例 2 、安装MySql 下载https://dev.mysql.com/downloads/repo/apt/并上传 或者http://mirrors.ustc.edu.cn/mysql-repo/ 安装输入数据库ROOT密码，其他保持默认即可 3、配置数据库 4、在Zabbix服务器主机上导入初始数据 输入zabbix数据库密码 5、导入数据库架构后禁用log_bin_trust_function_creators选项。 6、修改zabbix的配置文件 7、修改nginx配置，修改注释和端口号 8添加中文支持，取消UTF-8的中文注释 可能需要root账户执行locale-gen。。 9、重启服务设置自启动 参考链接：]]></description>
 										<content:encoded><![CDATA[
@@ -814,20 +814,20 @@ https://www.zabbix.com/download
 </div></figure>
 ]]></content:encoded>
 					
-					<wfw:commentRss>http://weiqinke.com/2023/05/02/ubuntu%e5%ae%89%e8%a3%85zabbix/feed/</wfw:commentRss>
+					<wfw:commentRss>https://weiqinke.com/2023/05/02/ubuntu%e5%ae%89%e8%a3%85zabbix/feed/</wfw:commentRss>
 			<slash:comments>0</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>第一篇博客？</title>
-		<link>http://weiqinke.com/2023/05/02/diyi/</link>
-					<comments>http://weiqinke.com/2023/05/02/diyi/#respond</comments>
+		<link>https://weiqinke.com/2023/05/02/diyi/</link>
+					<comments>https://weiqinke.com/2023/05/02/diyi/#respond</comments>
 		
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<pubDate>Tue, 02 May 2023 14:14:44 +0000</pubDate>
 				<category><![CDATA[未分类]]></category>
-		<guid isPermaLink="false">http://weiqinke.com/?p=132</guid>
+		<guid isPermaLink="false">https://weiqinke.com/?p=132</guid>
 
 					<description><![CDATA[🤔最近想做个个人网站，主要用于记笔记和分享内容。 很早之前玩过云主机，所以买过域名和主机，顺势想到了继续用原来的方法。 今天看了看阿里云和腾讯的国内外的虚拟主机和ECS真是不便宜。 然后又看了看各种博客平台。 最后终于想起来 我来 和 息流 有分享页面的功能，而且我有一些笔记已经在上面了，还不要钱。。 于是测试了一下分享页面，还行，就是下面有广告，免费的还要什么自行车。。 于是就有了你看到的这篇文章。。 PS：目前仅仅是为了测试博客放在笔记网站的可行性，有问题的话可能还是转到云主机。 测试失败，原因是本来想用自己的域名跳转到两个软件的公开分享链接但是不行🤡因为没办法备案。。 第二天又研究了一下发现了现在的方案 Gridea+文件托管到github+CDN加速 希望能行~~。 目前看起来还不错，接下来会把之前写的笔记同步一部分。 最终转战wordpress。 费了一点点力气终于是搞好了，目前方案是本地wordpress转静态+文件托管github+CDN。]]></description>
 										<content:encoded><![CDATA[
@@ -882,7 +882,7 @@ https://www.zabbix.com/download
 <p>费了一点点力气终于是搞好了，目前方案是本地wordpress转静态+文件托管github+CDN。</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>http://weiqinke.com/2023/05/02/diyi/feed/</wfw:commentRss>
+					<wfw:commentRss>https://weiqinke.com/2023/05/02/diyi/feed/</wfw:commentRss>
 			<slash:comments>0</slash:comments>
 		
 		
