@@ -12,7 +12,7 @@
 	<atom:link href="https://weiqinke.com/feed/" rel="self" type="application/rss+xml" />
 	<link>https://weiqinke.com/</link>
 	<description></description>
-	<lastBuildDate>Sat, 13 May 2023 11:21:34 +0000</lastBuildDate>
+	<lastBuildDate>Sat, 13 May 2023 11:35:02 +0000</lastBuildDate>
 	<language>zh-CN</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -20,26 +20,6 @@
 	1	</sy:updateFrequency>
 	<generator>https://wordpress.org/?v=6.2</generator>
 	<item>
-		<title>测试</title>
-		<link>https://weiqinke.com/2023/05/13/%e6%b5%8b%e8%af%95/</link>
-					<comments>https://weiqinke.com/2023/05/13/%e6%b5%8b%e8%af%95/#respond</comments>
-		
-		<dc:creator><![CDATA[admin]]></dc:creator>
-		<pubDate>Sat, 13 May 2023 10:06:48 +0000</pubDate>
-				<category><![CDATA[未分类]]></category>
-		<guid isPermaLink="false">https://weiqinke.com/?p=130</guid>
-
-					<description><![CDATA[测试测试哈哈哈]]></description>
-										<content:encoded><![CDATA[
-<p>测试测试哈哈哈</p>
-]]></content:encoded>
-					
-					<wfw:commentRss>https://weiqinke.com/2023/05/13/%e6%b5%8b%e8%af%95/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
-		
-		
-			</item>
-		<item>
 		<title>ospf基础</title>
 		<link>https://weiqinke.com/2023/05/09/45/</link>
 					<comments>https://weiqinke.com/2023/05/09/45/#respond</comments>
