@@ -2,11 +2,13 @@
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
   ><url>
+      <loc>https://weiqinke.com/things/</loc><lastmod>2023-05-13T10:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://weiqinke.com/</loc><lastmod>2023-05-13T22:22:10&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://weiqinke.com/things/tings/</loc><lastmod>2023-05-13T10:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
       <loc>https://weiqinke.com/tags/esxi/</loc><lastmod>2023-05-03T18:27:28&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
       <loc>https://weiqinke.com/2023/05/esxi-an-zhuang/</loc><lastmod>2023-05-03T18:27:28&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
       <loc>https://weiqinke.com/posts/</loc><lastmod>2023-05-13T22:22:10&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
       <loc>https://weiqinke.com/tags/</loc><lastmod>2023-05-03T18:27:28&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
-      <loc>https://weiqinke.com/</loc><lastmod>2023-05-13T22:22:10&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
       <loc>https://weiqinke.com/categories/</loc><lastmod>2023-05-03T16:44:28&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
       <loc>https://weiqinke.com/tags/ubuntu/</loc><lastmod>2023-05-03T16:44:28&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
       <loc>https://weiqinke.com/2023/05/ubuntu-an-zhuang-zabbix/</loc><lastmod>2023-05-03T16:44:28&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
