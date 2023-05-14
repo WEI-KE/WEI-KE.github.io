@@ -21,5 +21,5 @@ WAKE
 ---
 
 > 作者: WAKE  
-> URL: https://weiqinke.com/about/  
+> URL: https://weiqinke.com/2023/05/about/  
 

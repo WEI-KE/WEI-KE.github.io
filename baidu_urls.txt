@@ -1,7 +1,7 @@
-https://weiqinke.com/esxi-an-zhuang/
-https://weiqinke.com/ubuntu-an-zhuang-zabbix/
-https://weiqinke.com/ospf-ji-chu/
-https://weiqinke.com/ubuntu-an-zhuang-wordpress/
-https://weiqinke.com/ipv4-bao-liu-ip/
-https://weiqinke.com/about/
-https://weiqinke.com/di-yi-pian-bo-ke/
+https://weiqinke.com/2023/05/esxi-an-zhuang/
+https://weiqinke.com/2023/05/ubuntu-an-zhuang-zabbix/
+https://weiqinke.com/2023/05/ospf-ji-chu/
+https://weiqinke.com/2023/05/ubuntu-an-zhuang-wordpress/
+https://weiqinke.com/2023/05/ipv4-bao-liu-ip/
+https://weiqinke.com/2023/05/about/
+https://weiqinke.com/2023/05/di-yi-pian-bo-ke/

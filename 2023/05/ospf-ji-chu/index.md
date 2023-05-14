@@ -101,5 +101,5 @@ DR与BDR选举
 ---
 
 > 作者: WAKE  
-> URL: https://weiqinke.com/ospf-ji-chu/  
+> URL: https://weiqinke.com/2023/05/ospf-ji-chu/  
 

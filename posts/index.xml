@@ -5,66 +5,66 @@
     <description>所有文章 | WAKE</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 03 May 2023 18:27:28 &#43;0000</lastBuildDate><atom:link href="https://weiqinke.com/posts/" rel="self" type="application/rss+xml" /><item>
   <title>ESXI相关</title>
-  <link>https://weiqinke.com/esxi-an-zhuang/</link>
+  <link>https://weiqinke.com/2023/05/esxi-an-zhuang/</link>
   <pubDate>Wed, 03 May 2023 18:27:28 &#43;0000</pubDate>
   <author>WAKE</author>
-  <guid>https://weiqinke.com/esxi-an-zhuang/</guid>
+  <guid>https://weiqinke.com/2023/05/esxi-an-zhuang/</guid>
   <description><![CDATA[挂载USB存储： 在不接入USB硬盘的情况下输入以下命令： 1 2 /etc/init.d/usbarbitrator stop chkconfig usbarbitrator off 接入硬盘 1 esxcli storage core device list |grep -i usb 查看分区表 1 2 3 4 5 6 7 8 9 10 cd /dev/disks/ partedUtil getptbl mpx.vmhba32:C0:T0:L0 示例]]></description>
 </item>
 <item>
   <title>Ubuntu安装zabbix</title>
-  <link>https://weiqinke.com/ubuntu-an-zhuang-zabbix/</link>
+  <link>https://weiqinke.com/2023/05/ubuntu-an-zhuang-zabbix/</link>
   <pubDate>Wed, 03 May 2023 16:44:28 &#43;0000</pubDate>
   <author>WAKE</author>
-  <guid>https://weiqinke.com/ubuntu-an-zhuang-zabbix/</guid>
+  <guid>https://weiqinke.com/2023/05/ubuntu-an-zhuang-zabbix/</guid>
   <description><![CDATA[<div class="featured-image">
         <img src="https://assets.zabbix.com/img/banners/6.0/zabbix_6_0_background_5_1920x600.jpg" referrerpolicy="no-referrer">
       </div>1、安装6.4版本zabbix，以 Ubuntu 22.04、MySql、Nginx为例 1 2 3 4 wget https://repo.zabbix.com/zabbix/6.4/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.4-1+ubuntu22.04_all.deb sudo dpkg -i zabbix-release_6.4-1+ubuntu22.04_all.deb sudo apt update sudo apt install zabbix-server-mysql zabbix-frontend-php zabbix-nginx-conf zabbix-sql-scripts zabbix-agent 2 、安装MySql 下载h]]></description>
 </item>
 <item>
   <title>ospf基础</title>
-  <link>https://weiqinke.com/ospf-ji-chu/</link>
+  <link>https://weiqinke.com/2023/05/ospf-ji-chu/</link>
   <pubDate>Wed, 03 May 2023 16:38:52 &#43;0000</pubDate>
   <author>WAKE</author>
-  <guid>https://weiqinke.com/ospf-ji-chu/</guid>
+  <guid>https://weiqinke.com/2023/05/ospf-ji-chu/</guid>
   <description><![CDATA[<div class="featured-image">
         <img src="https://download.huawei.com/mdl/image/download?uuid=a1b351c20c5748b9b00f0b1d8277e33e" referrerpolicy="no-referrer">
       </div><p>ospf学习笔记</p>]]></description>
 </item>
 <item>
   <title>Ubuntu安装wordpress</title>
-  <link>https://weiqinke.com/ubuntu-an-zhuang-wordpress/</link>
+  <link>https://weiqinke.com/2023/05/ubuntu-an-zhuang-wordpress/</link>
   <pubDate>Tue, 02 May 2023 23:38:52 &#43;0000</pubDate>
   <author>WAKE</author>
-  <guid>https://weiqinke.com/ubuntu-an-zhuang-wordpress/</guid>
+  <guid>https://weiqinke.com/2023/05/ubuntu-an-zhuang-wordpress/</guid>
   <description><![CDATA[<div class="featured-image">
         <img src="https://images.unsplash.com/photo-1560472355-109703aa3edc?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb&amp;dl=stephen-phillips-hostreviews-co-uk-zs98a0DtKL4-unsplash.jpg" referrerpolicy="no-referrer">
       </div><p>Ubuntu安装wordpress</p>]]></description>
 </item>
 <item>
   <title>IP地址中的保留IP</title>
-  <link>https://weiqinke.com/ipv4-bao-liu-ip/</link>
+  <link>https://weiqinke.com/2023/05/ipv4-bao-liu-ip/</link>
   <pubDate>Tue, 02 May 2023 23:19:26 &#43;0000</pubDate>
   <author>WAKE</author>
-  <guid>https://weiqinke.com/ipv4-bao-liu-ip/</guid>
+  <guid>https://weiqinke.com/2023/05/ipv4-bao-liu-ip/</guid>
   <description><![CDATA[<div class="featured-image">
         <img src="https://images.unsplash.com/photo-1663932210347-164a05ed0ccd?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb&amp;dl=u-storsberg-_MauPmUJJ08-unsplash.jpg" referrerpolicy="no-referrer">
       </div><p>在互联网寻址结构中，互联网工程任务组（IETF）和互联网号码分配局（IANA）保留了许多用于特殊目的的网际协议（IP）地址。</p>]]></description>
 </item>
 <item>
   <title>关于</title>
-  <link>https://weiqinke.com/about/</link>
+  <link>https://weiqinke.com/2023/05/about/</link>
   <pubDate>Tue, 02 May 2023 19:09:48 &#43;0000</pubDate>
   <author>WAKE</author>
-  <guid>https://weiqinke.com/about/</guid>
+  <guid>https://weiqinke.com/2023/05/about/</guid>
   <description><![CDATA[欢迎来到我的小站呀，很高兴遇见你！🤝 👨‍💻 博主是谁 WAKE ⛹ 兴趣爱好 🎤 跳 rap 🏀 上面的都不喜欢, 精神不宅 身体很宅。 📬 联系我呀 如果你能找到这个博客那你应]]></description>
 </item>
 <item>
   <title>第一篇博客？</title>
-  <link>https://weiqinke.com/di-yi-pian-bo-ke/</link>
+  <link>https://weiqinke.com/2023/05/di-yi-pian-bo-ke/</link>
   <pubDate>Tue, 02 May 2023 16:21:12 &#43;0000</pubDate>
   <author>WAKE</author>
-  <guid>https://weiqinke.com/di-yi-pian-bo-ke/</guid>
+  <guid>https://weiqinke.com/2023/05/di-yi-pian-bo-ke/</guid>
   <description><![CDATA[🤔最近想做个个人网站，主要用于记笔记顺便分享。 很早之前玩过云主机，所以买过域名和主机，顺势想到了继续用原来的方法。 今天看了看阿里云和腾讯的国]]></description>
 </item>
 </channel>

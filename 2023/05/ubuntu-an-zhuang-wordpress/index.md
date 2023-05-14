@@ -115,5 +115,5 @@ Ubuntu安装wordpress
 ---
 
 > 作者: WAKE  
-> URL: https://weiqinke.com/ubuntu-an-zhuang-wordpress/  
+> URL: https://weiqinke.com/2023/05/ubuntu-an-zhuang-wordpress/  
 
