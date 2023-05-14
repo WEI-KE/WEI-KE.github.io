@@ -1,0 +1,27 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>ospf - 标签 - WAKE</title>
+    <link>https://weiqinke.com/tags/ospf/</link>
+    <description>ospf - 标签 - WAKE</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 03 May 2023 16:38:52 &#43;0000</lastBuildDate><atom:link href="https://weiqinke.com/tags/ospf/" rel="self" type="application/rss+xml" /><item>
+  <title>ospf基础</title>
+  <link>https://weiqinke.com/ospf-ji-chu/</link>
+  <pubDate>Wed, 03 May 2023 16:38:52 &#43;0000</pubDate>
+  <author>WAKE</author>
+  <guid>https://weiqinke.com/ospf-ji-chu/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://download.huawei.com/mdl/image/download?uuid=a1b351c20c5748b9b00f0b1d8277e33e" referrerpolicy="no-referrer">
+      </div><p>ospf学习笔记</p>]]></description>
+</item>
+<item>
+  <title>Ubuntu安装wordpress</title>
+  <link>https://weiqinke.com/ubuntu-an-zhuang-wordpress/</link>
+  <pubDate>Tue, 02 May 2023 23:38:52 &#43;0000</pubDate>
+  <author>WAKE</author>
+  <guid>https://weiqinke.com/ubuntu-an-zhuang-wordpress/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://images.unsplash.com/photo-1560472355-109703aa3edc?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb&amp;dl=stephen-phillips-hostreviews-co-uk-zs98a0DtKL4-unsplash.jpg" referrerpolicy="no-referrer">
+      </div><p>Ubuntu安装wordpress</p>]]></description>
+</item>
+</channel>
+</rss>

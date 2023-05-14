@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Esxi - 标签 - WAKE</title>
+    <link>https://weiqinke.com/tags/esxi/</link>
+    <description>Esxi - 标签 - WAKE</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 03 May 2023 18:27:28 &#43;0000</lastBuildDate><atom:link href="https://weiqinke.com/tags/esxi/" rel="self" type="application/rss+xml" /><item>
+  <title>ESXI相关</title>
+  <link>https://weiqinke.com/esxi-an-zhuang/</link>
+  <pubDate>Wed, 03 May 2023 18:27:28 &#43;0000</pubDate>
+  <author>WAKE</author>
+  <guid>https://weiqinke.com/esxi-an-zhuang/</guid>
+  <description><![CDATA[挂载USB存储： 在不接入USB硬盘的情况下输入以下命令： 1 2 /etc/init.d/usbarbitrator stop chkconfig usbarbitrator off 接入硬盘 1 esxcli storage core device list |grep -i usb 查看分区表 1 2 3 4 5 6 7 8 9 10 cd /dev/disks/ partedUtil getptbl mpx.vmhba32:C0:T0:L0 示例]]></description>
+</item>
+</channel>
+</rss>
