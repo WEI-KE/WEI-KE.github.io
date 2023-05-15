@@ -9,7 +9,9 @@
   <pubDate>Wed, 03 May 2023 18:27:28 &#43;0000</pubDate>
   <author>WAKE</author>
   <guid>https://weiqinke.com/2023/05/esxi-an-zhuang/</guid>
-  <description><![CDATA[挂载USB存储： 在不接入USB硬盘的情况下输入以下命令： 1 2 /etc/init.d/usbarbitrator stop chkconfig usbarbitrator off 接入硬盘 1 esxcli storage core device list |grep -i usb 查看分区表 1 2 3 4 5 6 7 8 9 10 cd /dev/disks/ partedUtil getptbl mpx.vmhba32:C0:T0:L0 示例]]></description>
+  <description><![CDATA[<blockquote>
+<p>之前折腾usb硬盘安装esxi遇到的一些问题</p>
+</blockquote>]]></description>
 </item>
 </channel>
 </rss>

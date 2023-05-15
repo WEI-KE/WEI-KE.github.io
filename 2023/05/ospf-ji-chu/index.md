@@ -1,6 +1,6 @@
 # ospf基础
 
-ospf学习笔记
+#### 一篇很早的ospf学习笔记
 <!--more-->
 # ospf基础
 

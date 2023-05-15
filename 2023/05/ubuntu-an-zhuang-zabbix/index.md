@@ -1,6 +1,9 @@
 # Ubuntu安装zabbix
 
+
 #### 1、安装6.4版本zabbix，以 Ubuntu 22.04、MySql、Nginx为例
+
+<!--more-->
 
 ```Bash
 wget https://repo.zabbix.com/zabbix/6.4/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.4-1+ubuntu22.04_all.deb
@@ -71,7 +74,7 @@ sudo vi /etc/nginx/sites-available
 
 ```XML
  listen 80;
- server_name example.com;
+        server_name example.com;
 ```
 
 #### 8添加中文支持，取消UTF-8的中文注释
@@ -89,14 +92,6 @@ sudo vi /etc/nginx/sites-available
 sudo systemctl restart zabbix-server zabbix-agent nginx php8.1-fpm
 sudo systemctl enable zabbix-server zabbix-agent nginx php8.1-fpm
 ```
-
-
-
-
-
-
-
-
 
 参考链接：
 

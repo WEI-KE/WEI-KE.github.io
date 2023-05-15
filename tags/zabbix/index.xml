@@ -11,7 +11,7 @@
   <guid>https://weiqinke.com/2023/05/ubuntu-an-zhuang-zabbix/</guid>
   <description><![CDATA[<div class="featured-image">
         <img src="https://assets.zabbix.com/img/banners/6.0/zabbix_6_0_background_5_1920x600.jpg" referrerpolicy="no-referrer">
-      </div>1、安装6.4版本zabbix，以 Ubuntu 22.04、MySql、Nginx为例 1 2 3 4 wget https://repo.zabbix.com/zabbix/6.4/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.4-1+ubuntu22.04_all.deb sudo dpkg -i zabbix-release_6.4-1+ubuntu22.04_all.deb sudo apt update sudo apt install zabbix-server-mysql zabbix-frontend-php zabbix-nginx-conf zabbix-sql-scripts zabbix-agent 2 、安装MySql 下载h]]></description>
+      </div><h4 id="1安装64版本zabbix以-ubuntu-2204mysqlnginx为例">1、安装6.4版本zabbix，以 Ubuntu 22.04、MySql、Nginx为例</h4>]]></description>
 </item>
 </channel>
 </rss>

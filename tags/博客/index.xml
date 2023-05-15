@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>博客 - 标签 - WAKE</title>
+    <link>https://weiqinke.com/tags/%E5%8D%9A%E5%AE%A2/</link>
+    <description>博客 - 标签 - WAKE</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 02 May 2023 23:38:52 &#43;0000</lastBuildDate><atom:link href="https://weiqinke.com/tags/%E5%8D%9A%E5%AE%A2/" rel="self" type="application/rss+xml" /><item>
+  <title>Ubuntu安装wordpress</title>
+  <link>https://weiqinke.com/2023/05/ubuntu-an-zhuang-wordpress/</link>
+  <pubDate>Tue, 02 May 2023 23:38:52 &#43;0000</pubDate>
+  <author>WAKE</author>
+  <guid>https://weiqinke.com/2023/05/ubuntu-an-zhuang-wordpress/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://images.unsplash.com/photo-1560472355-109703aa3edc?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb&amp;dl=stephen-phillips-hostreviews-co-uk-zs98a0DtKL4-unsplash.jpg" referrerpolicy="no-referrer">
+      </div><p>Ubuntu安装wordpress</p>]]></description>
+</item>
+</channel>
+</rss>

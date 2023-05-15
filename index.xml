@@ -3,15 +3,29 @@
     <title>WAKE</title>
     <link>https://weiqinke.com/</link>
     <description>这是WAKE的 Hugo FixIt 网站</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 13 May 2023 10:00:00 &#43;0800</lastBuildDate>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 15 May 2023 21:37:48 &#43;8000</lastBuildDate>
       <atom:link href="https://weiqinke.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
+  <title>print_req_error: I/0 error, dev fd0, sector 0</title>
+  <link>https://weiqinke.com/2023/05/unbuntu-print_req_error/</link>
+  <pubDate>Mon, 15 May 2023 21:37:48 &#43;8000</pubDate>
+  <author>WAKE</author>
+  <guid>https://weiqinke.com/2023/05/unbuntu-print_req_error/</guid>
+  <description><![CDATA[<blockquote>
+<p>一次偶然发现Ubuntu在输出报错信息
+<code> print_req_error: I/0 error, dev fd0, sector 0</code>
+，查了一下是软驱相关报错，找了一个解决方案如下：</p>
+</blockquote>]]></description>
+</item>
+<item>
   <title>ESXI相关</title>
   <link>https://weiqinke.com/2023/05/esxi-an-zhuang/</link>
   <pubDate>Wed, 03 May 2023 18:27:28 &#43;0000</pubDate>
   <author>WAKE</author>
   <guid>https://weiqinke.com/2023/05/esxi-an-zhuang/</guid>
-  <description><![CDATA[挂载USB存储： 在不接入USB硬盘的情况下输入以下命令： 1 2 /etc/init.d/usbarbitrator stop chkconfig usbarbitrator off 接入硬盘 1 esxcli storage core device list |grep -i usb 查看分区表 1 2 3 4 5 6 7 8 9 10 cd /dev/disks/ partedUtil getptbl mpx.vmhba32:C0:T0:L0 示例]]></description>
+  <description><![CDATA[<blockquote>
+<p>之前折腾usb硬盘安装esxi遇到的一些问题</p>
+</blockquote>]]></description>
 </item>
 <item>
   <title>Ubuntu安装zabbix</title>
@@ -21,7 +35,7 @@
   <guid>https://weiqinke.com/2023/05/ubuntu-an-zhuang-zabbix/</guid>
   <description><![CDATA[<div class="featured-image">
         <img src="https://assets.zabbix.com/img/banners/6.0/zabbix_6_0_background_5_1920x600.jpg" referrerpolicy="no-referrer">
-      </div>1、安装6.4版本zabbix，以 Ubuntu 22.04、MySql、Nginx为例 1 2 3 4 wget https://repo.zabbix.com/zabbix/6.4/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.4-1+ubuntu22.04_all.deb sudo dpkg -i zabbix-release_6.4-1+ubuntu22.04_all.deb sudo apt update sudo apt install zabbix-server-mysql zabbix-frontend-php zabbix-nginx-conf zabbix-sql-scripts zabbix-agent 2 、安装MySql 下载h]]></description>
+      </div><h4 id="1安装64版本zabbix以-ubuntu-2204mysqlnginx为例">1、安装6.4版本zabbix，以 Ubuntu 22.04、MySql、Nginx为例</h4>]]></description>
 </item>
 <item>
   <title>ospf基础</title>
@@ -31,7 +45,7 @@
   <guid>https://weiqinke.com/2023/05/ospf-ji-chu/</guid>
   <description><![CDATA[<div class="featured-image">
         <img src="https://download.huawei.com/mdl/image/download?uuid=a1b351c20c5748b9b00f0b1d8277e33e" referrerpolicy="no-referrer">
-      </div><p>ospf学习笔记</p>]]></description>
+      </div><h4 id="一篇很早的ospf学习笔记">一篇很早的ospf学习笔记</h4>]]></description>
 </item>
 <item>
   <title>Ubuntu安装wordpress</title>
@@ -39,7 +53,9 @@
   <pubDate>Tue, 02 May 2023 23:38:52 &#43;0000</pubDate>
   <author>WAKE</author>
   <guid>https://weiqinke.com/2023/05/ubuntu-an-zhuang-wordpress/</guid>
-  <description><![CDATA[<p>Ubuntu安装wordpress</p>]]></description>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://images.unsplash.com/photo-1560472355-109703aa3edc?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb&amp;dl=stephen-phillips-hostreviews-co-uk-zs98a0DtKL4-unsplash.jpg" referrerpolicy="no-referrer">
+      </div><p>Ubuntu安装wordpress</p>]]></description>
 </item>
 <item>
   <title>IP地址中的保留IP</title>
@@ -47,7 +63,11 @@
   <pubDate>Tue, 02 May 2023 23:19:26 &#43;0000</pubDate>
   <author>WAKE</author>
   <guid>https://weiqinke.com/2023/05/ipv4-bao-liu-ip/</guid>
-  <description><![CDATA[<p>在互联网寻址结构中，互联网工程任务组（IETF）和互联网号码分配局（IANA）保留了许多用于特殊目的的网际协议（IP）地址。</p>]]></description>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://images.unsplash.com/photo-1663932210347-164a05ed0ccd?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb&amp;dl=u-storsberg-_MauPmUJJ08-unsplash.jpg" referrerpolicy="no-referrer">
+      </div><blockquote>
+<p>在互联网寻址结构中，互联网工程任务组（IETF）和互联网号码分配局（IANA）保留了许多用于特殊目的的网际协议（IP）地址。</p>
+</blockquote>]]></description>
 </item>
 <item>
   <title>关于</title>

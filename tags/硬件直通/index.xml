@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>硬件直通 - 标签 - WAKE</title>
+    <link>https://weiqinke.com/tags/%E7%A1%AC%E4%BB%B6%E7%9B%B4%E9%80%9A/</link>
+    <description>硬件直通 - 标签 - WAKE</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 03 May 2023 18:27:28 &#43;0000</lastBuildDate><atom:link href="https://weiqinke.com/tags/%E7%A1%AC%E4%BB%B6%E7%9B%B4%E9%80%9A/" rel="self" type="application/rss+xml" /><item>
+  <title>ESXI相关</title>
+  <link>https://weiqinke.com/2023/05/esxi-an-zhuang/</link>
+  <pubDate>Wed, 03 May 2023 18:27:28 &#43;0000</pubDate>
+  <author>WAKE</author>
+  <guid>https://weiqinke.com/2023/05/esxi-an-zhuang/</guid>
+  <description><![CDATA[<blockquote>
+<p>之前折腾usb硬盘安装esxi遇到的一些问题</p>
+</blockquote>]]></description>
+</item>
+</channel>
+</rss>
