@@ -1,0 +1,27 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>WAKE</title>
+    <link>https://weiqinke.com/en/</link>
+    <description>这是WAKE的 Hugo FixIt 网站</description>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 23 May 2023 22:47:44 &#43;0800</lastBuildDate>
+      <atom:link href="https://weiqinke.com/en/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+  <title>Chat-specific post</title>
+  <link>https://weiqinke.com/en/2023/05/discussions/</link>
+  <pubDate>Tue, 23 May 2023 22:47:44 &#43;0800</pubDate>
+  <author>WAKE</author>
+  <guid>https://weiqinke.com/en/2023/05/discussions/</guid>
+  <description><![CDATA[<p>Today, I added the <a href="https://github.com/giscus/giscus"target="_blank" rel="external nofollow noopener noreferrer">Giscus</a> commenting system to the website.</p>
+<p>I thought it would be great to create a &ldquo;Thoughts&rdquo; page using this system.</p>
+<p>The page supports Markdown format, and visitors can leave comments. It&rsquo;s perfect!</p>]]></description>
+</item>
+<item>
+  <title>About</title>
+  <link>https://weiqinke.com/en/2023/05/about/</link>
+  <pubDate>Tue, 02 May 2023 19:09:48 &#43;0000</pubDate>
+  <author>WAKE</author>
+  <guid>https://weiqinke.com/en/2023/05/about/</guid>
+  <description><![CDATA[Welcome to my blog, nice to meet you!🤝 👨‍💻 Blogger WAKE ⛹ Interests 🎤 Dancing rap 🏀 The above are not like, the spirit is not otaku body is very otaku. 📬 Contact me If you can find this blog then you should already have my contact information😜 Reverse the first two n]]></description>
+</item>
+</channel>
+</rss>

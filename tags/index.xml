@@ -1,0 +1,87 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Tags - 标签 - WAKE</title>
+    <link>https://weiqinke.com/tags/</link>
+    <description>Tags - 标签 - WAKE</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 15 May 2023 21:37:48 &#43;8000</lastBuildDate><atom:link href="https://weiqinke.com/tags/" rel="self" type="application/rss+xml" /><item>
+  <title>Ubuntu</title>
+  <link>https://weiqinke.com/tags/ubuntu/</link>
+  <pubDate>Mon, 15 May 2023 21:37:48 &#43;8000</pubDate>
+  <author>WAKE</author>
+  <guid>https://weiqinke.com/tags/ubuntu/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>Esxi</title>
+  <link>https://weiqinke.com/tags/esxi/</link>
+  <pubDate>Wed, 03 May 2023 18:27:28 &#43;0000</pubDate>
+  <author>WAKE</author>
+  <guid>https://weiqinke.com/tags/esxi/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>硬件直通</title>
+  <link>https://weiqinke.com/tags/%E7%A1%AC%E4%BB%B6%E7%9B%B4%E9%80%9A/</link>
+  <pubDate>Wed, 03 May 2023 18:27:28 &#43;0000</pubDate>
+  <author>WAKE</author>
+  <guid>https://weiqinke.com/tags/%E7%A1%AC%E4%BB%B6%E7%9B%B4%E9%80%9A/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>zabbix</title>
+  <link>https://weiqinke.com/tags/zabbix/</link>
+  <pubDate>Wed, 03 May 2023 16:44:28 &#43;0000</pubDate>
+  <author>WAKE</author>
+  <guid>https://weiqinke.com/tags/zabbix/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>ospf</title>
+  <link>https://weiqinke.com/tags/ospf/</link>
+  <pubDate>Wed, 03 May 2023 16:38:52 &#43;0000</pubDate>
+  <author>WAKE</author>
+  <guid>https://weiqinke.com/tags/ospf/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>干货</title>
+  <link>https://weiqinke.com/tags/%E5%B9%B2%E8%B4%A7/</link>
+  <pubDate>Wed, 03 May 2023 16:38:52 &#43;0000</pubDate>
+  <author>WAKE</author>
+  <guid>https://weiqinke.com/tags/%E5%B9%B2%E8%B4%A7/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>网络</title>
+  <link>https://weiqinke.com/tags/%E7%BD%91%E7%BB%9C/</link>
+  <pubDate>Wed, 03 May 2023 16:38:52 &#43;0000</pubDate>
+  <author>WAKE</author>
+  <guid>https://weiqinke.com/tags/%E7%BD%91%E7%BB%9C/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>wordpress</title>
+  <link>https://weiqinke.com/tags/wordpress/</link>
+  <pubDate>Tue, 02 May 2023 23:38:52 &#43;0000</pubDate>
+  <author>WAKE</author>
+  <guid>https://weiqinke.com/tags/wordpress/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>博客</title>
+  <link>https://weiqinke.com/tags/%E5%8D%9A%E5%AE%A2/</link>
+  <pubDate>Tue, 02 May 2023 23:38:52 &#43;0000</pubDate>
+  <author>WAKE</author>
+  <guid>https://weiqinke.com/tags/%E5%8D%9A%E5%AE%A2/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>IPv4</title>
+  <link>https://weiqinke.com/tags/ipv4/</link>
+  <pubDate>Tue, 02 May 2023 23:19:26 &#43;0000</pubDate>
+  <author>WAKE</author>
+  <guid>https://weiqinke.com/tags/ipv4/</guid>
+  <description><![CDATA[]]></description>
+</item>
+</channel>
+</rss>
