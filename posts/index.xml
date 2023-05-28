@@ -3,7 +3,17 @@
     <title>所有文章 - WAKE</title>
     <link>https://weiqinke.com/posts/</link>
     <description>所有文章 | WAKE</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 23 May 2023 22:47:44 &#43;0800</lastBuildDate><atom:link href="https://weiqinke.com/posts/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 28 May 2023 01:48:24 &#43;0800</lastBuildDate><atom:link href="https://weiqinke.com/posts/" rel="self" type="application/rss+xml" /><item>
+  <title>Stable Diffusion 保姆级入门手册</title>
+  <link>https://weiqinke.com/2023/05/stable-diffusion/</link>
+  <pubDate>Sun, 28 May 2023 01:48:24 &#43;0800</pubDate>
+  <author>WAKE</author>
+  <guid>https://weiqinke.com/2023/05/stable-diffusion/</guid>
+  <description><![CDATA[<p>最近，AI图像生成引人注目，它能够根据文字描述生成精美图像，这极大地改变了人们的图像创作方式。Stable
+Diffusion作为一款高性能模型，它生成的图像质量更高、运行速度更快、消耗的资源以及内存占用更小，是AI图像生成领域的里程碑。本篇文章作者将手把手教大家入门
+Stable Diffusion。</p>]]></description>
+</item>
+<item>
   <title>聊天专用贴</title>
   <link>https://weiqinke.com/2023/05/discussions/</link>
   <pubDate>Tue, 23 May 2023 22:47:44 &#43;0800</pubDate>
@@ -90,14 +100,6 @@
   <author>WAKE</author>
   <guid>https://weiqinke.com/2023/05/about/</guid>
   <description><![CDATA[欢迎来到我的小站呀，很高兴遇见你！🤝 👨‍💻 博主是谁 WAKE ⛹ 兴趣爱好 🎤 跳 rap 🏀 上面的都不喜欢, 精神不宅 身体很宅。 📬 联系我呀 如果你能找到这个博客那你应]]></description>
-</item>
-<item>
-  <title>第一篇博客？</title>
-  <link>https://weiqinke.com/2023/05/di-yi-pian-bo-ke/</link>
-  <pubDate>Tue, 02 May 2023 16:21:12 &#43;0000</pubDate>
-  <author>WAKE</author>
-  <guid>https://weiqinke.com/2023/05/di-yi-pian-bo-ke/</guid>
-  <description><![CDATA[🤔最近想做个个人网站，主要用于记笔记顺便分享。 很早之前玩过云主机，所以买过域名和主机，顺势想到了继续用原来的方法。 今天看了看阿里云和腾讯的国]]></description>
 </item>
 </channel>
 </rss>
