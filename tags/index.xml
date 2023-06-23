@@ -3,7 +3,23 @@
     <title>Tags - 标签 - WAKE</title>
     <link>https://weiqinke.com/tags/</link>
     <description>Tags - 标签 - WAKE</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 28 May 2023 01:48:24 &#43;0800</lastBuildDate><atom:link href="https://weiqinke.com/tags/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 22 Jun 2023 22:55:32 &#43;0800</lastBuildDate><atom:link href="https://weiqinke.com/tags/" rel="self" type="application/rss+xml" /><item>
+  <title>Python</title>
+  <link>https://weiqinke.com/tags/python/</link>
+  <pubDate>Thu, 22 Jun 2023 22:55:32 &#43;0800</pubDate>
+  <author>WAKE</author>
+  <guid>https://weiqinke.com/tags/python/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>ssh</title>
+  <link>https://weiqinke.com/tags/ssh/</link>
+  <pubDate>Thu, 22 Jun 2023 22:55:32 &#43;0800</pubDate>
+  <author>WAKE</author>
+  <guid>https://weiqinke.com/tags/ssh/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
   <title>AI</title>
   <link>https://weiqinke.com/tags/ai/</link>
   <pubDate>Sun, 28 May 2023 01:48:24 &#43;0800</pubDate>
@@ -65,22 +81,6 @@
   <pubDate>Wed, 03 May 2023 16:38:52 &#43;0000</pubDate>
   <author>WAKE</author>
   <guid>https://weiqinke.com/tags/%E5%B9%B2%E8%B4%A7/</guid>
-  <description><![CDATA[]]></description>
-</item>
-<item>
-  <title>网络</title>
-  <link>https://weiqinke.com/tags/%E7%BD%91%E7%BB%9C/</link>
-  <pubDate>Wed, 03 May 2023 16:38:52 &#43;0000</pubDate>
-  <author>WAKE</author>
-  <guid>https://weiqinke.com/tags/%E7%BD%91%E7%BB%9C/</guid>
-  <description><![CDATA[]]></description>
-</item>
-<item>
-  <title>wordpress</title>
-  <link>https://weiqinke.com/tags/wordpress/</link>
-  <pubDate>Tue, 02 May 2023 23:38:52 &#43;0000</pubDate>
-  <author>WAKE</author>
-  <guid>https://weiqinke.com/tags/wordpress/</guid>
   <description><![CDATA[]]></description>
 </item>
 </channel>

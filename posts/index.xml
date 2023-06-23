@@ -3,7 +3,18 @@
     <title>所有文章 - WAKE</title>
     <link>https://weiqinke.com/posts/</link>
     <description>所有文章 | WAKE</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 28 May 2023 01:48:24 &#43;0800</lastBuildDate><atom:link href="https://weiqinke.com/posts/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 22 Jun 2023 22:55:32 &#43;0800</lastBuildDate><atom:link href="https://weiqinke.com/posts/" rel="self" type="application/rss+xml" /><item>
+  <title>Multithreaded SSH V0.1.1使用说明</title>
+  <link>https://weiqinke.com/2023/06/multithreaded-ssh/</link>
+  <pubDate>Thu, 22 Jun 2023 22:55:32 &#43;0800</pubDate>
+  <author>WAKE</author>
+  <guid>https://weiqinke.com/2023/06/multithreaded-ssh/</guid>
+  <description><![CDATA[<h2 id="前言">前言</h2>
+<p>最近换了一批华为交换机，为了过等保改用SSH远程交换机，之前写的Telnet脚本用不了了，
+于是最近花了点时间用Python重新写了一个多线程SSH程序 Multithreaded-SSH。</p>
+<p>此版本还是不太灵活，但是可以执行一些基本的命令。例如可以执行dis cur配合sshlog文件做到备份设备配置，或者批量修改密码。</p>]]></description>
+</item>
+<item>
   <title>Stable Diffusion 保姆级入门手册</title>
   <link>https://weiqinke.com/2023/05/stable-diffusion/</link>
   <pubDate>Sun, 28 May 2023 01:48:24 &#43;0800</pubDate>
@@ -92,14 +103,6 @@ Stable Diffusion。</p>]]></description>
   <author>WAKE</author>
   <guid>https://weiqinke.com/2023/05/fixit/</guid>
   <description><![CDATA[1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70]]></description>
-</item>
-<item>
-  <title>关于</title>
-  <link>https://weiqinke.com/2023/05/about/</link>
-  <pubDate>Tue, 02 May 2023 19:09:48 &#43;0000</pubDate>
-  <author>WAKE</author>
-  <guid>https://weiqinke.com/2023/05/about/</guid>
-  <description><![CDATA[欢迎来到我的小站呀，很高兴遇见你！🤝 👨‍💻 博主是谁 WAKE ⛹ 兴趣爱好 🎤 跳 rap 🏀 上面的都不喜欢, 精神不宅 身体很宅。 📬 联系我呀 如果你能找到这个博客那你应]]></description>
 </item>
 </channel>
 </rss>
