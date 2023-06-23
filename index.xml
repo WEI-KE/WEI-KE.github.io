@@ -7,10 +7,10 @@
       <atom:link href="https://weike.club/index.xml" rel="self" type="application/rss+xml" />
     <item>
   <title>Multithreaded SSH V0.1.1使用说明</title>
-  <link>https://weike.club/2023/06/multithreaded-ssh/</link>
+  <link>https://weike.club/2023/06/multithreaded-ssh-v0.1.1/</link>
   <pubDate>Thu, 22 Jun 2023 22:55:32 &#43;0800</pubDate>
   <author>WAKE</author>
-  <guid>https://weike.club/2023/06/multithreaded-ssh/</guid>
+  <guid>https://weike.club/2023/06/multithreaded-ssh-v0.1.1/</guid>
   <description><![CDATA[<h2 id="前言">前言</h2>
 <p>最近换了一批华为交换机，为了过等保改用SSH远程交换机，之前写的Telnet脚本用不了了，
 于是最近花了点时间用Python重新写了一个多线程SSH程序 Multithreaded-SSH。</p>

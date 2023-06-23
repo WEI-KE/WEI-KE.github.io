@@ -24,7 +24,7 @@
 于是最近花了点时间用Python重新写了一个多线程SSH程序 Multithreaded-SSH。
 此版本还是不太灵活，但是可以执行一些基本的命令。例如可以执行dis cur配合sshlog文件做到备份设备配置，或者批量修改密码。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://weike.club/2023/06/multithreaded-ssh/" /><meta property="og:image" content="https://weike.club/logo.png"/><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://weike.club/2023/06/multithreaded-ssh-v0.1.1/" /><meta property="og:image" content="https://weike.club/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-06-22T22:55:32+08:00" />
 <meta property="article:modified_time" content="2023-06-22T22:55:32+08:00" />
 <meta name="twitter:card" content="summary_large_image"/>
@@ -38,7 +38,7 @@
 <meta name="application-name" content="FixIt">
 <meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://weike.club/2023/06/multithreaded-ssh/" /><link rel="prev" href="https://weike.club/2023/05/stable-diffusion/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://weike.club/2023/06/multithreaded-ssh-v0.1.1/" /><link rel="prev" href="https://weike.club/2023/05/stable-diffusion/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
@@ -46,9 +46,9 @@
     "inLanguage": "zh-CN",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https:\/\/weike.club\/2023\/06\/multithreaded-ssh\/"
+      "@id": "https:\/\/weike.club\/2023\/06\/multithreaded-ssh-v0.1.1\/"
     },"genre": "posts","keywords": "ssh, Python","wordcount":  3730 ,
-    "url": "https:\/\/weike.club\/2023\/06\/multithreaded-ssh\/","datePublished": "2023-06-22T22:55:32+08:00","dateModified": "2023-06-22T22:55:32+08:00","publisher": {
+    "url": "https:\/\/weike.club\/2023\/06\/multithreaded-ssh-v0.1.1\/","datePublished": "2023-06-22T22:55:32+08:00","dateModified": "2023-06-22T22:55:32+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -479,6 +479,7 @@
 </span><span class="lnt">260
 </span><span class="lnt">261
 </span><span class="lnt">262
+</span><span class="lnt">263
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="ch">#!/usr/bin/python3</span>
@@ -737,7 +738,8 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;运行结束,共</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">hosts</span><span class="p">))</span><span class="si">}</span><span class="s1">台主机，成功</span><span class="si">{</span><span class="n">success_count</span><span class="si">}</span><span class="s1">台，错误</span><span class="si">{</span><span class="n">error_count</span><span class="si">}</span><span class="s1">，命令执行错误</span><span class="si">{</span><span class="n">command_error</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">log_file</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_log</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">        <span class="n">f_log</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;运行结束,共</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">hosts</span><span class="p">))</span><span class="si">}</span><span class="s1">台主机，成功</span><span class="si">{</span><span class="n">success_count</span><span class="si">}</span><span class="s1">，错误</span><span class="si">{</span><span class="n">error_count</span><span class="si">}</span><span class="s1">，命令执行错误</span><span class="si">{</span><span class="n">command_error</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">f_log</span><span class="o">.</span><span class="n">write</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="sa">f</span><span class="s1">&#39;运行结束,共</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">hosts</span><span class="p">))</span><span class="si">}</span><span class="s1">台主机，成功</span><span class="si">{</span><span class="n">success_count</span><span class="si">}</span><span class="s1">，错误</span><span class="si">{</span><span class="n">error_count</span><span class="si">}</span><span class="s1">，命令执行错误</span><span class="si">{</span><span class="n">command_error</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;完成！按回车退出...&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
@@ -745,7 +747,7 @@
 </span></span><span class="line"><span class="cl">    <span class="n">main</span><span class="p">()</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>已开源在👉<a href="https://github.com/WEI-KE/Multithreaded-SSH"target="_blank" rel="external nofollow noopener noreferrer">Github</a></p>
+</div><p>代码已开源在👉<a href="https://github.com/WEI-KE/Multithreaded-SSH"target="_blank" rel="external nofollow noopener noreferrer">Github</a></p>
 <p>也打包了一个<a href="https://github.com/WEI-KE/Multithreaded-SSH/releases"target="_blank" rel="external nofollow noopener noreferrer">.exe</a>可执行文件。有需要的自己下载。</p>
 <h2 id="使用说明">使用说明</h2>
 <ol>
@@ -768,8 +770,8 @@
 </li>
 </ul>
 <blockquote>
-<p><code>年-月-日.log</code>用于保存本程序输出的日志，你可以看到简单的执行情况</p>
-<p><code> Paramiko-年-月-日.log</code>用于储存Paramiko执行的日志用于ssh连接出现异常调试</p>
+<p><code>年-月-日.log</code>用于保存本程序输出的日志，你可以在这里看到本程序的执行情况</p>
+<p><code> Paramiko-年-月-日.log</code>储存Paramiko执行的日志用于ssh连接出现异常调试</p>
 <p><code>年-月-日-主机地址.log</code>用于储存ssh连接到主机后每台主机输出的内容</p>
 </blockquote>
 </li>
@@ -802,6 +804,7 @@
 <li>增加独立定义单台主机命令</li>
 <li>代码更加模块化 使其更易于被其他程序调用和集成</li>
 <li>优化代码逻辑</li>
+<li>完善代码备注</li>
 </ul>
 <p>不会更新的内容：</p>
 <ul>
@@ -822,7 +825,7 @@
           <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
         </div></div>
     <div class="post-info-line">
-      <div class="post-info-md"><span><a href="/2023/06/multithreaded-ssh/index.md" title="阅读原始文档" class="link-to-markdown">阅读原始文档</a></span></div>
+      <div class="post-info-md"><span><a href="/2023/06/multithreaded-ssh-v0.1.1/index.md" title="阅读原始文档" class="link-to-markdown">阅读原始文档</a></span></div>
       <div class="post-info-share">
         <span></span>
       </div>

@@ -1,4 +1,4 @@
-https://weike.club/2023/06/multithreaded-ssh/
+https://weike.club/2023/06/multithreaded-ssh-v0.1.1/
 https://weike.club/2023/05/stable-diffusion/
 https://weike.club/2023/05/discussions/
 https://weike.club/2023/05/unbuntu-print_req_error/
