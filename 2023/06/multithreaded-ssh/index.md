@@ -277,7 +277,7 @@ if __name__ == "__main__":
 
 已开源在👉[Github](https://github.com/WEI-KE/Multithreaded-SSH)
 
-也打包了一个[exe](https://github.com/WEI-KE/Multithreaded-SSH/releases)可执行文件。有需要的自己下载。
+也打包了一个[.exe](https://github.com/WEI-KE/Multithreaded-SSH/releases)可执行文件。有需要的自己下载。
 
 ## 使用说明
 
