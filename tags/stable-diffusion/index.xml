@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>Stable Diffusion - 标签 - WAKE</title>
-    <link>https://weiqinke.com/tags/stable-diffusion/</link>
+    <link>https://weike.club/tags/stable-diffusion/</link>
     <description>Stable Diffusion - 标签 - WAKE</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 28 May 2023 01:48:24 &#43;0800</lastBuildDate><atom:link href="https://weiqinke.com/tags/stable-diffusion/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 28 May 2023 01:48:24 &#43;0800</lastBuildDate><atom:link href="https://weike.club/tags/stable-diffusion/" rel="self" type="application/rss+xml" /><item>
   <title>Stable Diffusion 保姆级入门手册</title>
-  <link>https://weiqinke.com/2023/05/stable-diffusion/</link>
+  <link>https://weike.club/2023/05/stable-diffusion/</link>
   <pubDate>Sun, 28 May 2023 01:48:24 &#43;0800</pubDate>
   <author>WAKE</author>
-  <guid>https://weiqinke.com/2023/05/stable-diffusion/</guid>
+  <guid>https://weike.club/2023/05/stable-diffusion/</guid>
   <description><![CDATA[<p>最近，AI图像生成引人注目，它能够根据文字描述生成精美图像，这极大地改变了人们的图像创作方式。Stable
 Diffusion作为一款高性能模型，它生成的图像质量更高、运行速度更快、消耗的资源以及内存占用更小，是AI图像生成领域的里程碑。本篇文章作者将手把手教大家入门
 Stable Diffusion。</p>]]></description>

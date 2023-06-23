@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>IPv6 - 标签 - WAKE</title>
-    <link>https://weiqinke.com/tags/ipv6/</link>
+    <link>https://weike.club/tags/ipv6/</link>
     <description>IPv6 - 标签 - WAKE</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 02 May 2023 23:19:26 &#43;0000</lastBuildDate><atom:link href="https://weiqinke.com/tags/ipv6/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 02 May 2023 23:19:26 &#43;0000</lastBuildDate><atom:link href="https://weike.club/tags/ipv6/" rel="self" type="application/rss+xml" /><item>
   <title>IP地址中的保留IP</title>
-  <link>https://weiqinke.com/2023/05/ipv4-bao-liu-ip/</link>
+  <link>https://weike.club/2023/05/ipv4-bao-liu-ip/</link>
   <pubDate>Tue, 02 May 2023 23:19:26 &#43;0000</pubDate>
   <author>WAKE</author>
-  <guid>https://weiqinke.com/2023/05/ipv4-bao-liu-ip/</guid>
+  <guid>https://weike.club/2023/05/ipv4-bao-liu-ip/</guid>
   <description><![CDATA[<blockquote>
 <p>在互联网寻址结构中，互联网工程任务组（IETF）和互联网号码分配局（IANA）保留了许多用于特殊目的的网际协议（IP）地址。</p>
 </blockquote>]]></description>

@@ -12,5 +12,5 @@ The page supports Markdown format, and visitors can leave comments. It's perfect
 ---
 
 > Author: <no value>  
-> URL: https://weiqinke.com/en/2023/05/discussions/  
+> URL: https://weike.club/en/2023/05/discussions/  
 

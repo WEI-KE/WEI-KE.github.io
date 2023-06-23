@@ -60,5 +60,5 @@ dpkg-reconfigure initramfs-tools
 ---
 
 > 作者: WAKE  
-> URL: https://weiqinke.com/2023/05/unbuntu-print_req_error/  
+> URL: https://weike.club/2023/05/unbuntu-print_req_error/  
 

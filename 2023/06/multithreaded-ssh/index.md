@@ -330,5 +330,5 @@ if __name__ == "__main__":
 ---
 
 > 作者: WAKE  
-> URL: https://weiqinke.com/2023/06/multithreaded-ssh/  
+> URL: https://weike.club/2023/06/multithreaded-ssh/  
 

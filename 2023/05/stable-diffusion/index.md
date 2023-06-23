@@ -996,5 +996,5 @@ Skip，可以手动控制跳过 Stable Diffusion 的 Clip 阶段，直接使用�
 ---
 
 > 作者: <no value>  
-> URL: https://weiqinke.com/2023/05/stable-diffusion/  
+> URL: https://weike.club/2023/05/stable-diffusion/  
 > 转载 URL: https://mp.weixin.qq.com/s/nhB7Hsjz_aLkSrUT0mqHWw

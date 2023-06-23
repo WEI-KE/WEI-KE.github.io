@@ -12,5 +12,5 @@
 ---
 
 > 作者: <no value>  
-> URL: https://weiqinke.com/2023/05/discussions/  
+> URL: https://weike.club/2023/05/discussions/  
 

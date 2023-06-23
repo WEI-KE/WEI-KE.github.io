@@ -5,5 +5,5 @@
 ---
 
 > 作者: aaaa  
-> URL: https://weiqinke.com/2023/05/fixit/  
+> URL: https://weike.club/2023/05/fixit/  
 

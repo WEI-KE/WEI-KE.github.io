@@ -1,86 +1,86 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>Tags - 标签 - WAKE</title>
-    <link>https://weiqinke.com/tags/</link>
+    <link>https://weike.club/tags/</link>
     <description>Tags - 标签 - WAKE</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 22 Jun 2023 22:55:32 &#43;0800</lastBuildDate><atom:link href="https://weiqinke.com/tags/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 22 Jun 2023 22:55:32 &#43;0800</lastBuildDate><atom:link href="https://weike.club/tags/" rel="self" type="application/rss+xml" /><item>
   <title>Python</title>
-  <link>https://weiqinke.com/tags/python/</link>
+  <link>https://weike.club/tags/python/</link>
   <pubDate>Thu, 22 Jun 2023 22:55:32 &#43;0800</pubDate>
   <author>WAKE</author>
-  <guid>https://weiqinke.com/tags/python/</guid>
+  <guid>https://weike.club/tags/python/</guid>
   <description><![CDATA[]]></description>
 </item>
 <item>
   <title>ssh</title>
-  <link>https://weiqinke.com/tags/ssh/</link>
+  <link>https://weike.club/tags/ssh/</link>
   <pubDate>Thu, 22 Jun 2023 22:55:32 &#43;0800</pubDate>
   <author>WAKE</author>
-  <guid>https://weiqinke.com/tags/ssh/</guid>
+  <guid>https://weike.club/tags/ssh/</guid>
   <description><![CDATA[]]></description>
 </item>
 <item>
   <title>AI</title>
-  <link>https://weiqinke.com/tags/ai/</link>
+  <link>https://weike.club/tags/ai/</link>
   <pubDate>Sun, 28 May 2023 01:48:24 &#43;0800</pubDate>
   <author>WAKE</author>
-  <guid>https://weiqinke.com/tags/ai/</guid>
+  <guid>https://weike.club/tags/ai/</guid>
   <description><![CDATA[]]></description>
 </item>
 <item>
   <title>Stable Diffusion</title>
-  <link>https://weiqinke.com/tags/stable-diffusion/</link>
+  <link>https://weike.club/tags/stable-diffusion/</link>
   <pubDate>Sun, 28 May 2023 01:48:24 &#43;0800</pubDate>
   <author>WAKE</author>
-  <guid>https://weiqinke.com/tags/stable-diffusion/</guid>
+  <guid>https://weike.club/tags/stable-diffusion/</guid>
   <description><![CDATA[]]></description>
 </item>
 <item>
   <title>Ubuntu</title>
-  <link>https://weiqinke.com/tags/ubuntu/</link>
+  <link>https://weike.club/tags/ubuntu/</link>
   <pubDate>Mon, 15 May 2023 21:37:48 &#43;8000</pubDate>
   <author>WAKE</author>
-  <guid>https://weiqinke.com/tags/ubuntu/</guid>
+  <guid>https://weike.club/tags/ubuntu/</guid>
   <description><![CDATA[]]></description>
 </item>
 <item>
   <title>Esxi</title>
-  <link>https://weiqinke.com/tags/esxi/</link>
+  <link>https://weike.club/tags/esxi/</link>
   <pubDate>Wed, 03 May 2023 18:27:28 &#43;0000</pubDate>
   <author>WAKE</author>
-  <guid>https://weiqinke.com/tags/esxi/</guid>
+  <guid>https://weike.club/tags/esxi/</guid>
   <description><![CDATA[]]></description>
 </item>
 <item>
   <title>硬件直通</title>
-  <link>https://weiqinke.com/tags/%E7%A1%AC%E4%BB%B6%E7%9B%B4%E9%80%9A/</link>
+  <link>https://weike.club/tags/%E7%A1%AC%E4%BB%B6%E7%9B%B4%E9%80%9A/</link>
   <pubDate>Wed, 03 May 2023 18:27:28 &#43;0000</pubDate>
   <author>WAKE</author>
-  <guid>https://weiqinke.com/tags/%E7%A1%AC%E4%BB%B6%E7%9B%B4%E9%80%9A/</guid>
+  <guid>https://weike.club/tags/%E7%A1%AC%E4%BB%B6%E7%9B%B4%E9%80%9A/</guid>
   <description><![CDATA[]]></description>
 </item>
 <item>
   <title>zabbix</title>
-  <link>https://weiqinke.com/tags/zabbix/</link>
+  <link>https://weike.club/tags/zabbix/</link>
   <pubDate>Wed, 03 May 2023 16:44:28 &#43;0000</pubDate>
   <author>WAKE</author>
-  <guid>https://weiqinke.com/tags/zabbix/</guid>
+  <guid>https://weike.club/tags/zabbix/</guid>
   <description><![CDATA[]]></description>
 </item>
 <item>
   <title>ospf</title>
-  <link>https://weiqinke.com/tags/ospf/</link>
+  <link>https://weike.club/tags/ospf/</link>
   <pubDate>Wed, 03 May 2023 16:38:52 &#43;0000</pubDate>
   <author>WAKE</author>
-  <guid>https://weiqinke.com/tags/ospf/</guid>
+  <guid>https://weike.club/tags/ospf/</guid>
   <description><![CDATA[]]></description>
 </item>
 <item>
   <title>干货</title>
-  <link>https://weiqinke.com/tags/%E5%B9%B2%E8%B4%A7/</link>
+  <link>https://weike.club/tags/%E5%B9%B2%E8%B4%A7/</link>
   <pubDate>Wed, 03 May 2023 16:38:52 &#43;0000</pubDate>
   <author>WAKE</author>
-  <guid>https://weiqinke.com/tags/%E5%B9%B2%E8%B4%A7/</guid>
+  <guid>https://weike.club/tags/%E5%B9%B2%E8%B4%A7/</guid>
   <description><![CDATA[]]></description>
 </item>
 </channel>

@@ -1,38 +1,38 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>Categories - 分类 - WAKE</title>
-    <link>https://weiqinke.com/categories/</link>
+    <link>https://weike.club/categories/</link>
     <description>Categories - 分类 - WAKE</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 22 Jun 2023 22:55:32 &#43;0800</lastBuildDate><atom:link href="https://weiqinke.com/categories/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 22 Jun 2023 22:55:32 &#43;0800</lastBuildDate><atom:link href="https://weike.club/categories/" rel="self" type="application/rss+xml" /><item>
   <title>Python</title>
-  <link>https://weiqinke.com/categories/python/</link>
+  <link>https://weike.club/categories/python/</link>
   <pubDate>Thu, 22 Jun 2023 22:55:32 &#43;0800</pubDate>
   <author>WAKE</author>
-  <guid>https://weiqinke.com/categories/python/</guid>
+  <guid>https://weike.club/categories/python/</guid>
   <description><![CDATA[]]></description>
 </item>
 <item>
   <title>Esxi</title>
-  <link>https://weiqinke.com/categories/esxi/</link>
+  <link>https://weike.club/categories/esxi/</link>
   <pubDate>Wed, 03 May 2023 18:27:28 &#43;0000</pubDate>
   <author>WAKE</author>
-  <guid>https://weiqinke.com/categories/esxi/</guid>
+  <guid>https://weike.club/categories/esxi/</guid>
   <description><![CDATA[]]></description>
 </item>
 <item>
   <title>ospf</title>
-  <link>https://weiqinke.com/categories/ospf/</link>
+  <link>https://weike.club/categories/ospf/</link>
   <pubDate>Wed, 03 May 2023 16:38:52 &#43;0000</pubDate>
   <author>WAKE</author>
-  <guid>https://weiqinke.com/categories/ospf/</guid>
+  <guid>https://weike.club/categories/ospf/</guid>
   <description><![CDATA[]]></description>
 </item>
 <item>
   <title>ip</title>
-  <link>https://weiqinke.com/categories/ip/</link>
+  <link>https://weike.club/categories/ip/</link>
   <pubDate>Tue, 02 May 2023 23:19:26 &#43;0000</pubDate>
   <author>WAKE</author>
-  <guid>https://weiqinke.com/categories/ip/</guid>
+  <guid>https://weike.club/categories/ip/</guid>
   <description><![CDATA[]]></description>
 </item>
 </channel>

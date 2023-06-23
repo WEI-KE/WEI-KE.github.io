@@ -102,5 +102,5 @@ sudo systemctl enable zabbix-server zabbix-agent nginx php8.1-fpm
 ---
 
 > 作者: WAKE  
-> URL: https://weiqinke.com/2023/05/ubuntu-an-zhuang-zabbix/  
+> URL: https://weike.club/2023/05/ubuntu-an-zhuang-zabbix/  
 

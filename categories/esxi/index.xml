@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>Esxi - 分类 - WAKE</title>
-    <link>https://weiqinke.com/categories/esxi/</link>
+    <link>https://weike.club/categories/esxi/</link>
     <description>Esxi - 分类 - WAKE</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 03 May 2023 18:27:28 &#43;0000</lastBuildDate><atom:link href="https://weiqinke.com/categories/esxi/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 03 May 2023 18:27:28 &#43;0000</lastBuildDate><atom:link href="https://weike.club/categories/esxi/" rel="self" type="application/rss+xml" /><item>
   <title>ESXI相关</title>
-  <link>https://weiqinke.com/2023/05/esxi-an-zhuang/</link>
+  <link>https://weike.club/2023/05/esxi-an-zhuang/</link>
   <pubDate>Wed, 03 May 2023 18:27:28 &#43;0000</pubDate>
   <author>WAKE</author>
-  <guid>https://weiqinke.com/2023/05/esxi-an-zhuang/</guid>
+  <guid>https://weike.club/2023/05/esxi-an-zhuang/</guid>
   <description><![CDATA[<blockquote>
 <p>之前折腾usb硬盘安装esxi遇到的一些问题</p>
 </blockquote>]]></description>

@@ -24,5 +24,5 @@ Reverse the first two numbers👉6154074328@qq.com✉️
 ---
 
 > Author: WAKE  
-> URL: https://weiqinke.com/en/2023/05/about/  
+> URL: https://weike.club/en/2023/05/about/  
 

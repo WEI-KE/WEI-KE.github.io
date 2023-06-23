@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>Ubuntu - 标签 - WAKE</title>
-    <link>https://weiqinke.com/tags/ubuntu/</link>
+    <link>https://weike.club/tags/ubuntu/</link>
     <description>Ubuntu - 标签 - WAKE</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 15 May 2023 21:37:48 &#43;8000</lastBuildDate><atom:link href="https://weiqinke.com/tags/ubuntu/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 15 May 2023 21:37:48 &#43;8000</lastBuildDate><atom:link href="https://weike.club/tags/ubuntu/" rel="self" type="application/rss+xml" /><item>
   <title>print_req_error: I/0 error, dev fd0, sector 0</title>
-  <link>https://weiqinke.com/2023/05/unbuntu-print_req_error/</link>
+  <link>https://weike.club/2023/05/unbuntu-print_req_error/</link>
   <pubDate>Mon, 15 May 2023 21:37:48 &#43;8000</pubDate>
   <author>WAKE</author>
-  <guid>https://weiqinke.com/2023/05/unbuntu-print_req_error/</guid>
+  <guid>https://weike.club/2023/05/unbuntu-print_req_error/</guid>
   <description><![CDATA[<blockquote>
 <p>一次偶然发现Ubuntu在输出报错信息
 <code> print_req_error: I/0 error, dev fd0, sector 0</code>
@@ -17,20 +17,20 @@
 </item>
 <item>
   <title>Ubuntu安装zabbix</title>
-  <link>https://weiqinke.com/2023/05/ubuntu-an-zhuang-zabbix/</link>
+  <link>https://weike.club/2023/05/ubuntu-an-zhuang-zabbix/</link>
   <pubDate>Wed, 03 May 2023 16:44:28 &#43;0000</pubDate>
   <author>WAKE</author>
-  <guid>https://weiqinke.com/2023/05/ubuntu-an-zhuang-zabbix/</guid>
+  <guid>https://weike.club/2023/05/ubuntu-an-zhuang-zabbix/</guid>
   <description><![CDATA[<div class="featured-image">
         <img src="https://assets.zabbix.com/img/banners/6.0/zabbix_6_0_background_5_1920x600.jpg" referrerpolicy="no-referrer">
       </div><h4 id="1安装64版本zabbix以-ubuntu-2204mysqlnginx为例">1、安装6.4版本zabbix，以 Ubuntu 22.04、MySql、Nginx为例</h4>]]></description>
 </item>
 <item>
   <title>Ubuntu安装wordpress</title>
-  <link>https://weiqinke.com/2023/05/ubuntu-an-zhuang-wordpress/</link>
+  <link>https://weike.club/2023/05/ubuntu-an-zhuang-wordpress/</link>
   <pubDate>Tue, 02 May 2023 23:38:52 &#43;0000</pubDate>
   <author>WAKE</author>
-  <guid>https://weiqinke.com/2023/05/ubuntu-an-zhuang-wordpress/</guid>
+  <guid>https://weike.club/2023/05/ubuntu-an-zhuang-wordpress/</guid>
   <description><![CDATA[<div class="featured-image">
         <img src="https://images.unsplash.com/photo-1560472355-109703aa3edc?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb&amp;dl=stephen-phillips-hostreviews-co-uk-zs98a0DtKL4-unsplash.jpg" referrerpolicy="no-referrer">
       </div><p>Ubuntu安装wordpress</p>]]></description>

@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>所有文章 - WAKE</title>
-    <link>https://weiqinke.com/posts/</link>
+    <link>https://weike.club/posts/</link>
     <description>所有文章 | WAKE</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 22 Jun 2023 22:55:32 &#43;0800</lastBuildDate><atom:link href="https://weiqinke.com/posts/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 22 Jun 2023 22:55:32 &#43;0800</lastBuildDate><atom:link href="https://weike.club/posts/" rel="self" type="application/rss+xml" /><item>
   <title>Multithreaded SSH V0.1.1使用说明</title>
-  <link>https://weiqinke.com/2023/06/multithreaded-ssh/</link>
+  <link>https://weike.club/2023/06/multithreaded-ssh/</link>
   <pubDate>Thu, 22 Jun 2023 22:55:32 &#43;0800</pubDate>
   <author>WAKE</author>
-  <guid>https://weiqinke.com/2023/06/multithreaded-ssh/</guid>
+  <guid>https://weike.club/2023/06/multithreaded-ssh/</guid>
   <description><![CDATA[<h2 id="前言">前言</h2>
 <p>最近换了一批华为交换机，为了过等保改用SSH远程交换机，之前写的Telnet脚本用不了了，
 于是最近花了点时间用Python重新写了一个多线程SSH程序 Multithreaded-SSH。</p>
@@ -16,30 +16,30 @@
 </item>
 <item>
   <title>Stable Diffusion 保姆级入门手册</title>
-  <link>https://weiqinke.com/2023/05/stable-diffusion/</link>
+  <link>https://weike.club/2023/05/stable-diffusion/</link>
   <pubDate>Sun, 28 May 2023 01:48:24 &#43;0800</pubDate>
   <author>WAKE</author>
-  <guid>https://weiqinke.com/2023/05/stable-diffusion/</guid>
+  <guid>https://weike.club/2023/05/stable-diffusion/</guid>
   <description><![CDATA[<p>最近，AI图像生成引人注目，它能够根据文字描述生成精美图像，这极大地改变了人们的图像创作方式。Stable
 Diffusion作为一款高性能模型，它生成的图像质量更高、运行速度更快、消耗的资源以及内存占用更小，是AI图像生成领域的里程碑。本篇文章作者将手把手教大家入门
 Stable Diffusion。</p>]]></description>
 </item>
 <item>
   <title>聊天专用贴</title>
-  <link>https://weiqinke.com/2023/05/discussions/</link>
+  <link>https://weike.club/2023/05/discussions/</link>
   <pubDate>Tue, 23 May 2023 22:47:44 &#43;0800</pubDate>
   <author>WAKE</author>
-  <guid>https://weiqinke.com/2023/05/discussions/</guid>
+  <guid>https://weike.club/2023/05/discussions/</guid>
   <description><![CDATA[<p>今天新加了<a href="https://github.com/giscus/giscus"target="_blank" rel="external nofollow noopener noreferrer">giscus</a>评论系统</p>
 <p>想到可以用这个搞个<del>说说</del>唠唠页面，</p>
 <p>支持MD格式 访客还可以评论，完美~</p>]]></description>
 </item>
 <item>
   <title>print_req_error: I/0 error, dev fd0, sector 0</title>
-  <link>https://weiqinke.com/2023/05/unbuntu-print_req_error/</link>
+  <link>https://weike.club/2023/05/unbuntu-print_req_error/</link>
   <pubDate>Mon, 15 May 2023 21:37:48 &#43;8000</pubDate>
   <author>WAKE</author>
-  <guid>https://weiqinke.com/2023/05/unbuntu-print_req_error/</guid>
+  <guid>https://weike.club/2023/05/unbuntu-print_req_error/</guid>
   <description><![CDATA[<blockquote>
 <p>一次偶然发现Ubuntu在输出报错信息
 <code> print_req_error: I/0 error, dev fd0, sector 0</code>
@@ -48,60 +48,60 @@ Stable Diffusion。</p>]]></description>
 </item>
 <item>
   <title>ESXI相关</title>
-  <link>https://weiqinke.com/2023/05/esxi-an-zhuang/</link>
+  <link>https://weike.club/2023/05/esxi-an-zhuang/</link>
   <pubDate>Wed, 03 May 2023 18:27:28 &#43;0000</pubDate>
   <author>WAKE</author>
-  <guid>https://weiqinke.com/2023/05/esxi-an-zhuang/</guid>
+  <guid>https://weike.club/2023/05/esxi-an-zhuang/</guid>
   <description><![CDATA[<blockquote>
 <p>之前折腾usb硬盘安装esxi遇到的一些问题</p>
 </blockquote>]]></description>
 </item>
 <item>
   <title>Ubuntu安装zabbix</title>
-  <link>https://weiqinke.com/2023/05/ubuntu-an-zhuang-zabbix/</link>
+  <link>https://weike.club/2023/05/ubuntu-an-zhuang-zabbix/</link>
   <pubDate>Wed, 03 May 2023 16:44:28 &#43;0000</pubDate>
   <author>WAKE</author>
-  <guid>https://weiqinke.com/2023/05/ubuntu-an-zhuang-zabbix/</guid>
+  <guid>https://weike.club/2023/05/ubuntu-an-zhuang-zabbix/</guid>
   <description><![CDATA[<div class="featured-image">
         <img src="https://assets.zabbix.com/img/banners/6.0/zabbix_6_0_background_5_1920x600.jpg" referrerpolicy="no-referrer">
       </div><h4 id="1安装64版本zabbix以-ubuntu-2204mysqlnginx为例">1、安装6.4版本zabbix，以 Ubuntu 22.04、MySql、Nginx为例</h4>]]></description>
 </item>
 <item>
   <title>ospf基础</title>
-  <link>https://weiqinke.com/2023/05/ospf-ji-chu/</link>
+  <link>https://weike.club/2023/05/ospf-ji-chu/</link>
   <pubDate>Wed, 03 May 2023 16:38:52 &#43;0000</pubDate>
   <author>WAKE</author>
-  <guid>https://weiqinke.com/2023/05/ospf-ji-chu/</guid>
+  <guid>https://weike.club/2023/05/ospf-ji-chu/</guid>
   <description><![CDATA[<div class="featured-image">
         <img src="https://download.huawei.com/mdl/image/download?uuid=a1b351c20c5748b9b00f0b1d8277e33e" referrerpolicy="no-referrer">
       </div><h4 id="一篇很早的ospf学习笔记">一篇很早的ospf学习笔记</h4>]]></description>
 </item>
 <item>
   <title>Ubuntu安装wordpress</title>
-  <link>https://weiqinke.com/2023/05/ubuntu-an-zhuang-wordpress/</link>
+  <link>https://weike.club/2023/05/ubuntu-an-zhuang-wordpress/</link>
   <pubDate>Tue, 02 May 2023 23:38:52 &#43;0000</pubDate>
   <author>WAKE</author>
-  <guid>https://weiqinke.com/2023/05/ubuntu-an-zhuang-wordpress/</guid>
+  <guid>https://weike.club/2023/05/ubuntu-an-zhuang-wordpress/</guid>
   <description><![CDATA[<div class="featured-image">
         <img src="https://images.unsplash.com/photo-1560472355-109703aa3edc?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb&amp;dl=stephen-phillips-hostreviews-co-uk-zs98a0DtKL4-unsplash.jpg" referrerpolicy="no-referrer">
       </div><p>Ubuntu安装wordpress</p>]]></description>
 </item>
 <item>
   <title>IP地址中的保留IP</title>
-  <link>https://weiqinke.com/2023/05/ipv4-bao-liu-ip/</link>
+  <link>https://weike.club/2023/05/ipv4-bao-liu-ip/</link>
   <pubDate>Tue, 02 May 2023 23:19:26 &#43;0000</pubDate>
   <author>WAKE</author>
-  <guid>https://weiqinke.com/2023/05/ipv4-bao-liu-ip/</guid>
+  <guid>https://weike.club/2023/05/ipv4-bao-liu-ip/</guid>
   <description><![CDATA[<blockquote>
 <p>在互联网寻址结构中，互联网工程任务组（IETF）和互联网号码分配局（IANA）保留了许多用于特殊目的的网际协议（IP）地址。</p>
 </blockquote>]]></description>
 </item>
 <item>
   <title>Hugo主题FixIt配置</title>
-  <link>https://weiqinke.com/2023/05/fixit/</link>
+  <link>https://weike.club/2023/05/fixit/</link>
   <pubDate>Tue, 02 May 2023 20:14:22 &#43;0000</pubDate>
   <author>WAKE</author>
-  <guid>https://weiqinke.com/2023/05/fixit/</guid>
+  <guid>https://weike.club/2023/05/fixit/</guid>
   <description><![CDATA[1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70]]></description>
 </item>
 </channel>

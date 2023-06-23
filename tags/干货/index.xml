@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>干货 - 标签 - WAKE</title>
-    <link>https://weiqinke.com/tags/%E5%B9%B2%E8%B4%A7/</link>
+    <link>https://weike.club/tags/%E5%B9%B2%E8%B4%A7/</link>
     <description>干货 - 标签 - WAKE</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 03 May 2023 16:38:52 &#43;0000</lastBuildDate><atom:link href="https://weiqinke.com/tags/%E5%B9%B2%E8%B4%A7/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 03 May 2023 16:38:52 &#43;0000</lastBuildDate><atom:link href="https://weike.club/tags/%E5%B9%B2%E8%B4%A7/" rel="self" type="application/rss+xml" /><item>
   <title>ospf基础</title>
-  <link>https://weiqinke.com/2023/05/ospf-ji-chu/</link>
+  <link>https://weike.club/2023/05/ospf-ji-chu/</link>
   <pubDate>Wed, 03 May 2023 16:38:52 &#43;0000</pubDate>
   <author>WAKE</author>
-  <guid>https://weiqinke.com/2023/05/ospf-ji-chu/</guid>
+  <guid>https://weike.club/2023/05/ospf-ji-chu/</guid>
   <description><![CDATA[<div class="featured-image">
         <img src="https://download.huawei.com/mdl/image/download?uuid=a1b351c20c5748b9b00f0b1d8277e33e" referrerpolicy="no-referrer">
       </div><h4 id="一篇很早的ospf学习笔记">一篇很早的ospf学习笔记</h4>]]></description>

@@ -36,5 +36,5 @@
 ---
 
 > 作者: WAKE  
-> URL: https://weiqinke.com/2023/05/di-yi-pian-bo-ke/  
+> URL: https://weike.club/2023/05/di-yi-pian-bo-ke/  
 

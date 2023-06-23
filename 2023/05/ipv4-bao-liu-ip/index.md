@@ -92,5 +92,5 @@
 ---
 
 > 作者: WAKE  
-> URL: https://weiqinke.com/2023/05/ipv4-bao-liu-ip/  
+> URL: https://weike.club/2023/05/ipv4-bao-liu-ip/  
 
