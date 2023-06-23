@@ -17,7 +17,7 @@
 于是最近花了点时间用Python重新写了一个多线程SSH程序 Multithreaded-SSH。
 此版本还是不太灵活，但是可以执行一些基本的命令。例如可以执行dis cur配合sshlog文件做到备份设备配置，或者批量修改密码。"><meta itemprop="datePublished" content="2023-06-22T22:55:32+08:00" />
 <meta itemprop="dateModified" content="2023-06-22T22:55:32+08:00" />
-<meta itemprop="wordCount" content="1016"><meta itemprop="image" content="https://weiqinke.com/logo.png"/>
+<meta itemprop="wordCount" content="3733"><meta itemprop="image" content="https://weiqinke.com/logo.png"/>
 <meta itemprop="keywords" content="ssh,Python," /><meta property="og:title" content="Multithreaded SSH V0.1.1使用说明" />
 <meta property="og:description" content="前言
 最近换了一批华为交换机，为了过等保改用SSH远程交换机，之前写的Telnet脚本用不了了，
@@ -47,7 +47,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/weiqinke.com\/2023\/06\/multithreaded-ssh\/"
-    },"genre": "posts","keywords": "ssh, Python","wordcount":  1016 ,
+    },"genre": "posts","keywords": "ssh, Python","wordcount":  3733 ,
     "url": "https:\/\/weiqinke.com\/2023\/06\/multithreaded-ssh\/","datePublished": "2023-06-22T22:55:32+08:00","dateModified": "2023-06-22T22:55:32+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -196,7 +196,7 @@
       <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
       WAKE</span></span>
           <span class="post-category">收录于 <a href="/categories/python/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Python</a></span></div>
-      <div class="post-meta-line"><span title="发布于 2023-06-22 22:55:32"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2023-06-22">2023-06-22</time></span>&nbsp;<span title="更新于 2023-06-22 22:55:32"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2023-06-22">2023-06-22</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1016 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
+      <div class="post-meta-line"><span title="发布于 2023-06-22 22:55:32"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2023-06-22">2023-06-22</time></span>&nbsp;<span title="更新于 2023-06-22 22:55:32"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2023-06-22">2023-06-22</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 3733 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 8 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span>
@@ -215,7 +215,537 @@
 <p>最近换了一批华为交换机，为了过等保改用SSH远程交换机，之前写的Telnet脚本用不了了，
 于是最近花了点时间用Python重新写了一个多线程SSH程序 Multithreaded-SSH。</p>
 <p>此版本还是不太灵活，但是可以执行一些基本的命令。例如可以执行dis cur配合sshlog文件做到备份设备配置，或者批量修改密码。</p>
-<p>源文件已上传<a href="https://github.com/WEI-KE/Multithreaded-SSH"target="_blank" rel="external nofollow noopener noreferrer">Github</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span><span class="lnt">172
+</span><span class="lnt">173
+</span><span class="lnt">174
+</span><span class="lnt">175
+</span><span class="lnt">176
+</span><span class="lnt">177
+</span><span class="lnt">178
+</span><span class="lnt">179
+</span><span class="lnt">180
+</span><span class="lnt">181
+</span><span class="lnt">182
+</span><span class="lnt">183
+</span><span class="lnt">184
+</span><span class="lnt">185
+</span><span class="lnt">186
+</span><span class="lnt">187
+</span><span class="lnt">188
+</span><span class="lnt">189
+</span><span class="lnt">190
+</span><span class="lnt">191
+</span><span class="lnt">192
+</span><span class="lnt">193
+</span><span class="lnt">194
+</span><span class="lnt">195
+</span><span class="lnt">196
+</span><span class="lnt">197
+</span><span class="lnt">198
+</span><span class="lnt">199
+</span><span class="lnt">200
+</span><span class="lnt">201
+</span><span class="lnt">202
+</span><span class="lnt">203
+</span><span class="lnt">204
+</span><span class="lnt">205
+</span><span class="lnt">206
+</span><span class="lnt">207
+</span><span class="lnt">208
+</span><span class="lnt">209
+</span><span class="lnt">210
+</span><span class="lnt">211
+</span><span class="lnt">212
+</span><span class="lnt">213
+</span><span class="lnt">214
+</span><span class="lnt">215
+</span><span class="lnt">216
+</span><span class="lnt">217
+</span><span class="lnt">218
+</span><span class="lnt">219
+</span><span class="lnt">220
+</span><span class="lnt">221
+</span><span class="lnt">222
+</span><span class="lnt">223
+</span><span class="lnt">224
+</span><span class="lnt">225
+</span><span class="lnt">226
+</span><span class="lnt">227
+</span><span class="lnt">228
+</span><span class="lnt">229
+</span><span class="lnt">230
+</span><span class="lnt">231
+</span><span class="lnt">232
+</span><span class="lnt">233
+</span><span class="lnt">234
+</span><span class="lnt">235
+</span><span class="lnt">236
+</span><span class="lnt">237
+</span><span class="lnt">238
+</span><span class="lnt">239
+</span><span class="lnt">240
+</span><span class="lnt">241
+</span><span class="lnt">242
+</span><span class="lnt">243
+</span><span class="lnt">244
+</span><span class="lnt">245
+</span><span class="lnt">246
+</span><span class="lnt">247
+</span><span class="lnt">248
+</span><span class="lnt">249
+</span><span class="lnt">250
+</span><span class="lnt">251
+</span><span class="lnt">252
+</span><span class="lnt">253
+</span><span class="lnt">254
+</span><span class="lnt">255
+</span><span class="lnt">256
+</span><span class="lnt">257
+</span><span class="lnt">258
+</span><span class="lnt">259
+</span><span class="lnt">260
+</span><span class="lnt">261
+</span><span class="lnt">262
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="ch">#!/usr/bin/python3</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># -*- coding: UTF-8 -*-</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">paramiko</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">getpass</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">time</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">datetime</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">threading</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">logging</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">success_count</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="n">error_count</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="n">command_error</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">CommandTimeoutError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">pass</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">ssh</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">22</span><span class="p">,</span> <span class="n">username</span><span class="o">=</span><span class="s1">&#39;admin&#39;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">&#39;admin@123&#39;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">commands</span><span class="o">=</span><span class="s1">&#39;dis ver&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">command_time_out</span><span class="o">=</span><span class="mi">60</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 配置logging记录paramiko详细日志</span>
+</span></span><span class="line"><span class="cl">    <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;log/paramiko-</span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span><span class="si">}</span><span class="s1">.log&#39;</span><span class="p">,</span> <span class="n">filemode</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                        <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%(asctime)s</span><span class="s1"> - </span><span class="si">%(levelname)s</span><span class="s1"> - </span><span class="si">%(message)s</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">log_change</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">global</span> <span class="n">success_count</span><span class="p">,</span> <span class="n">error_count</span><span class="p">,</span> <span class="n">command_error</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 创建日志目录和文件</span>
+</span></span><span class="line"><span class="cl">    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s1">&#39;sshlog&#39;</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">log_file</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;log/</span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span><span class="si">}</span><span class="s1">.txt&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">sshlog_file</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;sshlog/</span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span><span class="si">}</span><span class="s1">-</span><span class="si">{</span><span class="n">host</span><span class="si">}</span><span class="s1">.txt&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 设置密钥验证目录和文件</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># os.makedirs(&#39;sshkey&#39;, exist_ok=True)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># known_hosts_file = &#39;./sshkey/known_hosts&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># with open(known_hosts_file, &#39;w&#39;) as f:</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#     pass</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 创建SSH客户端</span>
+</span></span><span class="line"><span class="cl">    <span class="n">client</span> <span class="o">=</span> <span class="n">paramiko</span><span class="o">.</span><span class="n">SSHClient</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 是否验证本地密钥</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># client.set_missing_host_key_policy(paramiko.WarningPolicy())</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># client.load_host_keys(os.path.expanduser(known_hosts_file))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 自动添加主机密钥</span>
+</span></span><span class="line"><span class="cl">    <span class="n">client</span><span class="o">.</span><span class="n">set_missing_host_key_policy</span><span class="p">(</span><span class="n">paramiko</span><span class="o">.</span><span class="n">AutoAddPolicy</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">connected</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">    <span class="n">break_tag</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">password</span> <span class="ow">in</span> <span class="n">password</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># 连接SSH</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&#34;%H:%M:%S.</span><span class="si">%f</span><span class="s2">&#34;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span><span class="si">}</span><span class="s1"> 尝试连接</span><span class="si">{</span><span class="n">host</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">log_change</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&#34;%H:%M:%S.</span><span class="si">%f</span><span class="s2">&#34;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span><span class="si">}</span><span class="s1"> 尝试连接</span><span class="si">{</span><span class="n">host</span><span class="si">}</span><span class="s1"> &#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># with open(log_file, &#39;a&#39;) as f_log:</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">#     f_log.write(f&#39;{datetime.datetime.now().strftime(&#34;%H:%M:%S.%f&#34;)[:-3]} 尝试连接{host} &#39;)</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># logging.info(f&#39;{datetime.datetime.now().strftime(&#34;%H:%M:%S.%f&#34;)[:-3]} 尝试连接{host} &#39;)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">hostname</span><span class="o">=</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="n">port</span><span class="p">,</span> <span class="n">username</span><span class="o">=</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="n">password</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">connected</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">host</span><span class="si">}</span><span class="s1">连接成功&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">log_change</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;连接成功 &#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># logging.info(&#39;连接成功&#39;)</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># with open(log_file, &#39;a&#39;) as f_log:</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">#     f_log.write(f&#39;连接成功 &#39;)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="c1"># 创建交互式shell</span>
+</span></span><span class="line"><span class="cl">            <span class="n">shell</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">invoke_shell</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">hostname</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">            <span class="n">output</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="n">shell</span><span class="o">.</span><span class="n">recv_ready</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">output</span> <span class="o">+=</span> <span class="n">shell</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="c1"># print(f&#39;{output}&#39;)</span>
+</span></span><span class="line"><span class="cl">                    <span class="c1"># print(output)</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">if</span> <span class="s1">&#39;&lt;&#39;</span> <span class="ow">in</span> <span class="n">output</span> <span class="ow">and</span> <span class="s1">&#39;&gt;&#39;</span> <span class="ow">in</span> <span class="n">output</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">hostname</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">                        <span class="nb">print</span><span class="p">(</span><span class="n">hostname</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">log_change</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">hostname</span><span class="si">}</span><span class="s1"> &#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                        <span class="k">break</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">if</span> <span class="n">hostname</span> <span class="o">&gt;</span> <span class="mi">6</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                        <span class="k">break</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">hostname</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                    <span class="c1"># with open(sshlog_file, &#39;a&#39;) as f_sshlog:</span>
+</span></span><span class="line"><span class="cl">                    <span class="c1">#     f_sshlog.write(f&#39;{hostname[1:-1]} &#39;)</span>
+</span></span><span class="line"><span class="cl">                    <span class="c1"># logging.info(f&#39;{hostname[1:-1]}&#39;)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">hostname</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;获取设备名称错误跳过</span><span class="si">{</span><span class="n">host</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">log_change</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;获取设备名称错误跳过</span><span class="si">{</span><span class="n">host</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="c1"># with open(log_file, &#39;a&#39;) as f_log:</span>
+</span></span><span class="line"><span class="cl">                <span class="c1">#     f_log.write(f&#39;获取设备名称错误跳过{host}\n&#39;)</span>
+</span></span><span class="line"><span class="cl">                <span class="c1"># logging.error(f&#39;获取设备名称错误跳过{host}&#39;)</span>
+</span></span><span class="line"><span class="cl">                <span class="k">break</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="n">shell</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;screen-length 0 temporary</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>  <span class="c1"># 设置输出长度为0，临时模式</span>
+</span></span><span class="line"><span class="cl">            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># 等待命令执行完成</span>
+</span></span><span class="line"><span class="cl">            <span class="n">output</span> <span class="o">+=</span> <span class="n">shell</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># print(output)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">sshlog_file</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_sshlog</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">f_sshlog</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="c1"># 清空output</span>
+</span></span><span class="line"><span class="cl">            <span class="n">output</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="c1"># 执行远程命令</span>
+</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="n">command</span> <span class="ow">in</span> <span class="n">commands</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">break_count</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">                <span class="n">command</span> <span class="o">=</span> <span class="n">command</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\n&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">shell</span><span class="o">.</span><span class="n">send</span><span class="p">((</span><span class="n">command</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">                <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>  <span class="c1"># 等待命令执行完成</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">if</span> <span class="n">shell</span><span class="o">.</span><span class="n">recv_ready</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">output</span> <span class="o">+=</span> <span class="n">shell</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                        <span class="c1"># print(f&#39;{output}&#39;)</span>
+</span></span><span class="line"><span class="cl">                        <span class="k">if</span> <span class="s1">&#39;&lt;&#39;</span> <span class="o">+</span> <span class="n">hostname</span> <span class="ow">in</span> <span class="n">output</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                            <span class="k">break</span>
+</span></span><span class="line"><span class="cl">                        <span class="k">elif</span> <span class="s1">&#39;[&#39;</span> <span class="o">+</span> <span class="n">hostname</span> <span class="ow">in</span> <span class="n">output</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                            <span class="k">break</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">if</span> <span class="n">break_count</span> <span class="o">&gt;=</span> <span class="n">command_time_out</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">sshlog_file</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_sshlog</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                            <span class="n">f_sshlog</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">output</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">command_error</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">                        <span class="k">raise</span> <span class="n">CommandTimeoutError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">command</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">break_count</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">sshlog_file</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_sshlog</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">f_sshlog</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">output</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="c1"># 写入日志文件</span>
+</span></span><span class="line"><span class="cl">                <span class="c1"># with open(log_file, &#39;a&#39;) as f:</span>
+</span></span><span class="line"><span class="cl">                <span class="c1">#     time.sleep(1.5)</span>
+</span></span><span class="line"><span class="cl">                <span class="c1">#     # f.write(f&#39;Command: {command}\n&#39;)</span>
+</span></span><span class="line"><span class="cl">                <span class="c1">#     f.write(output)</span>
+</span></span><span class="line"><span class="cl">                <span class="c1">#     # f.write(&#39;\n\n&#39;)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                <span class="c1"># 清空output</span>
+</span></span><span class="line"><span class="cl">                <span class="n">output</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;执行完成&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">log_change</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;执行完成 &#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># with open(log_file, &#39;a&#39;) as f_log:</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">#     f_log.write(f&#39;执行完成\n&#39;)</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># logging.info(&#39;执行完成&#39;)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">success_count</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">except</span> <span class="n">paramiko</span><span class="o">.</span><span class="n">AuthenticationException</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;身份验证失败：</span><span class="si">{</span><span class="n">host</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">log_change</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;身份验证失败：</span><span class="si">{</span><span class="n">host</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># with open(log_file, &#39;a&#39;) as f_log:</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">#     f_log.write(f&#39;身份验证失败：{host} &#39;)</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># logging.error(f&#39;身份验证失败：{host}&#39;)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">except</span> <span class="n">paramiko</span><span class="o">.</span><span class="n">SSHException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;SSH连接错误：</span><span class="si">{</span><span class="n">host</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">log_change</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;SSH连接错误：</span><span class="si">{</span><span class="n">host</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">break_tag</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># with open(log_file, &#39;a&#39;) as f_log:</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">#     f_log.write(f&#39;SSH连接错误：{host}, {str(e)} &#39;)</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># logging.error(f&#39;SSH连接错误：{host}, {str(e)}&#39;)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">except</span> <span class="n">paramiko</span><span class="o">.</span><span class="n">ssh_exception</span><span class="o">.</span><span class="n">NoValidConnectionsError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;无法连接到主机：</span><span class="si">{</span><span class="n">host</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">log_change</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;无法连接到主机：</span><span class="si">{</span><span class="n">host</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">break_tag</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># with open(log_file, &#39;a&#39;) as f_log:</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">#     f_log.write(f&#39;无法连接到主机：{host}, {str(e)} &#39;)</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># logging.error(f&#39;无法连接到主机：{host}, {str(e)}&#39;)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">except</span> <span class="ne">TimeoutError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;连接超时：</span><span class="si">{</span><span class="n">host</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">log_change</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;连接超时：</span><span class="si">{</span><span class="n">host</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">break_tag</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">except</span> <span class="n">CommandTimeoutError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">log_change</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;命令执行超时，跳过主机：</span><span class="si">{</span><span class="n">host</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;未知错误：</span><span class="si">{</span><span class="n">host</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">log_change</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;遇到未知错误：</span><span class="si">{</span><span class="n">host</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">finally</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># 关闭SSH连接</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="ow">not</span> <span class="n">connected</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">log_file</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_log</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">for</span> <span class="n">log</span> <span class="ow">in</span> <span class="n">log_change</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">f_log</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">log</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">log_change</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="n">break_tag</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">break</span>
+</span></span><span class="line"><span class="cl">                <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">elif</span> <span class="n">connected</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">client</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;关闭连接：</span><span class="si">{</span><span class="n">host</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">log_change</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;关闭连接：</span><span class="si">{</span><span class="n">host</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">log_file</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_log</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">for</span> <span class="n">log</span> <span class="ow">in</span> <span class="n">log_change</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">f_log</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">log</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">log_change</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">                <span class="k">break</span>
+</span></span><span class="line"><span class="cl">                <span class="c1"># with open(log_file, &#39;a&#39;) as f_log:</span>
+</span></span><span class="line"><span class="cl">                <span class="c1">#     f_log.write(f&#39;关闭连接&#39;)</span>
+</span></span><span class="line"><span class="cl">                <span class="c1"># logging.info(&#39;关闭连接&#39;)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="ow">not</span> <span class="n">connected</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">error_count</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 创建日志目录和文件</span>
+</span></span><span class="line"><span class="cl">    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s1">&#39;sshlog&#39;</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">log_file</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;log/</span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span><span class="si">}</span><span class="s1">.txt&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;程序启动时间：</span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&#34;%H:%M:%S.</span><span class="si">%f</span><span class="s2">&#34;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">log_file</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_log</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">f_log</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;程序启动时间：</span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&#34;%H:%M:%S.</span><span class="si">%f</span><span class="s2">&#34;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">username</span> <span class="o">=</span> <span class="s1">&#39;admin&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#  = getpass.getuser(&#39;请输入用户名&#39;)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">password</span> <span class="o">=</span> <span class="n">getpass</span><span class="o">.</span><span class="n">getpass</span><span class="p">(</span><span class="n">prompt</span><span class="o">=</span><span class="s1">&#39;请输入设备密码用&#34;空格&#34;分隔（最多不超过3个）:&#39;</span><span class="p">,</span> <span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># password = &#39;admin@123&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># password = input(&#39;请输入设备密码用&#34;空格&#34;分隔（最多不超过3个）:&#39;).split(&#39; &#39;)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># commands = [</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#     &#39;dis version&#39;,</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#     &#39;dis int br&#39;,</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#     &#39;dis cur&#39;,</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># ]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 读取主机地址列表</span>
+</span></span><span class="line"><span class="cl">    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;host.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">hosts</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 读取命令</span>
+</span></span><span class="line"><span class="cl">    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;commands.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">commands</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">threads</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">host</span> <span class="ow">in</span> <span class="n">hosts</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">thread</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">ssh</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">host</span><span class="p">,),</span>
+</span></span><span class="line"><span class="cl">                                  <span class="n">kwargs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;username&#39;</span><span class="p">:</span> <span class="n">username</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">:</span> <span class="n">password</span><span class="p">,</span> <span class="s1">&#39;commands&#39;</span><span class="p">:</span> <span class="n">commands</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl">        <span class="n">threads</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">thread</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># time.sleep(0.2)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">thread</span> <span class="ow">in</span> <span class="n">threads</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">thread</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;运行结束,共</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">hosts</span><span class="p">))</span><span class="si">}</span><span class="s1">台主机，成功</span><span class="si">{</span><span class="n">success_count</span><span class="si">}</span><span class="s1">台，错误</span><span class="si">{</span><span class="n">error_count</span><span class="si">}</span><span class="s1">，命令执行错误</span><span class="si">{</span><span class="n">command_error</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">log_file</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_log</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">f_log</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;运行结束,共</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">hosts</span><span class="p">))</span><span class="si">}</span><span class="s1">台主机，成功</span><span class="si">{</span><span class="n">success_count</span><span class="si">}</span><span class="s1">，错误</span><span class="si">{</span><span class="n">error_count</span><span class="si">}</span><span class="s1">，命令执行错误</span><span class="si">{</span><span class="n">command_error</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;完成！按回车退出...&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">main</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>已开源在👉<a href="https://github.com/WEI-KE/Multithreaded-SSH"target="_blank" rel="external nofollow noopener noreferrer">Github</a></p>
 <p>也打包了一个<a href="https://github.com/WEI-KE/Multithreaded-SSH/releases"target="_blank" rel="external nofollow noopener noreferrer">exe</a>可执行文件。有需要的自己下载。</p>
 <h2 id="使用说明">使用说明</h2>
 <ol>
@@ -266,10 +796,11 @@
   </div></li>
 </ul>
 <h2 id="更新计划">更新计划</h2>
-<p>不忙的话预计在1到2周内更新：</p>
+<p>预计在2到3周内更新：</p>
 <ul>
-<li>增加命令自定义终止符以适配更多场景和设备</li>
-<li>代码更加模块化 方便其他程序调用</li>
+<li>增加独立定义单条命令终止符以适配更多场景和设备</li>
+<li>增加独立定义单台主机命令</li>
+<li>代码更加模块化 使其更易于被其他程序调用和集成</li>
 <li>优化代码逻辑</li>
 </ul>
 <p>不会更新的内容：</p>
@@ -281,8 +812,8 @@
 </li>
 </ul>
 <h2 id="结语">结语</h2>
-<p>本人其实还是一个在编程新手村晃荡的人，欢迎在下方评论区交流，或者直接在Github上提交问题（issues）。</p>
-<p>如果觉得本程序还不错，可以在下方点个👍也可以去Github点个⭐，多谢。</p></div><div class="post-footer" id="post-footer">
+<p>本人是一个在编程新手村晃荡的人 代码写的很烂，欢迎在下方评论区交流，或者直接在Github上提交问题（issues）。</p>
+<p>如果觉得本程序还不错，可以在下方点个👍也可以去Github点个⭐，感谢支持。</p></div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
