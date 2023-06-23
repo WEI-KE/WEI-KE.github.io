@@ -1,12 +1,15 @@
-# Multithreaded SSH V0.1.1使用说明
+# Multithreaded SSH V0.1.1
 
 
-## 前言
+## Introduction
 
-最近换了一批华为交换机，为了过等保改用SSH远程交换机，之前写的Telnet脚本用不了了，
-于是最近花了点时间用Python重新写了一个多线程SSH程序 Multithreaded-SSH。
+Recently, I replaced a batch of Huawei switches and switched to using SSH for remote access, which rendered my previous
+Telnet script unusable. Therefore, I spent some time rewriting a multi-threaded SSH program called Multithreaded-SSH
+using Python.
 
-此版本还是不太灵活，但是可以执行一些基本的命令。例如可以执行dis cur配合sshlog文件做到备份设备配置，或者批量修改密码。
+This version is still not very flexible, but it can execute some basic commands. For example, it can execute "dis cur"
+command combined with the "sshlog" file to backup device configurations, or perform batch password modifications.
+
 <!--more-->
 
 ```python
@@ -276,65 +279,84 @@ if __name__ == "__main__":
 
 ```
 
-> 代码太长默认被折叠点击👆展开
+The code is too long and is collapsed by default. 👆Click above to expand.
 
-代码已开源在👉[Github](https://github.com/WEI-KE/Multithreaded-SSH)
+The code is open source on [GitHub](https://github.com/WEI-KE/Multithreaded-SSH).
 
-也打包了一个[.exe](https://github.com/WEI-KE/Multithreaded-SSH/releases)可执行文件。有需要的自己下载。
+I have also packaged it into an [.exe](https://github.com/WEI-KE/Multithreaded-SSH/releases) executable file. Feel free
+to download it if you need it.
 
-> 使用pyinstaller打包的可执行文件，不知道为什么360会报毒，如果不放心就自己打包。
+> The executable file packaged with PyInstaller may be flagged as malicious by security software for unknown
+> reasons. If you have concerns, you can choose to package it yourself.
 
-## 使用说明
+## Usage Instructions
 
-1. 确保程序同目录下有两个文件```host.txt```和```commands.txt```顾名思义，一个放置远程主机的地址（每行一个），另一个放置要执行的命令（每行一条）
-2. 确保程序有创建目录和文件的权限，程序执行后会创建两个目录和数个日志文件
+1. Make sure there are two files named `host.txt` and `commands.txt` in the same directory as the program. As the names
+   suggest, `host.txt` contains the addresses of remote hosts (one per line), and `commands.txt` contains the commands
+   to be executed (one command per line).
+
+2. Make sure the program has permissions to create directories and files. After execution, the program will create two
+   directories and several log files:
     - log
-        - 年-月-日.log
-        - Paramiko-年-月-日.log
+        - year-month-day.log
+        - Paramiko-year-month-day.log
     - sshlog
-        - 年-月-日-主机地址.log
+        - year-month-day-host-address.log
 
-   > ```年-月-日.log```用于保存本程序输出的日志，你可以在这里看到本程序的执行情况
+   > `year-month-day.log` is used to store the program's output logs, where you can see the execution status of the
+   program.
    >
-   >  ``` Paramiko-年-月-日.log```储存Paramiko执行的日志用于ssh连接出现异常调试
+   > `Paramiko-year-month-day.log` stores the logs of Paramiko for troubleshooting SSH connections.
    >
-   >  ```年-月-日-主机地址.log```用于储存ssh连接到主机后每台主机输出的内容
+   > `year-month-day-host-address.log` is used to store the output of each host after establishing an SSH connection.
 
-3. 打开程序后会提示输入设备密码，密码输入时不会显示在终端。
+3. When prompted, enter the device password. The password will not be displayed in the terminal.
 
-4. 程序运行时会实时输出一些信息及总结，但是设备多的时候会比较乱，可以结束后看程序日志。
+4. The program will provide real-time output and summary while running, but it can be messy when dealing with multiple
+   devices. You can check the program logs after it finishes.
 
-## 注意
+## Note
 
-- 目前版本的程序```v0.1.1```命令执行完成以```<设备名```或者```[设备名```提示符作为中断判断,主要为了适配华为等品牌网络设备。
-  如果某条命令执行后60秒（默认时间）不回到提示符程序判定命令执行失败。例如你要执行的命令执行后有需要输入y等，目前只能将组合命令放在一行里，如```save \n y```
-  用\n代表回车，如有其他需求请自行修改判断代码， 或者等后续版本（后面有更新计划）。<br>
-  {{< admonition info >}}按y确认在某些设备上超时时间是30秒，30秒后会自动取消回到提示符，然后被程序捕获，此时程序会认为命令执行成功。
-  所以请在程序执行后检查sshlog日志确认。{{< /admonition >}}
+- In the current version of the program (`v0.1.1`), the completion of a command is determined by the
+  prompt `<device-name` or `[device-name`. This is mainly to adapt to network devices of brands like Huawei. If a
+  command does not return to the prompt within 60 seconds (default time), the program will consider it as a command
+  execution failure. For example, if the command requires inputting 'y', currently you can only put the combined command
+  in one line, like `save \n y`. Use `\n` for line breaks. If you have other requirements, you can modify the code for
+  handling command completion or wait for future updates.
+  {{< admonition info >}}On some devices, the confirmation prompt times out after 30 seconds, and it will automatically
+  cancel and return to the prompt. The program will capture this and consider the command execution successful. So,
+  please check the sshlog logs for confirmation after the program finishes.{{< /admonition >}}
 
-## 更新计划
+## Update Plans
 
-预计在2到3周内更新：
+Expected updates within 2 to 3 weeks:
 
-- 增加分别定义单台主机命令
-- 增加分别定义每条命令终止符以适配更多场景和设备
-- 代码更加模块化 使其更易于被其他程序调用和集成
-- 优化代码逻辑
-- 完善代码备注
+- Add the ability to define commands for individual hosts.
+- Add the ability to define termination characters for each command to adapt to different scenarios and devices.
+- Improve code modularity for easier integration and use by other programs.
+- Optimize code logic.
+- Enhance code comments.
 
-不会更新的内容：
+Not planned for updates:
 
-- 自动读取密码
-    - 目前是程序每次执行都需要输入设备密码，以后也是。因为没有想到完美的密码存储方式。自动读取用户名也许会加
+- Automatic password retrieval:
+    - Currently, the program requires entering the device password each time it
 
-## 结语
+is executed, and it will remain so in the future. I haven't found a perfect way to store passwords. Automatic retrieval
+of usernames may be considered.
 
-本人还在编程新手村晃荡 代码写的很烂，欢迎在下方评论区交流，或者直接在Github上提交问题（issues）。
+## Conclusion
 
-如果觉得本程序还不错，可以在下方点个👍也可以去Github点个⭐，感谢支持。
+I'm still a beginner in the programming world, and my code may not be great. I welcome discussions in the comments
+section below or direct problem submissions (issues) on GitHub.
+
+If you find this program useful, you can give it a thumbs up below or give it a star on GitHub. Thank you for your
+support.
+
+This article was translated by ChatGPT.
 
 ---
 
-> 作者: WAKE  
-> URL: https://weike.club/2023/06/multithreaded-ssh-v0.1.1/  
+> Author: WAKE  
+> URL: https://weike.club/en/2023/06/multithreaded-ssh-v0.1.1/  
 

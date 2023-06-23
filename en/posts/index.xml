@@ -3,7 +3,20 @@
     <title>All Posts - WAKE</title>
     <link>https://weike.club/en/posts/</link>
     <description>All Posts | WAKE</description>
-    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 23 May 2023 22:47:44 &#43;0800</lastBuildDate><atom:link href="https://weike.club/en/posts/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 24 Jun 2023 01:38:07 &#43;0800</lastBuildDate><atom:link href="https://weike.club/en/posts/" rel="self" type="application/rss+xml" /><item>
+  <title>Multithreaded SSH V0.1.1</title>
+  <link>https://weike.club/en/2023/06/multithreaded-ssh-v0.1.1/</link>
+  <pubDate>Sat, 24 Jun 2023 01:38:07 &#43;0800</pubDate>
+  <author>WAKE</author>
+  <guid>https://weike.club/en/2023/06/multithreaded-ssh-v0.1.1/</guid>
+  <description><![CDATA[<h2 id="introduction">Introduction</h2>
+<p>Recently, I replaced a batch of Huawei switches and switched to using SSH for remote access, which rendered my previous
+Telnet script unusable. Therefore, I spent some time rewriting a multi-threaded SSH program called Multithreaded-SSH
+using Python.</p>
+<p>This version is still not very flexible, but it can execute some basic commands. For example, it can execute &ldquo;dis cur&rdquo;
+command combined with the &ldquo;sshlog&rdquo; file to backup device configurations, or perform batch password modifications.</p>]]></description>
+</item>
+<item>
   <title>Chat-specific post</title>
   <link>https://weike.club/en/2023/05/discussions/</link>
   <pubDate>Tue, 23 May 2023 22:47:44 &#43;0800</pubDate>
