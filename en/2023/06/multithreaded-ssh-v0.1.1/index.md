@@ -281,10 +281,12 @@ if __name__ == "__main__":
 
 The code is too long and is collapsed by default. 👆Click above to expand.
 
-The code is open source on [GitHub](https://github.com/WEI-KE/Multithreaded-SSH).
+The code is open source on 👉 [GitHub](https://github.com/WEI-KE/Multithreaded-SSH).
 
 I have also packaged it into an [.exe](https://github.com/WEI-KE/Multithreaded-SSH/releases) executable file. Feel free
 to download it if you need it.
+
+Currently, the program is not available in English, but there might be an English version in the future.
 
 > The executable file packaged with PyInstaller may be flagged as malicious by security software for unknown
 > reasons. If you have concerns, you can choose to package it yourself.
@@ -340,17 +342,15 @@ Expected updates within 2 to 3 weeks:
 Not planned for updates:
 
 - Automatic password retrieval:
-    - Currently, the program requires entering the device password each time it
-
-is executed, and it will remain so in the future. I haven't found a perfect way to store passwords. Automatic retrieval
-of usernames may be considered.
+    - Currently, the program requires entering the device password each time it .is executed, and it will remain so in
+      the future. I haven't found a perfect way to store passwords. Automatic retrieval of usernames may be considered.
 
 ## Conclusion
 
 I'm still a beginner in the programming world, and my code may not be great. I welcome discussions in the comments
 section below or direct problem submissions (issues) on GitHub.
 
-If you find this program useful, you can give it a thumbs up below or give it a star on GitHub. Thank you for your
+If you find this program useful, you can give it a 👍 below or give it a ⭐ on GitHub. Thank you for your
 support.
 
 This article was translated by ChatGPT.
