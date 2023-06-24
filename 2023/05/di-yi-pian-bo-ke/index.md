@@ -28,7 +28,7 @@
 
 ~~费了一点点力气终于是搞好了，目前方案是本地wordpress转静态+文件托管github+CDN。~~
 
-最终的最终还是选定了Hugo+github+CDN加速。 （CDN暂时还没上）  
+最终的最终还是选定了Hugo+github+CDN加速。 ~~（CDN暂时还没上）~~  
 原因是:word press功能很强大但是对静态部署不友好。
 
 （回头详细讲讲这一路的心路历程 flag+1）

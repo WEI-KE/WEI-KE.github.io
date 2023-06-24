@@ -11,22 +11,22 @@
 <meta name="description" content="前言
 最近换了一批华为交换机，为了过等保改用SSH远程交换机，之前写的Telnet脚本用不了了，
 于是最近花了点时间用Python重新写了一个多线程SSH程序 Multithreaded-SSH。
-此版本还是不太灵活，但是可以执行一些基本的命令。例如可以执行dis cur配合sshlog文件做到备份设备配置，或者批量修改密码。" /><meta name="keywords" content='ssh, Python' /><meta itemprop="name" content="Multithreaded SSH V0.1.1使用说明">
+此版本还是不太灵活，但是可以执行一些基本的命令。例如可以执行dis cur配合sshlog文件做到备份设备配置，或者上线初期批量修改配置等操作。" /><meta name="keywords" content='ssh, Python' /><meta itemprop="name" content="Multithreaded SSH V0.1.1使用说明">
 <meta itemprop="description" content="前言
 最近换了一批华为交换机，为了过等保改用SSH远程交换机，之前写的Telnet脚本用不了了，
 于是最近花了点时间用Python重新写了一个多线程SSH程序 Multithreaded-SSH。
-此版本还是不太灵活，但是可以执行一些基本的命令。例如可以执行dis cur配合sshlog文件做到备份设备配置，或者批量修改密码。"><meta itemprop="datePublished" content="2023-06-22T22:55:32+08:00" />
-<meta itemprop="dateModified" content="2023-06-22T22:55:32+08:00" />
-<meta itemprop="wordCount" content="3790"><meta itemprop="image" content="https://weike.club/logo.png"/>
+此版本还是不太灵活，但是可以执行一些基本的命令。例如可以执行dis cur配合sshlog文件做到备份设备配置，或者上线初期批量修改配置等操作。"><meta itemprop="datePublished" content="2023-06-22T22:55:32+08:00" />
+<meta itemprop="dateModified" content="2023-06-24T22:55:32+08:00" />
+<meta itemprop="wordCount" content="3797"><meta itemprop="image" content="https://weike.club/logo.png"/>
 <meta itemprop="keywords" content="ssh,Python," /><meta property="og:title" content="Multithreaded SSH V0.1.1使用说明" />
 <meta property="og:description" content="前言
 最近换了一批华为交换机，为了过等保改用SSH远程交换机，之前写的Telnet脚本用不了了，
 于是最近花了点时间用Python重新写了一个多线程SSH程序 Multithreaded-SSH。
-此版本还是不太灵活，但是可以执行一些基本的命令。例如可以执行dis cur配合sshlog文件做到备份设备配置，或者批量修改密码。" />
+此版本还是不太灵活，但是可以执行一些基本的命令。例如可以执行dis cur配合sshlog文件做到备份设备配置，或者上线初期批量修改配置等操作。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://weike.club/2023/06/multithreaded-ssh-v0.1.1/" /><meta property="og:image" content="https://weike.club/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-06-22T22:55:32+08:00" />
-<meta property="article:modified_time" content="2023-06-22T22:55:32+08:00" />
+<meta property="article:modified_time" content="2023-06-24T22:55:32+08:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://weike.club/logo.png"/>
 
@@ -34,7 +34,7 @@
 <meta name="twitter:description" content="前言
 最近换了一批华为交换机，为了过等保改用SSH远程交换机，之前写的Telnet脚本用不了了，
 于是最近花了点时间用Python重新写了一个多线程SSH程序 Multithreaded-SSH。
-此版本还是不太灵活，但是可以执行一些基本的命令。例如可以执行dis cur配合sshlog文件做到备份设备配置，或者批量修改密码。"/>
+此版本还是不太灵活，但是可以执行一些基本的命令。例如可以执行dis cur配合sshlog文件做到备份设备配置，或者上线初期批量修改配置等操作。"/>
 <meta name="application-name" content="FixIt">
 <meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -47,8 +47,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/weike.club\/2023\/06\/multithreaded-ssh-v0.1.1\/"
-    },"genre": "posts","keywords": "ssh, Python","wordcount":  3790 ,
-    "url": "https:\/\/weike.club\/2023\/06\/multithreaded-ssh-v0.1.1\/","datePublished": "2023-06-22T22:55:32+08:00","dateModified": "2023-06-22T22:55:32+08:00","publisher": {
+    },"genre": "posts","keywords": "ssh, Python","wordcount":  3797 ,
+    "url": "https:\/\/weike.club\/2023\/06\/multithreaded-ssh-v0.1.1\/","datePublished": "2023-06-22T22:55:32+08:00","dateModified": "2023-06-24T22:55:32+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -200,7 +200,7 @@
       <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
       WAKE</span></span>
           <span class="post-category">收录于 <a href="/categories/python/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Python</a></span></div>
-      <div class="post-meta-line"><span title="发布于 2023-06-22 22:55:32"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2023-06-22">2023-06-22</time></span>&nbsp;<span title="更新于 2023-06-22 22:55:32"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2023-06-22">2023-06-22</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 3790 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 8 分钟</span>&nbsp;</div>
+      <div class="post-meta-line"><span title="发布于 2023-06-22 22:55:32"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2023-06-22">2023-06-22</time></span>&nbsp;<span title="更新于 2023-06-24 22:55:32"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2023-06-24">2023-06-24</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 3797 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 8 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span>
@@ -218,7 +218,7 @@
       </div><div class="content" id="content"><h2 id="前言">前言</h2>
 <p>最近换了一批华为交换机，为了过等保改用SSH远程交换机，之前写的Telnet脚本用不了了，
 于是最近花了点时间用Python重新写了一个多线程SSH程序 Multithreaded-SSH。</p>
-<p>此版本还是不太灵活，但是可以执行一些基本的命令。例如可以执行dis cur配合sshlog文件做到备份设备配置，或者批量修改密码。</p>
+<p>此版本还是不太灵活，但是可以执行一些基本的命令。例如可以执行dis cur配合sshlog文件做到备份设备配置，或者上线初期批量修改配置等操作。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">  1
@@ -830,7 +830,7 @@
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title="更新于 2023-06-22 22:55:32">更新于 2023-06-22&nbsp;</span>
+        <span title="更新于 2023-06-24 22:55:32">更新于 2023-06-24&nbsp;</span>
       </div><div class="post-info-license">
           <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
         </div></div>
