@@ -18,7 +18,7 @@ WAKE
 
 ~~If you can find this blog then you should already have my contact information😜~~
 
-Reverse the first two numbers👉hi@weike.club ✉️
+✉️👉hi@weike.club 
 
 ---
 
