@@ -68,7 +68,7 @@ download it if needed.
 ## Note:
 
 1. Although this version resolves the issue of not being able to customize terminators mentioned
-   in [v0.1.1](https://weike.club/2023/06/multithreaded-ssh-v0.1.1/), it still retains the ability to use `\n` in
+   in [v0.1.1](https://weike.club/en/2023/06/multithreaded-ssh-v0.1.1/), it still retains the ability to use `\n` in
    commands to represent a newline.
 2. In TXT mode or if hostnames are not defined in the Excel file, an attempt will be made to define the hostname using
    the characters between `<` and `>`. If unsuccessful, the host will be skipped.
