@@ -12,14 +12,13 @@ WAKE
 
 ## ⛹ Interests
 
-~~🎤 Dancing rap 🏀~~  
-The above are not like, the spirit is not otaku body is very otaku.
+🎮
 
 ## 📬 Contact me
 
 ~~If you can find this blog then you should already have my contact information😜~~
 
-Reverse the first two numbers👉hi@ ✉️
+Reverse the first two numbers👉hi@weike.club ✉️
 
 ---
 
