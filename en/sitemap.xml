@@ -2,6 +2,33 @@
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
   ><url>
+      <loc>https://weike.club/en/categories/</loc><lastmod>2023-07-16T22:03:36&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            rel="alternate"
+            hreflang="zh-cn"
+            href="https://weike.club/categories/"
+            /><xhtml:link
+          rel="alternate"
+          hreflang="en"
+          href="https://weike.club/en/categories/"
+          /></url><url>
+      <loc>https://weike.club/en/tags/multithreaded_ssh/</loc><lastmod>2023-07-16T22:03:36&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            rel="alternate"
+            hreflang="zh-cn"
+            href="https://weike.club/tags/multithreaded_ssh/"
+            /><xhtml:link
+          rel="alternate"
+          hreflang="en"
+          href="https://weike.club/en/tags/multithreaded_ssh/"
+          /></url><url>
+      <loc>https://weike.club/en/categories/multithreaded_ssh/</loc><lastmod>2023-07-16T22:03:36&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            rel="alternate"
+            hreflang="zh-cn"
+            href="https://weike.club/categories/multithreaded_ssh/"
+            /><xhtml:link
+          rel="alternate"
+          hreflang="en"
+          href="https://weike.club/en/categories/multithreaded_ssh/"
+          /></url><url>
       <loc>https://weike.club/en/2023/07/multithreaded_ssh_v0.5.0/</loc><lastmod>2023-07-16T22:03:36&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
             rel="alternate"
             hreflang="zh-cn"
@@ -19,6 +46,33 @@
           rel="alternate"
           hreflang="en"
           href="https://weike.club/en/posts/"
+          /></url><url>
+      <loc>https://weike.club/en/tags/python/</loc><lastmod>2023-07-16T22:03:36&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            rel="alternate"
+            hreflang="zh-cn"
+            href="https://weike.club/tags/python/"
+            /><xhtml:link
+          rel="alternate"
+          hreflang="en"
+          href="https://weike.club/en/tags/python/"
+          /></url><url>
+      <loc>https://weike.club/en/tags/ssh/</loc><lastmod>2023-07-16T22:03:36&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            rel="alternate"
+            hreflang="zh-cn"
+            href="https://weike.club/tags/ssh/"
+            /><xhtml:link
+          rel="alternate"
+          hreflang="en"
+          href="https://weike.club/en/tags/ssh/"
+          /></url><url>
+      <loc>https://weike.club/en/tags/</loc><lastmod>2023-07-16T22:03:36&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            rel="alternate"
+            hreflang="zh-cn"
+            href="https://weike.club/tags/"
+            /><xhtml:link
+          rel="alternate"
+          hreflang="en"
+          href="https://weike.club/en/tags/"
           /></url><url>
       <loc>https://weike.club/en/</loc><lastmod>2023-07-16T22:03:36&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
             rel="alternate"
@@ -55,22 +109,4 @@
           rel="alternate"
           hreflang="en"
           href="https://weike.club/en/2023/05/about/"
-          /></url><url>
-      <loc>https://weike.club/en/categories/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-            rel="alternate"
-            hreflang="zh-cn"
-            href="https://weike.club/categories/"
-            /><xhtml:link
-          rel="alternate"
-          hreflang="en"
-          href="https://weike.club/en/categories/"
-          /></url><url>
-      <loc>https://weike.club/en/tags/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-            rel="alternate"
-            hreflang="zh-cn"
-            href="https://weike.club/tags/"
-            /><xhtml:link
-          rel="alternate"
-          hreflang="en"
-          href="https://weike.club/en/tags/"
           /></url></urlset>
