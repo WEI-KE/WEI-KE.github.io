@@ -21,7 +21,8 @@ Multithreaded_SSH V0.5.0 现已发布。
 
 1. 准备文件：
     - txt模式： 确保程序同目录下有两个文件```host.txt```和```commands.txt```顾名思义，一个放置远程主机的地址（每行一个），另一个放置要执行的命令（每行一条）
-    - excel模式： 请确保程序同目录下有```SSH.xlsx```文件，或者手动输入文件名称。excel文件格式可以参考~~github的示例文件~~
+    - excel模式： 请确保程序同目录下有```SSH.xlsx```
+      文件，或者手动输入文件名称。excel文件格式可以参考github上的[示例文件](https://github.com/WEI-KE/Multithreaded-SSH/blob/main/SSH.xlsx)
       ,详细要求如下：
 
         - 标题需要包含```Address```、```Username```、```Multi_SSH_Enable```、```cmd1```。可选：```Hostname```、```end*```
@@ -33,7 +34,7 @@ Multithreaded_SSH V0.5.0 现已发布。
       |----------|---------|----------|-----------------------------------------|------|---------|
       | 主机名      | 主机地址    | 用户名      | 启用标记<br/>True 启用<br/>False 禁用<br/>留空为启用 | 命令   | 命令执行终止符 |
 
-       > 如果你是使用源代码请确保目录下有excel_read.py。
+      > 如果你是使用源代码请确保目录下有excel_read.py。
 
 2. 确保程序有创建目录和文件的权限，程序执行后会创建两个目录和若干日志文件
     - log
