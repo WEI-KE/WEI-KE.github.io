@@ -1,4 +1,4 @@
-# Multithreaded_SSH_v0.5.0
+# Multithreaded_SSH V0.5.0
 
 
 Multithreaded_SSH V0.5.0 has been released.
