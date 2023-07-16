@@ -67,7 +67,9 @@ Multithreaded_SSH V0.5.0 现已发布。
 
 ## 结语
 
-欢迎在下方评论区交流，或者直接在Github上提交问题（issues）。
+写代码的时候无意间发现python支持用中文作为变量所以便有了这个[整活的版本](https://github.com/WEI-KE/Multithreaded-SSH/tree/main/%E4%B8%AD%E6%96%87%E7%89%88)
+
+欢迎在下方评论区交流，或者直接在Github上提交问题（issues）。 
 
 如果觉得本程序还不错，可以在下方点个👍也可以去[Github](https://github.com/WEI-KE/Multithreaded-SSH)点个⭐，感谢支持。
 
