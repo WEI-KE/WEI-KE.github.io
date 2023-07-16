@@ -19,7 +19,7 @@ The above are not like, the spirit is not otaku body is very otaku.
 
 ~~If you can find this blog then you should already have my contact information😜~~
 
-Reverse the first two numbers👉6154074328@qq.com✉️
+Reverse the first two numbers👉hi@ ✉️
 
 ---
 
