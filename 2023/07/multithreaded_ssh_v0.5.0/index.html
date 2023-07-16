@@ -6,49 +6,37 @@
     <meta name="referrer" content="never">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
-    <title>Multithreaded_SSH V0.1.1 - WAKE</title><meta name="author" content="WAKE">
+    <title>Multithreaded_SSH V0.5.0 - WAKE</title><meta name="author" content="WAKE">
 <meta name="author-link" content="">
-<meta name="description" content="前言
-最近换了一批华为交换机，为了过等保改用SSH远程交换机，之前写的Telnet脚本用不了了，
-于是最近花了点时间用Python重新写了一个多线程SSH程序 Multithreaded-SSH。
-此版本还是不太灵活，但是可以执行一些基本的命令。例如可以执行dis cur配合sshlog文件做到备份设备配置，或者上线初期批量修改配置等操作。" /><meta name="keywords" content='ssh, Python, Multithreaded_SSH' /><meta itemprop="name" content="Multithreaded_SSH V0.1.1">
-<meta itemprop="description" content="前言
-最近换了一批华为交换机，为了过等保改用SSH远程交换机，之前写的Telnet脚本用不了了，
-于是最近花了点时间用Python重新写了一个多线程SSH程序 Multithreaded-SSH。
-此版本还是不太灵活，但是可以执行一些基本的命令。例如可以执行dis cur配合sshlog文件做到备份设备配置，或者上线初期批量修改配置等操作。"><meta itemprop="datePublished" content="2023-06-22T22:55:32+08:00" />
-<meta itemprop="dateModified" content="2023-06-24T22:55:32+08:00" />
-<meta itemprop="wordCount" content="1100"><meta itemprop="image" content="https://weike.club/logo.png"/>
-<meta itemprop="keywords" content="ssh,Python,Multithreaded_SSH," /><meta property="og:title" content="Multithreaded_SSH V0.1.1" />
-<meta property="og:description" content="前言
-最近换了一批华为交换机，为了过等保改用SSH远程交换机，之前写的Telnet脚本用不了了，
-于是最近花了点时间用Python重新写了一个多线程SSH程序 Multithreaded-SSH。
-此版本还是不太灵活，但是可以执行一些基本的命令。例如可以执行dis cur配合sshlog文件做到备份设备配置，或者上线初期批量修改配置等操作。" />
+<meta name="description" content="Multithreaded_SSH V0.5.0 现已发布。" /><meta name="keywords" content='ssh, Python, Multithreaded_SSH' /><meta itemprop="name" content="Multithreaded_SSH V0.5.0">
+<meta itemprop="description" content="Multithreaded_SSH V0.5.0 现已发布。"><meta itemprop="datePublished" content="2023-07-16T16:46:10+08:00" />
+<meta itemprop="dateModified" content="2023-07-16T16:46:10+08:00" />
+<meta itemprop="wordCount" content="1088"><meta itemprop="image" content="https://weike.club/logo.png"/>
+<meta itemprop="keywords" content="ssh,Python,Multithreaded_SSH," /><meta property="og:title" content="Multithreaded_SSH V0.5.0" />
+<meta property="og:description" content="Multithreaded_SSH V0.5.0 现已发布。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://weike.club/2023/06/multithreaded-ssh-v0.1.1/" /><meta property="og:image" content="https://weike.club/logo.png"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2023-06-22T22:55:32+08:00" />
-<meta property="article:modified_time" content="2023-06-24T22:55:32+08:00" />
+<meta property="og:url" content="https://weike.club/2023/07/multithreaded_ssh_v0.5.0/" /><meta property="og:image" content="https://weike.club/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-07-16T16:46:10+08:00" />
+<meta property="article:modified_time" content="2023-07-16T16:46:10+08:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://weike.club/logo.png"/>
 
-<meta name="twitter:title" content="Multithreaded_SSH V0.1.1"/>
-<meta name="twitter:description" content="前言
-最近换了一批华为交换机，为了过等保改用SSH远程交换机，之前写的Telnet脚本用不了了，
-于是最近花了点时间用Python重新写了一个多线程SSH程序 Multithreaded-SSH。
-此版本还是不太灵活，但是可以执行一些基本的命令。例如可以执行dis cur配合sshlog文件做到备份设备配置，或者上线初期批量修改配置等操作。"/>
+<meta name="twitter:title" content="Multithreaded_SSH V0.5.0"/>
+<meta name="twitter:description" content="Multithreaded_SSH V0.5.0 现已发布。"/>
 <meta name="application-name" content="FixIt">
 <meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://weike.club/2023/06/multithreaded-ssh-v0.1.1/" /><link rel="prev" href="https://weike.club/2023/05/stable-diffusion/" /><link rel="next" href="https://weike.club/2023/07/multithreaded_ssh_v0.5.0/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://weike.club/2023/07/multithreaded_ssh_v0.5.0/" /><link rel="prev" href="https://weike.club/2023/06/multithreaded-ssh-v0.1.1/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
-    "headline": "Multithreaded_SSH V0.1.1",
+    "headline": "Multithreaded_SSH V0.5.0",
     "inLanguage": "zh-CN",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https:\/\/weike.club\/2023\/06\/multithreaded-ssh-v0.1.1\/"
-    },"genre": "posts","keywords": "ssh, Python, Multithreaded_SSH","wordcount":  1100 ,
-    "url": "https:\/\/weike.club\/2023\/06\/multithreaded-ssh-v0.1.1\/","datePublished": "2023-06-22T22:55:32+08:00","dateModified": "2023-06-24T22:55:32+08:00","publisher": {
+      "@id": "https:\/\/weike.club\/2023\/07\/multithreaded_ssh_v0.5.0\/"
+    },"genre": "posts","keywords": "ssh, Python, Multithreaded_SSH","wordcount":  1088 ,
+    "url": "https:\/\/weike.club\/2023\/07\/multithreaded_ssh_v0.5.0\/","datePublished": "2023-07-16T16:46:10+08:00","dateModified": "2023-07-16T16:46:10+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -109,7 +97,7 @@
             <ul class="sub-menu"><li class="menu-item">
                       <span class="menu-link text-secondary" title="简体中文">简体中文</span>
                     </li><li class="menu-item">
-                      <a href="/en/2023/06/multithreaded-ssh-v0.1.1/" class="menu-link" title="English">English</a>
+                      <a href="/en/2023/07/multithreaded_ssh_v0.5.0/" class="menu-link" title="English">English</a>
                     </li></ul>
           </li></ul>
     </nav>
@@ -178,7 +166,7 @@
                 ><i class="fa-solid fa-user fa-fw fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item menu-system">
           <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span><span class="menu-system-item language-switch">
               <span role="button" aria-label="选择语言" title="选择语言">简体中文<i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i></span>
-              <select class="language-select" onchange="location = this.value;"><option value="/2023/06/multithreaded-ssh-v0.1.1/" selected disabled>简体中文</option><option value="/en/2023/06/multithreaded-ssh-v0.1.1/">English</option></select>
+              <select class="language-select" onchange="location = this.value;"><option value="/2023/07/multithreaded_ssh_v0.5.0/" selected disabled>简体中文</option><option value="/en/2023/07/multithreaded_ssh_v0.5.0/">English</option></select>
             </span></li>
       </ul>
     </nav>
@@ -195,12 +183,12 @@
     </aside>
 
   <article class="page single">
-    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>Multithreaded_SSH V0.1.1</span>
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>Multithreaded_SSH V0.5.0</span>
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
       WAKE</span></span>
           <span class="post-category">收录于 <a href="/categories/multithreaded_ssh/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Multithreaded_SSH</a></span></div>
-      <div class="post-meta-line"><span title="发布于 2023-06-22 22:55:32"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2023-06-22">2023-06-22</time></span>&nbsp;<span title="更新于 2023-06-24 22:55:32"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2023-06-24">2023-06-24</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1100 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
+      <div class="post-meta-line"><span title="发布于 2023-07-16 16:46:10"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2023-07-16">2023-07-16</time></span>&nbsp;<span title="更新于 2023-07-16 16:46:10"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2023-07-16">2023-07-16</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1088 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span>
@@ -208,29 +196,75 @@
         </div>
         <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#前言">前言</a></li>
-    <li><a href="#使用说明">使用说明</a></li>
+    <li><a href="#更新说明">更新说明:</a></li>
+    <li><a href="#使用说明">使用说明:</a></li>
     <li><a href="#注意">注意</a></li>
     <li><a href="#更新计划">更新计划</a></li>
     <li><a href="#结语">结语</a></li>
   </ul>
 </nav></div>
-      </div><div class="content" id="content"><h2 id="前言">前言</h2>
-<p>最近换了一批华为交换机，为了过等保改用SSH远程交换机，之前写的Telnet脚本用不了了，
-于是最近花了点时间用Python重新写了一个多线程SSH程序 Multithreaded-SSH。</p>
-<p>此版本还是不太灵活，但是可以执行一些基本的命令。例如可以执行dis cur配合sshlog文件做到备份设备配置，或者上线初期批量修改配置等操作。</p>
+      </div><div class="content" id="content"><p>Multithreaded_SSH V0.5.0 现已发布。</p>
 <p>代码已开源在👉<a href="https://github.com/WEI-KE/Multithreaded-SSH"target="_blank" rel="external nofollow noopener noreferrer">Github</a></p>
 <p>也打包了一个<a href="https://github.com/WEI-KE/Multithreaded-SSH/releases"target="_blank" rel="external nofollow noopener noreferrer">.exe</a>可执行文件。有需要的自己下载。</p>
 <blockquote>
 <p>使用pyinstaller打包的可执行文件，不知道为什么360会报毒，如果不放心就自己打包。</p>
 </blockquote>
-<h2 id="使用说明">使用说明</h2>
+<h2 id="更新说明">更新说明:</h2>
+<ol>
+<li>增加excel读取能。现在可以从excel文件中读取主机地址、用户名、命令、终止符。</li>
+<li>代码更加模块化</li>
+<li>优化了代码逻辑</li>
+</ol>
+<h2 id="使用说明">使用说明:</h2>
 <ol>
 <li>
-<p>确保程序同目录下有两个文件<code>host.txt</code>和<code>commands.txt</code>顾名思义，一个放置远程主机的地址（每行一个），另一个放置要执行的命令（每行一条）</p>
+<p>准备文件：</p>
+<ul>
+<li>
+<p>txt模式： 确保程序同目录下有两个文件<code>host.txt</code>和<code>commands.txt</code>顾名思义，一个放置远程主机的地址（每行一个），另一个放置要执行的命令（每行一条）</p>
 </li>
 <li>
-<p>确保程序有创建目录和文件的权限，程序执行后会创建两个目录和数个日志文件</p>
+<p>excel模式： 请确保程序同目录下有<code>SSH.xlsx</code>文件，或者手动输入文件名称。excel文件格式可以参考<del>github的示例文件</del>
+,详细要求如下：</p>
+<ul>
+<li>
+<p>标题需要包含<code>Address</code>、<code>Username</code>、<code>Multi_SSH_Enable</code>、<code>cmd1</code>。可选：<code>Hostname</code>、<code>end*</code></p>
+</li>
+<li>
+<p>命令序号连续增加，不要跳过数字。如<code>cmd1</code>,<code>cmd2</code>,<code>cmd3</code>,<code>cmd5</code>，在执行时cmd5及以后的内容将被抛弃
+，end序号可以不连续，end序号是对应相同命令序号的执行终止符。</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Hostname</th>
+<th>Address</th>
+<th>Username</th>
+<th>Multi_SSH_Enable</th>
+<th>cmd1</th>
+<th>end1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主机名</td>
+<td>主机地址</td>
+<td>用户名</td>
+<td>启用标记<br/>True 启用<br/>False 禁用<br/>留空为启用</td>
+<td>命令</td>
+<td>命令执行终止符</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>如果你是使用源代码请确保目录下有excel_read.py。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<p>确保程序有创建目录和文件的权限，程序执行后会创建两个目录和若干日志文件</p>
 <ul>
 <li>log
 <ul>
@@ -238,7 +272,7 @@
 <li>Paramiko-年-月-日.log</li>
 </ul>
 </li>
-<li>sshlog
+<li>SSH_log
 <ul>
 <li>年-月-日-主机地址.log</li>
 </ul>
@@ -258,49 +292,27 @@
 </li>
 </ol>
 <h2 id="注意">注意</h2>
-<ul>
-<li>目前版本的程序<code>v0.1.1</code>命令执行完成只能以<code>&lt;设备名</code>或者<code>[设备名</code>提示符作为中断判断,主要为了适配华为等品牌网络设备。
-如果某条命令执行后60秒（默认时间）不回到提示符程序判定命令执行失败。例如你要执行的命令执行后有需要输入y等，目前只能将组合命令放在一行里，如<code>save \n y</code>
-用\n代表回车，如有其他需求请自行修改判断代码， 或者等后续版本（后面有更新计划）。<br>
-<div class="details admonition info open">
-    <div class="details-summary admonition-title">
-      <i class="icon fa-solid fa-info-circle fa-fw" aria-hidden="true"></i>信息<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
-    </div>
-    <div class="details-content">
-      <div class="admonition-content">按y确认在某些设备上超时时间是30秒，30秒后会自动取消回到提示符，然后被程序捕获，此时程序会认为命令执行成功。
-所以请在程序执行后检查sshlog日志确认。</div>
-    </div>
-  </div></li>
-</ul>
+<ol>
+<li>此版本程序虽然解决了<a href="https://weike.club/2023/06/multithreaded-ssh-v0.1.1/"target="_blank" rel="external nofollow noopener noreferrer"><code>v0.1.1</code></a>
+中<a href="https://weike.club/2023/06/multithreaded-ssh-v0.1.1/#%E6%B3%A8%E6%84%8F"target="_blank" rel="external nofollow noopener noreferrer">不能自定义结束符</a>
+的问题，但依然保留了在命令中用<code>\n</code>代表回车的能力。</li>
+<li>在txt模式下，或者excel中没有定义主机名，连接到主机后会尝试用<code>&lt;</code>和<code>&gt;</code>中间的字符定义为主机名。获取失败将跳过主机。</li>
+<li>在txt模式下，或者excel中没有定义end的情况下默认以<code>&lt;设备名</code>或者<code>[设备名</code>提示符作为中断判断。</li>
+</ol>
 <h2 id="更新计划">更新计划</h2>
-<p>预计在2到3周内更新：</p>
-<ul>
-<li>增加分别定义单台主机命令</li>
-<li>增加分别定义每条命令终止符以适配更多场景和设备</li>
-<li>代码更加模块化 使其更易于被其他程序调用和集成</li>
-<li>优化代码逻辑</li>
-<li>完善代码备注</li>
-</ul>
-<p>不会更新的内容：</p>
-<ul>
-<li>自动读取密码
-<ul>
-<li>目前是程序每次执行都需要输入设备密码，以后也是。因为没有想到完美的密码存储方式。自动读取用户名也许会加</li>
-</ul>
-</li>
-</ul>
+<p>代码进入稳定期， 近期不会有更新，除非发现问题，或有小的修改。</p>
 <h2 id="结语">结语</h2>
-<p>本人还在编程新手村晃荡 代码写的很烂，欢迎在下方评论区交流，或者直接在Github上提交问题（issues）。</p>
+<p>欢迎在下方评论区交流，或者直接在Github上提交问题（issues）。</p>
 <p>如果觉得本程序还不错，可以在下方点个👍也可以去<a href="https://github.com/WEI-KE/Multithreaded-SSH"target="_blank" rel="external nofollow noopener noreferrer">Github</a>点个⭐，感谢支持。</p></div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title="更新于 2023-06-24 22:55:32">更新于 2023-06-24&nbsp;</span>
+        <span title="更新于 2023-07-16 16:46:10">更新于 2023-07-16&nbsp;</span>
       </div><div class="post-info-license">
           <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
         </div></div>
     <div class="post-info-line">
-      <div class="post-info-md"><span><a href="/2023/06/multithreaded-ssh-v0.1.1/index.md" title="阅读原始文档" class="link-to-markdown">阅读原始文档</a></span></div>
+      <div class="post-info-md"><span><a href="/2023/07/multithreaded_ssh_v0.5.0/index.md" title="阅读原始文档" class="link-to-markdown">阅读原始文档</a></span></div>
       <div class="post-info-share">
         <span></span>
       </div>
@@ -314,8 +326,7 @@
     </section>
   </div>
 
-  <div class="post-nav"><a href="/2023/05/stable-diffusion/" class="post-nav-item" rel="prev" title="Stable Diffusion 保姆级入门手册"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Stable Diffusion 保姆级入门手册</a>
-      <a href="/2023/07/multithreaded_ssh_v0.5.0/" class="post-nav-item" rel="next" title="Multithreaded_SSH V0.5.0">Multithreaded_SSH V0.5.0<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+  <div class="post-nav"><a href="/2023/06/multithreaded-ssh-v0.1.1/" class="post-nav-item" rel="prev" title="Multithreaded_SSH V0.1.1"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Multithreaded_SSH V0.1.1</a></div>
 </div>
 <div id="comments"><div id="giscus">
           <script

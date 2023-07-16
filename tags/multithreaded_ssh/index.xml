@@ -1,9 +1,9 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
-    <title>Python - 标签 - WAKE</title>
-    <link>https://weike.club/tags/python/</link>
-    <description>Python - 标签 - WAKE</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 16 Jul 2023 16:46:10 &#43;0800</lastBuildDate><atom:link href="https://weike.club/tags/python/" rel="self" type="application/rss+xml" /><item>
+    <title>Multithreaded_SSH - 标签 - WAKE</title>
+    <link>https://weike.club/tags/multithreaded_ssh/</link>
+    <description>Multithreaded_SSH - 标签 - WAKE</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 16 Jul 2023 16:46:10 &#43;0800</lastBuildDate><atom:link href="https://weike.club/tags/multithreaded_ssh/" rel="self" type="application/rss+xml" /><item>
   <title>Multithreaded_SSH V0.5.0</title>
   <link>https://weike.club/2023/07/multithreaded_ssh_v0.5.0/</link>
   <pubDate>Sun, 16 Jul 2023 16:46:10 &#43;0800</pubDate>
