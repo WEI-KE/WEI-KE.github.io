@@ -2,7 +2,7 @@
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
   ><url>
-      <loc>https://weike.club/categories/</loc><lastmod>2023-07-16T16:46:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
+      <loc>https://weike.club/categories/</loc><lastmod>2023-07-30T16:46:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
             rel="alternate"
             hreflang="en"
             href="https://weike.club/en/categories/"
@@ -11,7 +11,7 @@
           hreflang="zh-cn"
           href="https://weike.club/categories/"
           /></url><url>
-      <loc>https://weike.club/tags/multithreaded_ssh/</loc><lastmod>2023-07-16T16:46:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
+      <loc>https://weike.club/tags/multithreaded_ssh/</loc><lastmod>2023-07-30T16:46:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
             rel="alternate"
             hreflang="en"
             href="https://weike.club/en/tags/multithreaded_ssh/"
@@ -20,7 +20,7 @@
           hreflang="zh-cn"
           href="https://weike.club/tags/multithreaded_ssh/"
           /></url><url>
-      <loc>https://weike.club/categories/multithreaded_ssh/</loc><lastmod>2023-07-16T16:46:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
+      <loc>https://weike.club/categories/multithreaded_ssh/</loc><lastmod>2023-07-30T16:46:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
             rel="alternate"
             hreflang="en"
             href="https://weike.club/en/categories/multithreaded_ssh/"
@@ -29,7 +29,7 @@
           hreflang="zh-cn"
           href="https://weike.club/categories/multithreaded_ssh/"
           /></url><url>
-      <loc>https://weike.club/2023/07/multithreaded_ssh_v0.5.0/</loc><lastmod>2023-07-16T16:46:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
+      <loc>https://weike.club/2023/07/multithreaded_ssh_v0.5.0/</loc><lastmod>2023-07-30T16:46:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
             rel="alternate"
             hreflang="en"
             href="https://weike.club/en/2023/07/multithreaded_ssh_v0.5.0/"
@@ -38,7 +38,7 @@
           hreflang="zh-cn"
           href="https://weike.club/2023/07/multithreaded_ssh_v0.5.0/"
           /></url><url>
-      <loc>https://weike.club/posts/</loc><lastmod>2023-07-16T16:46:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
+      <loc>https://weike.club/posts/</loc><lastmod>2023-07-30T16:46:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
             rel="alternate"
             hreflang="en"
             href="https://weike.club/en/posts/"
@@ -47,7 +47,7 @@
           hreflang="zh-cn"
           href="https://weike.club/posts/"
           /></url><url>
-      <loc>https://weike.club/tags/python/</loc><lastmod>2023-07-16T16:46:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
+      <loc>https://weike.club/tags/python/</loc><lastmod>2023-07-30T16:46:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
             rel="alternate"
             hreflang="en"
             href="https://weike.club/en/tags/python/"
@@ -56,7 +56,7 @@
           hreflang="zh-cn"
           href="https://weike.club/tags/python/"
           /></url><url>
-      <loc>https://weike.club/tags/ssh/</loc><lastmod>2023-07-16T16:46:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
+      <loc>https://weike.club/tags/ssh/</loc><lastmod>2023-07-30T16:46:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
             rel="alternate"
             hreflang="en"
             href="https://weike.club/en/tags/ssh/"
@@ -65,7 +65,7 @@
           hreflang="zh-cn"
           href="https://weike.club/tags/ssh/"
           /></url><url>
-      <loc>https://weike.club/tags/</loc><lastmod>2023-07-16T16:46:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
+      <loc>https://weike.club/tags/</loc><lastmod>2023-07-30T16:46:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
             rel="alternate"
             hreflang="en"
             href="https://weike.club/en/tags/"
@@ -74,7 +74,7 @@
           hreflang="zh-cn"
           href="https://weike.club/tags/"
           /></url><url>
-      <loc>https://weike.club/</loc><lastmod>2023-07-16T16:46:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
+      <loc>https://weike.club/</loc><lastmod>2023-07-30T16:46:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
             rel="alternate"
             hreflang="en"
             href="https://weike.club/en/"
