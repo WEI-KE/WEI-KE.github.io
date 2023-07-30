@@ -13,28 +13,30 @@ Multithreaded_SSH V0.5.0 现已发布。
 
 ## 更新说明:
 
-1. 增加excel读取能。现在可以从excel文件中读取主机地址、用户名、命令、终止符。
-2. 代码更加模块化
-3. 优化了代码逻辑
+1. 增加了数字选单。
+2. 增加excel读取能。现在可以从excel文件中读取主机地址、用户名、命令、终止符。
+3. 代码更加模块化。
+4. 优化了代码逻辑。
 
 ## 使用说明:
 
-1. 准备文件：
-    - txt模式： 确保程序同目录下有两个文件```host.txt```和```commands.txt```顾名思义，一个放置远程主机的地址（每行一个），另一个放置要执行的命令（每行一条）
-    - excel模式： 请确保程序同目录下有```SSH.xlsx```
+1. 选择模式：
+    - 1.txt模式： 请确保程序同目录下有两个文件```host.txt```和```commands.txt```，一个放置远程主机的地址（每行一个），另一个放置要执行的命令（每行一条）
+    - 2.excel模式： 请确保程序同目录下有```SSH.xlsx```
       文件，或者手动输入文件名称。excel文件格式可以参考github上的[示例文件](https://github.com/WEI-KE/Multithreaded-SSH/blob/main/SSH.xlsx)
       ,详细要求如下：
 
-        - 标题需要包含```Address```、```Username```、```Multi_SSH_Enable```、```cmd1```。可选：```Hostname```、```end*```
+        - 标题需要包含```Hostname```、```Address```、```Username```、```Multi_SSH_Enable```、```cmd1```，可选：```end*```。
+          标题无位置要求。
 
         - 命令序号连续增加，不要跳过数字。如```cmd1```,```cmd2```,```cmd3```,```cmd5```，在执行时cmd5及以后的内容将被抛弃
-          ，end序号可以不连续，end序号是对应相同命令序号的执行终止符。
+          ，end序号可以不连续，end序号是对应相同命令序号的执行终止符。作为标题同样无位置要求。
 
       | Hostname | Address | Username | Multi_SSH_Enable                        | cmd1 | end1    |
       |----------|---------|----------|-----------------------------------------|------|---------|
       | 主机名      | 主机地址    | 用户名      | 启用标记<br/>True 启用<br/>False 禁用<br/>留空为启用 | 命令   | 命令执行终止符 |
 
-      > 如果你是使用源代码请确保目录下有excel_read.py。
+   > 如果你是使用源代码请确保目录下有excel_read.py。
 
 2. 确保程序有创建目录和文件的权限，程序执行后会创建两个目录和若干日志文件
     - log
@@ -65,11 +67,13 @@ Multithreaded_SSH V0.5.0 现已发布。
 
 代码进入稳定期， 近期不会有更新，除非发现问题，或有小的修改。
 
+可能会增加配置文件方便使用。
+
 ## 结语
 
 写代码的时候无意间发现python支持用中文作为变量所以便有了这个[整活的版本](https://github.com/WEI-KE/Multithreaded-SSH/tree/main/%E4%B8%AD%E6%96%87%E7%89%88)
 
-欢迎在下方评论区交流，或者直接在Github上提交问题（issues）。 
+欢迎在下方评论区交流，或者直接在Github上提交问题（issues）。
 
 如果觉得本程序还不错，可以在下方点个👍也可以去[Github](https://github.com/WEI-KE/Multithreaded-SSH)点个⭐，感谢支持。
 

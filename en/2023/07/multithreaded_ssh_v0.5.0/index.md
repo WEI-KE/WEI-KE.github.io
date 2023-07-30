@@ -31,7 +31,7 @@ download it if needed.
       the [example file](https://github.com/WEI-KE/Multithreaded-SSH/blob/main/SSH.xlsx) on GitHub. The requirements are
       as follows:
 
-        - The header should include `Address`, `Username`, `Multi_SSH_Enable`, and `cmd1`. Optional: `Hostname`, `end*`.
+        - The header should include `Hostname`, `Address`, `Username`, `Multi_SSH_Enable`, and `cmd1`. Optional:`end*`.
 
         - Command numbers should be consecutive without skipping any. For example, `cmd1`, `cmd2`, `cmd3`, `cmd5`.
           Commands starting from `cmd5` and beyond will be ignored. The `end` numbers can be non-consecutive, and they
